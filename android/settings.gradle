@@ -1,0 +1,3 @@
+rootProject.name = 'shadowClient'
+
+include ':app'
