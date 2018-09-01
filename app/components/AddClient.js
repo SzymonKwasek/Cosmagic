@@ -19,8 +19,12 @@ class AddClient extends React.Component {
 
     addClient = async () => {
         const response = await axios.post('http://10.0.2.2:8080/public/client', this.state)
+        const data = {
+            name: this.state.name,
+            lashtype: this.state.lashType
+        }
         if(response) {
-            console.log(response)
+            this.props.addClients(this.props.clients, data)
             this.props.navigation.navigate('Main')
         }
     }
@@ -56,13 +60,20 @@ class AddClient extends React.Component {
 
 function mapStateToProps (state) {
     return {
-        user: state.user
+        user: state.user,
+        clients: state.clients
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        addClients : (clients, client) => dispatch({type:'ADD_CLIENT', clients, client})
     }
 }
 
 
 
-export default connect(mapStateToProps)(AddClient)
+export default connect(mapStateToProps, mapDispatchToProps)(AddClient)
 
 const styles = StyleSheet.create({
     wrapper: {

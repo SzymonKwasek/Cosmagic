@@ -2,6 +2,7 @@ import React from 'react'
 import { FlatList, StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import ClientTab from './ClientTab'
 
 
 class Main extends React.Component {
@@ -13,14 +14,12 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            clients: []
-        }
     }
 
     componentDidMount() {
         this.getAllClients()
     }
+
 
     getAllClients = async () => {
         const data = {
@@ -28,13 +27,16 @@ class Main extends React.Component {
         }
         const response = await axios.post('http://10.0.2.2:8080/public/client/clients', data)
         if( response ) {
-            console.log(response)
-            const temp = []
             const size = Object.keys(response.data.response).length
             for( let i = 0; i < size;i++) {
-                temp.push(response.data.response[i])
+                if(this.props.clients) {
+                    this.props.addClients(this.props.clients, response.data.response[i])
+                } else {
+                    this.props.addClient(response.data.response[i])
+                }             
             }
-            this.setState({clients: temp})
+            console.log(this.props.clients)
+            console.log(this.props.user)
         }   
     }
 
@@ -53,23 +55,13 @@ class Main extends React.Component {
             </View>
             <ScrollView style={styles.scrollContainer}> 
                 <FlatList 
-                    data={this.state.clients}
+                    data={this.props.clients}
                     keyExtractor={(x) => x}
                     renderItem={({ item }) =>
-                    <Text>
-                        {item.name}
-                    </Text>}
+                    <ClientTab data={item} onPress={() => this.props.navigation.navigate('Client', item)}/>}
                 />
             
             </ScrollView>
-            
-            <View style={styles.footer}>
-                <TextInput
-                    style={styles.TextInput}
-                    placeholder='>note'
-                    placeholderTextColor='white'
-                    underlineColorAndroid='transparent'/>
-            </View>
             <TouchableOpacity
                         style={styles.btn}
                         onPress={() => this.props.navigation.navigate('AddClient')}>
@@ -87,15 +79,25 @@ class Main extends React.Component {
 
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        addClients : (clients, client) => dispatch({type:'ADD_CLIENT', client, clients}),
+        addClient : (client) => dispatch({type:'ADD_FIRST', client})
+    }
+}
+
 function mapStateToProps (state) {
     return {
-        user: state.user
+        user: state.user,
+        clients: state.clients
     }
 }
 
 
 
-export default connect(mapStateToProps)(Main)
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
 
 const styles = StyleSheet.create({
     container: {

@@ -44,14 +44,12 @@ export default class Register extends React.Component {
             alert("Passwords must match !")
             return false
         }
-        return true
+        return true;
     }
 
     async onRegisterPressed() {
-
-        this.formValidator()
        
-        if(!this.formValidator) {
+        if(!this.formValidator()) {
             return
         }
         
@@ -62,8 +60,10 @@ export default class Register extends React.Component {
             password: password
         }
         const response = await axios.post('http://10.0.2.2:8080/public/user/new', data)
-        console.log(response)
-        this.props.navigation.navigate('Login')
+        if(response.data.response) {
+            this.props.navigation.navigate('Login')
+        }
+        
     }
 
     componentDidMount() {
