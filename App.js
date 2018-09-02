@@ -12,12 +12,14 @@ import { Provider } from 'react-redux'
 
 
 const Application = createStackNavigator({
-  Home: {screen: Register},
+  Register: {screen: Register},
   Login: {screen: Login},
   Main: {screen: Main},
   AddClient: {screen: AddClient},
   Client: {screen: Client},
   ClientTab: {screen: ClientTab}
+}, {
+  initialRouteName: 'Login'
 })
 
 export default class App extends React.Component {

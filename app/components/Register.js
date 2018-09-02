@@ -1,8 +1,10 @@
 import React from 'react'
 import  axios  from 'axios'
 import { sha512 } from 'js-sha512'
-import { StyleSheet, TextInput, Text, View, TouchableHighlight, AsyncStorage } from 'react-native'
+import { Image, ImageBackground, StyleSheet, TextInput, Text, View, TouchableHighlight, AsyncStorage } from 'react-native'
 
+import bgImage from '../../assets/images/meduza.jpeg'
+// import appIcon from '../../assets/images/eye.png'
 
 export default class Register extends React.Component {
 
@@ -81,7 +83,7 @@ export default class Register extends React.Component {
 
     render() {
         return (
-                <View style={styles.container}>
+                <ImageBackground style={styles.image} source={bgImage}>
                     <Text style={styles.header}> Register </Text>
 
                     <TextInput 
@@ -110,50 +112,56 @@ export default class Register extends React.Component {
                         secureTextEntry={true}
                         underlineColorAndroid='transparent'/>
                     
-                    <TouchableHighlight style={styles.button} onPress={this.onRegisterPressed.bind(this)}>
-                        <Text style={styles.buttonText}> Register </Text>
+                    <TouchableHighlight style={styles.btn} onPress={this.onRegisterPressed.bind(this)}>
+                        <Text style={styles.btnText}> Register </Text>
                     </TouchableHighlight>
 
-                    <TouchableHighlight style={styles.button} onPress={ () => this.props.navigation.navigate('Login')}>
-                        <Text style={styles.buttonText}> Already Registered ! </Text>
-                    </TouchableHighlight>
-
-                </View>
+                </ImageBackground>
         );
     }
 
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#2896d3',
-        paddingLeft: 40,
-        paddingRight: 40
-    },
     header: {
         fontSize: 24,
-        marginBottom: 60,
         color: '#fff',
         fontWeight: 'bold'
     },
     textInput: {
         alignSelf: 'stretch',
-        padding: 16,
+        padding: 14,
         marginBottom: 20,
-        backgroundColor: '#fff'
-    },
-    button: {
-        alignSelf: 'stretch',
-        padding: 10,
-        marginTop: 10,
-        backgroundColor: '#fff'
-    },
-    buttonText: {
-        alignSelf: 'center',
+        backgroundColor: '#fff',
+        opacity: .8,
+        borderRadius: 25,
+        textAlign: 'center',
         fontSize: 16
+    },
+    btn: {
+        alignSelf: 'stretch',
+        backgroundColor: 'transparent',
+        padding: 18,      
+        borderRadius: 30,
+        borderColor: '#9e79c6',
+        borderWidth: 1.5,
+        alignItems: 'center'
+    },
+    btnText: {
+        fontSize: 22,
+        color: '#fff',
+        fontWeight: 'bold'
+    },
+    image: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: null,
+        height: null,
+        paddingLeft: 40,
+        paddingRight: 40,
+        paddingTop: 20,
+        paddingBottom: 20
     }
 })
 

@@ -1,9 +1,11 @@
 import React from 'react'
-import { StyleSheet, TextInput, Text, View, KeyboardAvoidingView, TouchableOpacity, AsyncStorage } from 'react-native'
-import Main from './Main'
+import { Image, ImageBackground, StyleSheet, TextInput, Text, View, TouchableHighlight, TouchableOpacity, AsyncStorage } from 'react-native'
 import { sha512 } from 'js-sha512'
 import axios from 'axios'
 import { connect } from 'react-redux'
+
+import bgImage from '../../assets/images/meduza.jpeg'
+import appIcon from '../../assets/images/eye.png'
 
 class Login extends React.Component {
     static navigationOptions = {
@@ -21,6 +23,17 @@ class Login extends React.Component {
     componentDidMount() {
         this._loadInitialState().done();
     }
+    formValidator () {
+        if(!this.state.email) {
+            alert('Fill in Email field !')
+            return false
+        }
+        if(!this.state.password) {
+            alert('Fill in Password field !')
+            return false
+        }
+        return true;
+    }
 
     _loadInitialState = async () => {
 
@@ -32,6 +45,10 @@ class Login extends React.Component {
 
     login = async () => {
 
+        if(!this.formValidator()) {
+            return
+        }
+
         const password = sha512(this.state.password)
 
         const data = {
@@ -40,7 +57,7 @@ class Login extends React.Component {
         }
         const response = await axios.post('http://10.0.2.2:8080/public/user/login',
             data)
-        if(response) {
+        if(response.data.response) {
             AsyncStorage.setItem('user', response.data.response)
             this.props.setUser(response.data.response)
             this.props.navigation.navigate('Main')
@@ -52,28 +69,33 @@ class Login extends React.Component {
 
     render() {
         return (
-        <View style={styles.container}>
-            <Text style={styles.header}> LOGIN </Text>
+            <ImageBackground style={styles.image} source={bgImage}>
+                {/* <Text style={styles.header}> Shadow of Lashes</Text> */}
+                <Image style={styles.appIcon} source={appIcon}/>
+                <TextInput 
+                    style={styles.textInput} 
+                    placeholder="Email"
+                    onChangeText={ (email) =>this.setState({email}) }
+                    underlineColorAndroid='transparent'/>
 
-            <TextInput 
-                style={styles.textInput} 
-                placeholder="Email"
-                onChangeText={ (email) =>this.setState({email}) }
-                underlineColorAndroid='transparent'/>
+                <TextInput 
+                    style={styles.textInput} 
+                    placeholder="Password"
+                    onChangeText={ (password) =>this.setState({password}) }
+                    secureTextEntry={true}
+                    underlineColorAndroid='transparent'/>
 
-            <TextInput 
-                style={styles.textInput} 
-                placeholder="Password"
-                onChangeText={ (password) =>this.setState({password}) }
-                secureTextEntry={true}
-                underlineColorAndroid='transparent'/>
+                <TouchableOpacity
+                    style={styles.btn}
+                    onPress={this.login}>
+                    <Text style={styles.btnText}> Login </Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity
-                style={styles.btn}
-                onPress={this.login}>
-                <Text> Login </Text>
-            </TouchableOpacity>
-        </View>
+                <Text style={styles.bottomText}>
+                    Don't have an account ? {'\n'}
+                    <Text onPress={() => this.props.navigation.navigate('Register')} style={styles.linkText}>Sign up</Text> now !
+                </Text>
+            </ImageBackground>
         );
     }
 }
@@ -93,34 +115,58 @@ function mapStateToProps (state) {
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 const styles = StyleSheet.create({
-    wrapper: {
-        flex: 1
-    },
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#2896d3',
-        paddingLeft: 40,
-        paddingRight: 40
-    },
     header: {
         fontSize: 24,
-        marginBottom: 60,
         color: '#fff',
         fontWeight: 'bold'
     },
     textInput: {
         alignSelf: 'stretch',
-        padding: 16,
+        padding: 14,
         marginBottom: 20,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        opacity: .8,
+        borderRadius: 25,
+        textAlign: 'center',
+        fontSize: 16
     },
     btn: {
         alignSelf: 'stretch',
-        backgroundColor: '#01c853',
-        padding: 20,
+        backgroundColor: 'transparent',
+        padding: 18,      
+        borderRadius: 30,
+        borderColor: '#9e79c6',
+        borderWidth: 1.5,
         alignItems: 'center'
+    },
+    btnText: {
+        fontSize: 22,
+        color: '#fff',
+        fontWeight: 'bold'
+    },
+    bottomText: {
+        color: '#fff',
+        textAlign: 'center'
+    },
+    linkText: {
+        color: '#90b1e5',
+    },
+    image: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: null,
+        height: null,
+        paddingLeft: 40,
+        paddingRight: 40,
+        paddingTop: 20,
+        paddingBottom: 20
+    },
+    appIcon: {
+        paddingTop: 20,
+        alignSelf: 'center',
+        marginBottom: 80
+
     }
 })
 
