@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View, ImageBackground, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
+import { Modal, FlatList, StyleSheet, Text, View, ImageBackground, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import ClientTab from './ClientTab'
@@ -15,12 +15,21 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            modalToggle: false
+        }
     }
 
     componentDidMount() {
         this.getAllClients()
     }
 
+    toggleModal = () => {
+        this.setState({
+            modalToggle: !this.state.modalToggle
+        })
+
+    }
 
     getAllClients = async () => {
         const data = {
@@ -29,31 +38,36 @@ class Main extends React.Component {
         const response = await axios.post('http://10.0.2.2:8080/public/client/clients', data)
         if( response ) {
             const size = Object.keys(response.data.response).length
-            for( let i = 0; i < size;i++) {
+            for( let i = 0; i < size; i++ ) {
                 if(this.props.clients) {
                     this.props.addClients(this.props.clients, response.data.response[i])
                 } else {
                     this.props.addClient(response.data.response[i])
                 }             
             }
-            console.log(this.props.clients)
-            console.log(this.props.user)
         }   
     }
 
     logout = () => {
         AsyncStorage.removeItem('user')
+        this.toggleModal()
         this.props.navigation.push('Login')
     }
 
 
   render() {
-    return (
+    return (    
       <ImageBackground style={styles.image} source={bgImage}>
 
-            <View style={styles.header}>
-                <Text style={styles.headerText} onPress={this.logout} > <Icon name="rocket" size={30} color="#900" /></Text>
-            </View>
+            
+
+            <Modal visible={this.state.modalToggle} transparent={true} onRequestClose={()=>{console.log('closed')}} >
+                <View style={styles.modalContainer}>
+                    <Text style={styles.modalText} onPress={this.logout} > <Icon name="sign-out" size={30} color="#fff" /> Sign Out</Text>
+                    <Text style={styles.modalText} onPress={this.toggleModal} > <Icon name="times" size={30} color="#fff" /> Close</Text>
+                </View>
+            </Modal>
+
             <ScrollView style={styles.scrollContainer}> 
                 <FlatList 
                     data={this.props.clients}
@@ -63,10 +77,15 @@ class Main extends React.Component {
                 />
             
             </ScrollView>
+
+            <TouchableOpacity style={styles.header} onPress={this.toggleModal}>
+                <Text style={styles.headerText}> <Icon name="cog" size={30} color="#fff" /></Text>
+            </TouchableOpacity>
+
             <TouchableOpacity
                         style={styles.btn}
                         onPress={() => this.props.navigation.navigate('AddClient')}>
-                        <Text style={styles.btnText}> + </Text>
+                        <Icon name="plus" size={40} color="#fff" />
             </TouchableOpacity>
 
       </ImageBackground>
@@ -106,10 +125,10 @@ const styles = StyleSheet.create({
         paddingRight: 20,
     },
     header: {
-        backgroundColor: 'rgba(0,0,0,0)',
-        justifyContent: 'center',
-        alignSelf: 'stretch',
-        height: 40
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        margin: 20
     },
     headerText: {
         color: 'white',
@@ -123,16 +142,28 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         right: 0,
-        backgroundColor: '#01c853',
-        padding: 40,
+        backgroundColor: 'transparent',
+        justifyContent: 'center',
+        alignItems: 'center',
         margin: 20,
-        width: 40,
-        height: 40,
+        width: 80,
+        height: 80,
         borderRadius: 40
     },
-    btnText: {
-        color: '#fff',
-        fontSize: 60,
-        fontWeight: 'bold'
+    modalContainer: {
+        marginTop: 200,
+        alignSelf: 'center',
+        backgroundColor: 'rgba(0,0,0,.8)',
+        borderRadius: 20,
+        width: 350,
+        padding: 40
+    },
+    modalText: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: "#fff",
+        marginTop: 10,
+        marginBottom: 10,
+        textAlign: 'center'
     }
 });
