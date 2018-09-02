@@ -1,15 +1,16 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
+import { FlatList, StyleSheet, Text, View, ImageBackground, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import ClientTab from './ClientTab'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
+import bgImage from '../../assets/images/meduza.jpeg'
 
 class Main extends React.Component {
 
     static navigationOptions = {
-        title: 'Main',
-        headerLeft: null,
+        header: null
       };
 
     constructor(props) {
@@ -48,10 +49,10 @@ class Main extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ImageBackground style={styles.image} source={bgImage}>
 
             <View style={styles.header}>
-                <Text style={styles.headerText}> Shadow Of Lashess </Text>
+                <Text style={styles.headerText} onPress={this.logout} > <Icon name="rocket" size={30} color="#900" /></Text>
             </View>
             <ScrollView style={styles.scrollContainer}> 
                 <FlatList 
@@ -65,15 +66,10 @@ class Main extends React.Component {
             <TouchableOpacity
                         style={styles.btn}
                         onPress={() => this.props.navigation.navigate('AddClient')}>
-                        <Text> Add </Text>
+                        <Text style={styles.btnText}> + </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
-                        style={styles.btn}
-                        onPress={this.logout}>
-                        <Text> Logout </Text>
-            </TouchableOpacity>
-      </View>
+      </ImageBackground>
     );
   }
 
@@ -100,26 +96,43 @@ function mapStateToProps (state) {
 export default connect(mapStateToProps, mapDispatchToProps)(Main)
 
 const styles = StyleSheet.create({
-    container: {
+    image : {
         flex: 1,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: null,
+        height: null,
+        paddingLeft: 20,
+        paddingRight: 20,
     },
     header: {
-        backgroundColor: '#ddcc85',
-        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0)',
         justifyContent: 'center',
-        borderBottomWidth: 10,
-        borderBottomColor: '#d6bf5e'
+        alignSelf: 'stretch',
+        height: 40
     },
     headerText: {
         color: 'white',
-        fontSize: 24,
-        padding: 26,
-        fontWeight: 'bold'
+        fontSize: 14,
+        alignSelf: 'flex-end'
+    },
+    scrollContainer: {
+        alignSelf: 'stretch'
     },
     btn: {
-        alignSelf: 'stretch',
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
         backgroundColor: '#01c853',
-        padding: 20,
-        alignItems: 'center'
-        }
+        padding: 40,
+        margin: 20,
+        width: 40,
+        height: 40,
+        borderRadius: 40
+    },
+    btnText: {
+        color: '#fff',
+        fontSize: 60,
+        fontWeight: 'bold'
+    }
 });

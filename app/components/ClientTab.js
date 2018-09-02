@@ -49,11 +49,13 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 10,
+        marginBottom: 10
     },
     photo: {
         backgroundColor: '#e8e5b7',
-        borderRadius: 2,
+        borderRadius: 50,
         borderWidth: .5,
         borderColor:'#b2947b',
         height: 80,
@@ -61,12 +63,18 @@ const styles = StyleSheet.create({
     },
     basicInfo: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        backgroundColor: 'rgba(255, 255, 255, .1)',
+        borderRadius: 20,
+        height: 70,
+        marginLeft: 15,
+        padding: 15
     },
     infoText: {
-        textAlign: 'center',
-        fontSize: 13,
-        fontWeight: 'bold'
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#fff'
     }
 });

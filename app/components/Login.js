@@ -9,10 +9,9 @@ import appIcon from '../../assets/images/eye.png'
 
 class Login extends React.Component {
     static navigationOptions = {
-        title: 'Login',
-        headerLeft: null,
+        header: null
       };
-      
+
     constructor(props) {
         super(props)
         this.state = {

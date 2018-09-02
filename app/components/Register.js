@@ -8,6 +8,10 @@ import bgImage from '../../assets/images/meduza.jpeg'
 
 export default class Register extends React.Component {
 
+    static navigationOptions = {
+        header: null
+      };
+
     constructor(props) {
         super(props)
         this.state = {

@@ -19,7 +19,8 @@ const Application = createStackNavigator({
   Client: {screen: Client},
   ClientTab: {screen: ClientTab}
 }, {
-  initialRouteName: 'Login'
+  initialRouteName: 'Login',
+  headerMode: 'screen'
 })
 
 export default class App extends React.Component {
