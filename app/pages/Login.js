@@ -1,8 +1,9 @@
 import React from 'react'
-import { Image, ImageBackground, StyleSheet, TextInput, Text, View, TouchableHighlight, TouchableOpacity, AsyncStorage } from 'react-native'
+import { Image, ImageBackground, StyleSheet, Animated, Text, TouchableOpacity, AsyncStorage } from 'react-native'
 import { sha512 } from 'js-sha512'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import FancyInput from '../components/FancyInput'
 
 import bgImage from '../../assets/images/meduza.jpeg'
 import appIcon from '../../assets/images/eye.png'
@@ -16,11 +17,26 @@ class Login extends React.Component {
         super(props)
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            animation: {
+                emailPositionLeft: new Animated.Value(795),
+                passwordPositionLeft: new Animated.Value(905)
+            }
         }
     }
     componentDidMount() {
         this._loadInitialState().done();
+        const timing = Animated.timing
+        Animated.parallel([
+            timing(this.state.animation.emailPositionLeft, {
+                toValue: 0,
+                duration: 700
+            }),
+            timing(this.state.animation.passwordPositionLeft, {
+                toValue: 0,
+                duration: 900
+            })
+        ]).start()
     }
     formValidator () {
         if(!this.state.email) {
@@ -71,19 +87,22 @@ class Login extends React.Component {
             <ImageBackground style={styles.image} source={bgImage}>
                 {/* <Text style={styles.header}> Shadow of Lashes</Text> */}
                 <Image style={styles.appIcon} source={appIcon}/>
-                <TextInput 
-                    style={styles.textInput} 
+                <Animated.View style={{position: 'relative', left: this.state.animation.emailPositionLeft, alignSelf: 'stretch'}}>
+                <FancyInput 
                     placeholder="Email"
-                    onChangeText={ (email) =>this.setState({email}) }
-                    underlineColorAndroid='transparent'/>
+                    onChange={ (email) =>this.setState({email}) }
+                    password={false}
+                    placeholderColor={'#fff'}/>
+                </Animated.View>
 
-                <TextInput 
-                    style={styles.textInput} 
+                <Animated.View style={{position: 'relative', left: this.state.animation.passwordPositionLeft, alignSelf: 'stretch'}}>
+                <FancyInput 
                     placeholder="Password"
-                    onChangeText={ (password) =>this.setState({password}) }
-                    secureTextEntry={true}
-                    underlineColorAndroid='transparent'/>
-
+                    onChange={ (password) =>this.setState({password}) }
+                    password= {true}
+                    placeholderColor={'#fff'}
+                    />
+                </Animated.View>
                 <TouchableOpacity
                     style={styles.btn}
                     onPress={this.login}>
@@ -136,7 +155,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         borderColor: '#9e79c6',
         borderWidth: 1.5,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     btnText: {
         fontSize: 22,

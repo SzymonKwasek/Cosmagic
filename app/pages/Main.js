@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal, FlatList, StyleSheet, Text, View, ImageBackground, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import ClientTab from './ClientTab'
+import ClientTab from '../components/ClientTab'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import bgImage from '../../assets/images/meduza.jpeg'

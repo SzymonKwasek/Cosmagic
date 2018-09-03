@@ -1,10 +1,9 @@
 import React from 'react';
-import Register from './app/components/Register'
-import Login from './app/components/Login'
-import Main from './app/components/Main'
-import AddClient from './app/components/AddClient'
-import Client from './app/components/Client'
-import ClientTab from './app/components/ClientTab'
+import Register from './app/pages/Register'
+import Login from './app/pages/Login'
+import Main from './app/pages/Main'
+import AddClient from './app/pages/AddClient'
+import Client from './app/pages/Client'
 import { createStackNavigator } from 'react-navigation'
 import store from './app/store/store'
 import { Provider } from 'react-redux'
@@ -16,8 +15,7 @@ const Application = createStackNavigator({
   Login: {screen: Login},
   Main: {screen: Main},
   AddClient: {screen: AddClient},
-  Client: {screen: Client},
-  ClientTab: {screen: ClientTab}
+  Client: {screen: Client}
 }, {
   initialRouteName: 'Login',
   headerMode: 'screen'

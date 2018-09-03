@@ -1,8 +1,6 @@
 import React from 'react'
 import { FlatList, StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
-import axios from 'axios'
 import { connect } from 'react-redux'
-import ClientTab from './ClientTab'
 
 
 class Main extends React.Component {
