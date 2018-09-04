@@ -21,6 +21,7 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
+        this.props.clearTable()
         this.getAllClients()
     }
 
@@ -97,7 +98,8 @@ class Main extends React.Component {
 function mapDispatchToProps(dispatch) {
     return {
         addClients : (clients, client) => dispatch({type:'ADD_CLIENT', client, clients}),
-        addClient : (client) => dispatch({type:'ADD_FIRST', client})
+        addClient : (client) => dispatch({type:'ADD_FIRST', client}),
+        clearTable : () => dispatch({type: 'CLEAR_TABLE'})
     }
 }
 

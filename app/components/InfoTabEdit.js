@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import  FancyInput  from './FancyInput'
+import  FancyInputEdit  from './FancyInputEdit'
 
 
 export default class InfoTab extends React.Component {
@@ -17,7 +17,7 @@ export default class InfoTab extends React.Component {
                 <Text style={styles.infoName}>
                     {this.props.tabName}
                 </Text>
-                <FancyInput password={false} placeholder={this.props.toDisplay} placeholderColor='#fff' onChange={this.props.onChange} />
+                <FancyInputEdit password={false} placeholder={this.props.toDisplay} placeholderColor='#fff' onChange={this.props.onChange} />
             </View>
         );
     }
@@ -33,7 +33,7 @@ export default class InfoTab extends React.Component {
 
 const styles = StyleSheet.create({
     infoTab: {
-        flex: 0,
+        flex: 1,
         alignSelf: 'stretch',
         flexDirection: 'row',
         justifyContent: 'space-between',

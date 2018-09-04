@@ -23,7 +23,7 @@ class AddClient extends React.Component {
         }
         if(response) {
             this.props.addClients(this.props.clients, data)
-            this.props.navigation.navigate('Main')
+            this.props.navigation.push('Main')
         }
     }
 

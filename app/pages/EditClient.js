@@ -7,7 +7,7 @@ import axios from 'axios'
 
 import bgImage from '../../assets/images/meduza.jpeg'
 
-class Main extends React.Component {
+class EditClient extends React.Component {
 
     static navigationOptions = {
         header: null
@@ -15,11 +15,13 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props)
+        const data = this.props.navigation.state.params
         this.state = {
-            applicationDate: '',
-            lashName: '',
-            lashType: '',
-            lashThickness: ''
+            applicationDate: data.applicationDate,
+            lashName: data.lashName,
+            lashType: data.lashType,
+            lashThickness: data.lashThickness,
+            userUUID: this.props.user.uuid
         }
     }
 
@@ -28,7 +30,9 @@ class Main extends React.Component {
             this.state)
         if(response.data.response) {
             alert('Client edited successfully !')
-            this.props.navigation.navigate('Main')
+            console.log(response)
+            console.log(this.state)
+            this.props.navigation.push('Main')
         } else {
             alert('Something went wrong !')
         }
@@ -45,10 +49,10 @@ render() {
                     <Text style={styles.headerText}> {data.name} </Text>
                 </View>
                 <ScrollView style={{alignSelf: 'stretch'}}>
-                    <InfoTabEdit toDisplay='12.02.2018' tabName='Data aplikacji: ' onChange={ (applicationDate) => this.setState({applicationDate}) } />
-                    <InfoTabEdit toDisplay='LashLashes' tabName='Nazwa rzęs: ' onChange={ (lashName) => this.setState({lashName}) } />
-                    <InfoTabEdit toDisplay='C' tabName='Skręt:  ' onChange={ (lashType) => this.setState({lashType}) } />
-                    <InfoTabEdit toDisplay='0.03' tabName='Grubość: ' onChange={ (lashThickness) => this.setState({lashThickness}) } />
+                    <InfoTabEdit toDisplay={data.applicationDate} tabName='Data aplikacji: ' onChange={ (applicationDate) => this.setState({applicationDate}) } />
+                    <InfoTabEdit toDisplay={data.lashName} tabName='Nazwa rzęs: ' onChange={ (lashName) => this.setState({lashName}) } />
+                    <InfoTabEdit toDisplay={data.lashType} tabName='Skręt:  ' onChange={ (lashType) => this.setState({lashType}) } />
+                    <InfoTabEdit toDisplay={data.lashThickness} tabName='Grubość: ' onChange={ (lashThickness) => this.setState({lashThickness}) } />
                 </ScrollView>
                 <FancyButton action={this.edit} btnText='Apply' />
 
@@ -66,7 +70,7 @@ function mapStateToProps (state) {
 
 
 
-export default connect(mapStateToProps)(Main)
+export default connect(mapStateToProps)(EditClient)
 
 const styles = StyleSheet.create({
     header: {

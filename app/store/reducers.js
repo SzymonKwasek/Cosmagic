@@ -11,7 +11,9 @@ const initialState = {
       case 'ADD_CLIENT':
       return { clients: [...action.clients, action.client ], user: state.user }
       case 'ADD_FIRST':
-      return { clients: [action.client], user: state.user } 
+      return { clients: [action.client], user: state.user }
+      case 'CLEAR_TABLE':
+      return {clients: [], user: state.user} 
     }
     return state
   }
