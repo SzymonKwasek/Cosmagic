@@ -3,9 +3,6 @@ import { StyleSheet, TextInput } from 'react-native'
 
 
 export default class FancyInput extends React.Component {
-    static navigationOptions = {
-        header: null
-      };
 
     constructor(props) {
         super(props)

@@ -4,6 +4,7 @@ import { sha512 } from 'js-sha512'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import FancyInput from '../components/FancyInput'
+import FancyButton from '../components/FancyButton'
 
 import bgImage from '../../assets/images/meduza.jpeg'
 import appIcon from '../../assets/images/eye.png'
@@ -103,11 +104,8 @@ class Login extends React.Component {
                     placeholderColor={'#fff'}
                     />
                 </Animated.View>
-                <TouchableOpacity
-                    style={styles.btn}
-                    onPress={this.login}>
-                    <Text style={styles.btnText}> Login </Text>
-                </TouchableOpacity>
+
+                <FancyButton action={this.login} btnText='Login' />
 
                 <Text style={styles.bottomText}>
                     Don't have an account ? {'\n'}
@@ -147,20 +145,6 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         textAlign: 'center',
         fontSize: 16
-    },
-    btn: {
-        alignSelf: 'stretch',
-        backgroundColor: 'transparent',
-        padding: 18,      
-        borderRadius: 30,
-        borderColor: '#9e79c6',
-        borderWidth: 1.5,
-        alignItems: 'center',
-    },
-    btnText: {
-        fontSize: 22,
-        color: '#fff',
-        fontWeight: 'bold'
     },
     bottomText: {
         color: '#fff',

@@ -1,8 +1,9 @@
 import React from 'react'
 import { ImageBackground, StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
 import { connect } from 'react-redux'
-import  InfoTab  from '../components/InfoTab'
+import  InfoTabEdit  from '../components/InfoTabEdit'
 import FancyButton from '../components/FancyButton'
+import axios from 'axios'
 
 import bgImage from '../../assets/images/meduza.jpeg'
 
@@ -14,6 +15,23 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            applicationDate: '',
+            lashName: '',
+            lashType: '',
+            lashThickness: ''
+        }
+    }
+
+    edit = async () => {
+        const response = await axios.put('http://10.0.2.2:8080/public/client',
+            this.state)
+        if(response.data.response) {
+            alert('Client edited successfully !')
+            this.props.navigation.navigate('Main')
+        } else {
+            alert('Something went wrong !')
+        }
     }
 
 
@@ -27,12 +45,12 @@ render() {
                     <Text style={styles.headerText}> {data.name} </Text>
                 </View>
                 <ScrollView style={{alignSelf: 'stretch'}}>
-                    <InfoTab toDisplay={data.applicationDate} tabName='Data aplikacji: '/>
-                    <InfoTab toDisplay={data.lashName} tabName='Nazwa rzęs: '/>
-                    <InfoTab toDisplay={data.lashType} tabName='Skręt:  '/>
-                    <InfoTab toDisplay={data.lashThickness} tabName='Grubość: '/>
+                    <InfoTabEdit toDisplay='12.02.2018' tabName='Data aplikacji: ' onChange={ (applicationDate) => this.setState({applicationDate}) } />
+                    <InfoTabEdit toDisplay='LashLashes' tabName='Nazwa rzęs: ' onChange={ (lashName) => this.setState({lashName}) } />
+                    <InfoTabEdit toDisplay='C' tabName='Skręt:  ' onChange={ (lashType) => this.setState({lashType}) } />
+                    <InfoTabEdit toDisplay='0.03' tabName='Grubość: ' onChange={ (lashThickness) => this.setState({lashThickness}) } />
                 </ScrollView>
-                <FancyButton action={() => this.props.navigation.navigate('EditClient', data)} btnText='Edit' />
+                <FancyButton action={this.edit} btnText='Apply' />
 
         </ImageBackground>
     );
@@ -64,12 +82,6 @@ const styles = StyleSheet.create({
         padding: 10,
         fontWeight: 'bold',
         textAlign: 'center'
-    },
-    btn: {
-        alignSelf: 'stretch',
-        backgroundColor: '#01c853',
-        padding: 20,
-        alignItems: 'center'
     },
     image: {
         flex: 1,

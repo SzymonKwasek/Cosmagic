@@ -10,7 +10,6 @@ class AddClient extends React.Component {
         super(props)
         this.state = {
             name: '',
-            lashType: '',
             userUUID: this.props.user.uuid
         }
 
@@ -20,8 +19,7 @@ class AddClient extends React.Component {
     addClient = async () => {
         const response = await axios.post('http://10.0.2.2:8080/public/client', this.state)
         const data = {
-            name: this.state.name,
-            lashtype: this.state.lashType
+            name: this.state.name
         }
         if(response) {
             this.props.addClients(this.props.clients, data)
@@ -39,12 +37,6 @@ class AddClient extends React.Component {
                 style={styles.textInput} 
                 placeholder="Name"
                 onChangeText={ (name) =>this.setState({name}) }
-                underlineColorAndroid='transparent'/>
-
-            <TextInput 
-                style={styles.textInput} 
-                placeholder="Lash Type"
-                onChangeText={ (lashType) =>this.setState({lashType}) }
                 underlineColorAndroid='transparent'/>
 
             <TouchableOpacity
