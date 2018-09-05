@@ -1,12 +1,13 @@
 import React from 'react'
-import { Image, ImageBackground, StyleSheet, Animated, Text, TouchableOpacity, AsyncStorage } from 'react-native'
+import { Image, StyleSheet, Animated, Text, AsyncStorage } from 'react-native'
 import { sha512 } from 'js-sha512'
 import axios from 'axios'
 import { connect } from 'react-redux'
+
 import FancyInput from '../components/FancyInput'
 import FancyButton from '../components/FancyButton'
+import FancyBackground from '../components/FancyBackground'
 
-import bgImage from '../../assets/images/meduza.jpeg'
 import appIcon from '../../assets/images/eye.png'
 
 class Login extends React.Component {
@@ -85,24 +86,25 @@ class Login extends React.Component {
 
     render() {
         return (
-            <ImageBackground style={styles.image} source={bgImage}>
-                {/* <Text style={styles.header}> Shadow of Lashes</Text> */}
+            <FancyBackground>
+
+                
                 <Image style={styles.appIcon} source={appIcon}/>
+                
                 <Animated.View style={{position: 'relative', left: this.state.animation.emailPositionLeft, alignSelf: 'stretch'}}>
-                <FancyInput 
-                    placeholder="Email"
-                    onChange={ (email) =>this.setState({email}) }
-                    password={false}
-                    placeholderColor={'#fff'}/>
+                    <FancyInput 
+                        placeholder="Email"
+                        onChange={ (email) =>this.setState({email}) }
+                        password={false}
+                        placeholderColor='#a592b7'/>
                 </Animated.View>
 
                 <Animated.View style={{position: 'relative', left: this.state.animation.passwordPositionLeft, alignSelf: 'stretch'}}>
-                <FancyInput 
-                    placeholder="Password"
-                    onChange={ (password) =>this.setState({password}) }
-                    password= {true}
-                    placeholderColor={'#fff'}
-                    />
+                    <FancyInput 
+                        placeholder="Password"
+                        onChange={ (password) =>this.setState({password}) }
+                        password= {true}
+                        placeholderColor='#a592b7'/>
                 </Animated.View>
 
                 <FancyButton action={this.login} btnText='Login' />
@@ -111,7 +113,8 @@ class Login extends React.Component {
                     Don't have an account ? {'\n'}
                     <Text onPress={() => this.props.navigation.navigate('Register')} style={styles.linkText}>Sign up</Text> now !
                 </Text>
-            </ImageBackground>
+
+            </FancyBackground>
         );
     }
 }
@@ -131,38 +134,12 @@ function mapStateToProps (state) {
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 const styles = StyleSheet.create({
-    header: {
-        fontSize: 24,
-        color: '#fff',
-        fontWeight: 'bold'
-    },
-    textInput: {
-        alignSelf: 'stretch',
-        padding: 14,
-        marginBottom: 20,
-        backgroundColor: '#fff',
-        opacity: .8,
-        borderRadius: 25,
-        textAlign: 'center',
-        fontSize: 16
-    },
     bottomText: {
         color: '#fff',
         textAlign: 'center'
     },
     linkText: {
         color: '#90b1e5',
-    },
-    image: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        width: null,
-        height: null,
-        paddingLeft: 40,
-        paddingRight: 40,
-        paddingTop: 20,
-        paddingBottom: 20
     },
     appIcon: {
         paddingTop: 20,

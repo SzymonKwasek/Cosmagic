@@ -1,12 +1,18 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
-import { connect } from 'react-redux'
-import  InfoTab  from '../components/InfoTab'
+import { ScrollView, StyleSheet, Modal, View, Text } from 'react-native'
+
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+import axios from 'axios'
+
+import InfoTab from '../components/InfoTab'
 import FancyButton from '../components/FancyButton'
+import FancyHeader from '../components/FancyHeader'
+import FancyBackground from '../components/FancyBackground'
+import HeaderButton from '../components/HeaderButton'
 
-import bgImage from '../../assets/images/meduza.jpeg'
 
-class Main extends React.Component {
+export default class Client extends React.Component {
 
     static navigationOptions = {
         header: null
@@ -14,72 +20,74 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            modalToggle : false
+        }
+    }
+
+    toggleModal = () => {
+        this.setState({
+            modalToggle: !this.state.modalToggle
+        })
+    }
+
+    delete = async () => {
+        const data = this.props.navigation.state.params
+        const response = await axios.delete('http://10.0.2.2:8080/public/client', data.uuid)
+        if( response.data.response ) {
+            this.props.navigation.push('Main')
+        }
     }
 
 
+    render() {
+        const data = this.props.navigation.state.params
+        return (
+            <FancyBackground>
 
-render() {
-    const data = this.props.navigation.state.params
-    return (
-        <ImageBackground style={styles.image} source={bgImage}>
+                <Modal visible={this.state.modalToggle} transparent={true} onRequestClose={()=>{console.log('closed')}} >
+                    <View style={styles.modalContainer}>
+                        <Text style={styles.modalText}> Are you sure ? </Text>
+                        <Text style={styles.modalText} onPress={this.delete} > <Icon name="trash" size={30} color="#fff" /> Delete!</Text>
+                        <Text style={styles.modalText} onPress={this.toggleModal} > <Icon name="times" size={30} color="#fff" /> Close</Text>
+                    </View>
+                </Modal>
 
-                <View style={styles.header}>
-                    <Text style={styles.headerText}> {data.name} </Text>
-                </View>
+                <FancyHeader headerText={data.name} />
+
                 <ScrollView style={{alignSelf: 'stretch'}}>
                     <InfoTab toDisplay={data.applicationDate} tabName='Data aplikacji: '/>
                     <InfoTab toDisplay={data.lashName} tabName='Nazwa rzęs: '/>
                     <InfoTab toDisplay={data.lashType} tabName='Skręt:  '/>
-                    <InfoTab toDisplay={data.lashThickness} tabName='Grubość: '/>
+                    <InfoTab toDisplay={data.size} tabName='Grubość: '/>
                 </ScrollView>
+
+                <HeaderButton onPress={this.toggleModal} iconName='trash' iconColor='#a8555e'/>
+
                 <FancyButton action={() => this.props.navigation.navigate('EditClient', data)} btnText='Edit' />
 
-        </ImageBackground>
-    );
-}
-
-}
-
-function mapStateToProps (state) {
-    return {
-        user: state.user
+            </FancyBackground>
+        );
     }
 }
 
-
-
-export default connect(mapStateToProps)(Main)
-
 const styles = StyleSheet.create({
-    header: {
-        backgroundColor: 'transparent',
-        alignSelf: 'stretch',
-        justifyContent: 'center',
-        borderBottomWidth: 1.5,
-        borderColor: '#9e79c6'
+    modalContainer: {
+        marginTop: 200,
+        alignSelf: 'center',
+        backgroundColor: 'rgba(0,0,0,.8)',
+        borderRadius: 20,
+        width: 350,
+        padding: 40
     },
-    headerText: {
-        color: 'white',
-        fontSize: 30,
-        padding: 10,
+    modalText: {
+        fontSize: 25,
         fontWeight: 'bold',
+        color: "#fff",
+        marginTop: 10,
+        marginBottom: 10,
         textAlign: 'center'
-    },
-    btn: {
-        alignSelf: 'stretch',
-        backgroundColor: '#01c853',
-        padding: 20,
-        alignItems: 'center'
-    },
-    image: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        width: null,
-        height: null,
-        paddingLeft: 40,
-        paddingRight: 40,
-        paddingTop: 20,
-        paddingBottom: 20
-    },
+    }
 });
+
+

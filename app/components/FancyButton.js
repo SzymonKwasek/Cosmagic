@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react'
 import { StyleSheet, TouchableOpacity, Text } from 'react-native'
-import  FancyText  from './FancyText'
 
 
 export default class FancyButton extends React.Component {

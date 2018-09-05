@@ -1,11 +1,13 @@
 import React from 'react'
-import { Modal, FlatList, StyleSheet, Text, View, ImageBackground, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
+import { Modal, FlatList, StyleSheet, Text, View, Animated, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import ClientTab from '../components/ClientTab'
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import bgImage from '../../assets/images/meduza.jpeg'
+import ClientTab from '../components/ClientTab'
+import FancyBackground from '../components/FancyBackground'
+import HeaderButton from '../components/HeaderButton'
 
 class Main extends React.Component {
 
@@ -16,7 +18,8 @@ class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            modalToggle: false
+            modalToggle: false,
+            clients : []
         }
     }
 
@@ -29,23 +32,26 @@ class Main extends React.Component {
         this.setState({
             modalToggle: !this.state.modalToggle
         })
-
     }
 
     getAllClients = async () => {
+        this.setState({clients: []})
         const data = {
             userUUID: this.props.user.uuid
         }
         const response = await axios.post('http://10.0.2.2:8080/public/client/clients', data)
-        if( response ) {
+        if( response.data.response ) {
             const size = Object.keys(response.data.response).length
+            const temp = []
             for( let i = 0; i < size; i++ ) {
-                if(this.props.clients) {
-                    this.props.addClients(this.props.clients, response.data.response[i])
-                } else {
-                    this.props.addClient(response.data.response[i])
-                }             
+                // if(this.props.clients) {
+                //     this.props.addClients(this.props.clients, response.data.response[i])
+                // } else {
+                //     this.props.addClient(response.data.response[i])
+                // }       
+                temp.push(response.data.response[i])      
             }
+            this.setState({clients: temp})
         }   
     }
 
@@ -55,43 +61,37 @@ class Main extends React.Component {
         this.props.navigation.push('Login')
     }
 
+    render() {
+        return (    
+        <FancyBackground>
 
-  render() {
-    return (    
-      <ImageBackground style={styles.image} source={bgImage}>
+                <Modal visible={this.state.modalToggle} transparent={true} onRequestClose={()=>{console.log('closed')}} >
+                    <View style={styles.modalContainer}>
+                        <Text style={styles.modalText} onPress={this.logout} > <Icon name="sign-out" size={30} color="#fff" /> Sign Out</Text>
+                        <Text style={styles.modalText} onPress={this.toggleModal} > <Icon name="times" size={30} color="#fff" /> Close</Text>
+                    </View>
+                </Modal>
 
-            
+                <ScrollView style={styles.scrollContainer}> 
+                    <FlatList 
+                        data={this.state.clients}
+                        keyExtractor={(x) => x}
+                        renderItem={({ item }) =>
+                        <ClientTab data={item} onPress={() => this.props.navigation.navigate('Client', item)}/>
+                        }/>          
+                </ScrollView>
 
-            <Modal visible={this.state.modalToggle} transparent={true} onRequestClose={()=>{console.log('closed')}} >
-                <View style={styles.modalContainer}>
-                    <Text style={styles.modalText} onPress={this.logout} > <Icon name="sign-out" size={30} color="#fff" /> Sign Out</Text>
-                    <Text style={styles.modalText} onPress={this.toggleModal} > <Icon name="times" size={30} color="#fff" /> Close</Text>
-                </View>
-            </Modal>
+                <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor='#fff' />
 
-            <ScrollView style={styles.scrollContainer}> 
-                <FlatList 
-                    data={this.props.clients}
-                    keyExtractor={(x) => x}
-                    renderItem={({ item }) =>
-                    <ClientTab data={item} onPress={() => this.props.navigation.navigate('Client', item)}/>}
-                />
-            
-            </ScrollView>
+                <TouchableOpacity
+                            style={styles.btn}
+                            onPress={() => this.props.navigation.navigate('AddClient')}>
+                            <Icon name="plus" size={40} color="#fff" />
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.header} onPress={this.toggleModal}>
-                <Text style={styles.headerText}> <Icon name="cog" size={30} color="#fff" /></Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-                        style={styles.btn}
-                        onPress={() => this.props.navigation.navigate('AddClient')}>
-                        <Icon name="plus" size={40} color="#fff" />
-            </TouchableOpacity>
-
-      </ImageBackground>
-    );
-  }
+        </FancyBackground>
+        );
+    }
 
 }
 
@@ -117,26 +117,6 @@ function mapStateToProps (state) {
 export default connect(mapStateToProps, mapDispatchToProps)(Main)
 
 const styles = StyleSheet.create({
-    image : {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        width: null,
-        height: null,
-        paddingLeft: 20,
-        paddingRight: 20,
-    },
-    header: {
-        position: 'absolute',
-        top: 0,
-        right: 0,
-        margin: 20
-    },
-    headerText: {
-        color: 'white',
-        fontSize: 14,
-        alignSelf: 'flex-end'
-    },
     scrollContainer: {
         alignSelf: 'stretch'
     },

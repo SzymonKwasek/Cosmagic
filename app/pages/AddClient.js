@@ -1,7 +1,13 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
+import { ImageBackground, StyleSheet} from 'react-native'
 import axios from 'axios'
 import { connect } from 'react-redux'
+
+import FancyButton from '../components/FancyButton'
+import FancyInput from '../components/FancyInput'
+import FancyHeader from '../components/FancyHeader'
+import FancyBackground from '../components/FancyBackground'
+
 
 
 class AddClient extends React.Component {
@@ -30,21 +36,13 @@ class AddClient extends React.Component {
 
   render() {
     return (
-        <View style={styles.container}>
-            <Text style={styles.header}> Add Client </Text>
+        <FancyBackground>
+            <FancyHeader headerText='Add Client' />
 
-            <TextInput 
-                style={styles.textInput} 
-                placeholder="Name"
-                onChangeText={ (name) =>this.setState({name}) }
-                underlineColorAndroid='transparent'/>
+            <FancyInput placeholder='Name' placeholderColor='#fff' onChange = {(name) => this.setState({name})} password={false}/>
 
-            <TouchableOpacity
-                style={styles.btn}
-                onPress={this.addClient}>
-                <Text> Add </Text>
-            </TouchableOpacity>
-        </View>
+            <FancyButton action={this.addClient} btnText='Add'/>
+        </FancyBackground>
     );
   }
 
@@ -66,35 +64,3 @@ function mapDispatchToProps(dispatch) {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddClient)
-
-const styles = StyleSheet.create({
-    wrapper: {
-        flex: 1
-    },
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#2896d3',
-        paddingLeft: 40,
-        paddingRight: 40
-    },
-    header: {
-        fontSize: 24,
-        marginBottom: 60,
-        color: '#fff',
-        fontWeight: 'bold'
-    },
-    textInput: {
-        alignSelf: 'stretch',
-        padding: 16,
-        marginBottom: 20,
-        backgroundColor: '#fff'
-    },
-    btn: {
-        alignSelf: 'stretch',
-        backgroundColor: '#01c853',
-        padding: 20,
-        alignItems: 'center'
-    }
-})

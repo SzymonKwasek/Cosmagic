@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { StyleSheet, TextInput } from 'react-native'
 
 
@@ -23,12 +24,12 @@ export default class FancyInputEdit extends React.Component {
     }
 }
 
-// FancyInput.PropTypes = {
-//     placeholder: PropTypes.string,
-//     placeholderColor: PropTypes.string,
-//     onChange: PropTypes.func,
-//     password: PropTypes.bool
-// }
+FancyInputEdit.propTypes = {
+    placeholder: PropTypes.string,
+    placeholderColor: PropTypes.string,
+    onChange: PropTypes.func,
+    password: PropTypes.bool
+}
 
 
 const styles = StyleSheet.create({
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         fontSize: 20,
         color: '#fff',
+        textAlign: 'right',
     }
 })
 
