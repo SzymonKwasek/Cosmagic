@@ -17,7 +17,7 @@ export default class InfoTab extends React.Component {
                 <Text style={styles.infoName}>
                     {this.props.tabName}
                 </Text>
-                <FancyInputEdit password={false} placeholder={this.props.toDisplay} placeholderColor='#a592b7' onChange={this.props.onChange} />
+                <FancyInputEdit password={false} datepicker={this.props.datepicker} placeholder={this.props.toDisplay} placeholderColor='#a592b7' onChange={this.props.onChange} />
             </View>
         );
     }

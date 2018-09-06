@@ -8,22 +8,26 @@ export default class FancyInputEdit extends React.Component {
 
     constructor(props) {
         super(props)
-    }
-    renderType() {
-        if(this.props.datepicker) {
-            return (
-                <DatePicker
-                    style={{width:150}}
-                    date={this.props.toDisplay}
-                    mode='date'
-                    placeholder={this.props.toDisplay}
-                    format='DD-MM-YYYY'
-                    confirmBtnText='Confirm'
-                    cancelBtnText='Cancel'
-                    onDateChange = {this.props.onChange}
-                />
-            )
+        this.state = {
+            date: this.props.placeholder
         }
+    }
+
+    renderDataPicker() {
+        return (
+            <DatePicker
+                style={{width:150}}
+                date={this.props.placeholder}
+                mode='date'
+                placeholder={this.props.placeholder}
+                format='DD-MM-YYYY'
+                confirmBtnText='Confirm'
+                cancelBtnText='Cancel'
+                onDateChange = {this.props.onChange}
+            />
+        )
+    }
+    renderInput() {
         return (
             <TextInput 
                 style={styles.textInput} 
@@ -37,7 +41,8 @@ export default class FancyInputEdit extends React.Component {
 
 
     render() {
-        return this.renderType()
+        if(this.props.datepicker) return this.renderDataPicker()
+        else return this.renderInput()
     }
 }
 

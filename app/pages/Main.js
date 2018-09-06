@@ -26,9 +26,9 @@ class Main extends React.Component {
         this.lastBackButtonPress = null
     }
 
-    componentDidMount() {
-        this.getAllClients()
+    componentDidMount() {   
         if(this.props.navigation.isFocused()) {
+            this.getAllClients()
             this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
                 if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
                     BackHandler.exitApp();
@@ -42,7 +42,15 @@ class Main extends React.Component {
     }
 
     componentWillUnmount() {
-        this.backHandler.remove()
+        const reset = StackActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({routeName: 'Main'}),
+            ]
+        })
+        this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+            this.props.navigation.dispatch(reset)
+        })
     }
 
 
