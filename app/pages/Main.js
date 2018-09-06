@@ -2,6 +2,7 @@ import React from 'react'
 import { Modal, FlatList, StyleSheet, Text, View, Animated, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import { BackHandler} from 'react-native'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -21,12 +22,25 @@ class Main extends React.Component {
             modalToggle: false,
             clients : []
         }
+        this.lastBackButtonPress = null
     }
 
     componentDidMount() {
-        this.props.clearTable()
         this.getAllClients()
+        // BackHandler.addEventListener('hardwareBackPress', () => {
+        //     if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
+        //         BackHandler.exitApp();
+        //         return true
+        //     }
+        //     this.lastBackButtonPress = new Date().getTime()
+
+        //     return true;
+        // })
     }
+
+    // componentWillUnmount() {
+    //     BackHandler.removeEventListener('hardwareBackPress', () => {this.props.navigation.goBack()})
+    // }
 
     toggleModal = () => {
         this.setState({
@@ -43,12 +57,7 @@ class Main extends React.Component {
         if( response.data.response ) {
             const size = Object.keys(response.data.response).length
             const temp = []
-            for( let i = 0; i < size; i++ ) {
-                // if(this.props.clients) {
-                //     this.props.addClients(this.props.clients, response.data.response[i])
-                // } else {
-                //     this.props.addClient(response.data.response[i])
-                // }       
+            for( let i = 0; i < size; i++ ) {     
                 temp.push(response.data.response[i])      
             }
             this.setState({clients: temp})
@@ -77,7 +86,7 @@ class Main extends React.Component {
                         data={this.state.clients}
                         keyExtractor={(x) => x}
                         renderItem={({ item }) =>
-                        <ClientTab data={item} onPress={() => this.props.navigation.navigate('Client', item)}/>
+                        <ClientTab data={item} onPress={() => this.props.navigation.push('Client', item)}/>
                         }/>          
                 </ScrollView>
 
@@ -95,26 +104,15 @@ class Main extends React.Component {
 
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        addClients : (clients, client) => dispatch({type:'ADD_CLIENT', client, clients}),
-        addClient : (client) => dispatch({type:'ADD_FIRST', client}),
-        clearTable : () => dispatch({type: 'CLEAR_TABLE'})
-    }
-}
 
 function mapStateToProps (state) {
     return {
-        user: state.user,
-        clients: state.clients
+        user: state.user
     }
 }
 
 
-
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main)
+export default connect(mapStateToProps)(Main)
 
 const styles = StyleSheet.create({
     scrollContainer: {

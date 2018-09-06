@@ -1,5 +1,4 @@
 import React from 'react'
-import { ImageBackground, StyleSheet} from 'react-native'
 import axios from 'axios'
 import { connect } from 'react-redux'
 
@@ -11,6 +10,10 @@ import FancyBackground from '../components/FancyBackground'
 
 
 class AddClient extends React.Component {
+
+    static navigationOptions = {
+        header: null
+      };
 
     constructor(props) {
         super(props)
@@ -28,7 +31,6 @@ class AddClient extends React.Component {
             name: this.state.name
         }
         if(response) {
-            this.props.addClients(this.props.clients, data)
             this.props.navigation.push('Main')
         }
     }
@@ -51,16 +53,7 @@ class AddClient extends React.Component {
 function mapStateToProps (state) {
     return {
         user: state.user,
-        clients: state.clients
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        addClients : (clients, client) => dispatch({type:'ADD_CLIENT', clients, client})
-    }
-}
-
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(AddClient)
+export default connect(mapStateToProps)(AddClient)

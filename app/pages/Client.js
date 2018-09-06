@@ -32,9 +32,10 @@ export default class Client extends React.Component {
     }
 
     delete = async () => {
-        const data = this.props.navigation.state.params
-        const response = await axios.delete('http://10.0.2.2:8080/public/client', data.uuid)
+        const prop = this.props.navigation.state.params
+        const response = await axios.delete('http://10.0.2.2:8080/public/client/'+prop.uuid)
         if( response.data.response ) {
+            this.toggleModal()
             this.props.navigation.push('Main')
         }
     }

@@ -1,6 +1,5 @@
 const initialState = {
-    user: {},
-    clients: []
+    user: {}
   }
   
   const reducer = (state=initialState, action) => {
@@ -8,12 +7,6 @@ const initialState = {
     {
       case 'SET_USER':
       return { user: action.user }
-      case 'ADD_CLIENT':
-      return { clients: [...action.clients, action.client ], user: state.user }
-      case 'ADD_FIRST':
-      return { clients: [action.client], user: state.user }
-      case 'CLEAR_TABLE':
-      return {clients: [], user: state.user} 
     }
     return state
   }
