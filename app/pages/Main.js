@@ -3,6 +3,7 @@ import { Modal, FlatList, StyleSheet, Text, View, Animated, ScrollView, Touchabl
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { BackHandler} from 'react-native'
+import { StackActions, NavigationActions } from 'react-navigation'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -27,20 +28,46 @@ class Main extends React.Component {
 
     componentDidMount() {
         this.getAllClients()
-        // BackHandler.addEventListener('hardwareBackPress', () => {
-        //     if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
-        //         BackHandler.exitApp();
-        //         return true
-        //     }
-        //     this.lastBackButtonPress = new Date().getTime()
+        if(this.props.navigation.isFocused()) {
+            this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+                if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
+                    BackHandler.exitApp();
+                    return true
+                }
+                this.lastBackButtonPress = new Date().getTime()
 
-        //     return true;
-        // })
+                return true;
+            })
+        }
     }
 
-    // componentWillUnmount() {
-    //     BackHandler.removeEventListener('hardwareBackPress', () => {this.props.navigation.goBack()})
-    // }
+    componentWillUnmount() {
+        this.backHandler.remove()
+    }
+
+
+    resetClientAction(data) {
+       const reset = StackActions.reset({
+            index: 1,
+            actions: [
+                NavigationActions.navigate({routeName: 'Main'}),
+                NavigationActions.navigate({routeName: 'Client', params: data})
+            ]
+        })
+        return reset
+    }
+    
+    resetAddAction() {
+        const reset = StackActions.reset({
+            index: 1,
+            actions: [
+                NavigationActions.navigate({routeName: 'Main'}),
+                NavigationActions.navigate({routeName: 'AddClient'})
+            ]
+        })
+        return reset
+    }
+
 
     toggleModal = () => {
         this.setState({
@@ -86,7 +113,7 @@ class Main extends React.Component {
                         data={this.state.clients}
                         keyExtractor={(x) => x}
                         renderItem={({ item }) =>
-                        <ClientTab data={item} onPress={() => this.props.navigation.push('Client', item)}/>
+                        <ClientTab data={item} onPress={() => this.props.navigation.dispatch(this.resetClientAction(item))}/>
                         }/>          
                 </ScrollView>
 
@@ -94,7 +121,7 @@ class Main extends React.Component {
 
                 <TouchableOpacity
                             style={styles.btn}
-                            onPress={() => this.props.navigation.navigate('AddClient')}>
+                            onPress={() => this.props.navigation.dispatch(this.resetAddAction())}>
                             <Icon name="plus" size={40} color="#fff" />
                 </TouchableOpacity>
 
@@ -103,6 +130,7 @@ class Main extends React.Component {
     }
 
 }
+
 
 
 function mapStateToProps (state) {

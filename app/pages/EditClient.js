@@ -48,7 +48,7 @@ render() {
                 <FancyHeader headerText={data.name} />
 
                 <ScrollView style={{alignSelf: 'stretch'}}>
-                    <InfoTabEdit toDisplay={data.applicationDate} tabName='Data aplikacji: ' onChange={ (applicationDate) => this.setState({applicationDate}) } />
+                    <InfoTabEdit toDisplay={data.applicationDate} tabName='Data aplikacji: ' datepicker={true} onChange={ (applicationDate) => this.setState({applicationDate}) } />
                     <InfoTabEdit toDisplay={data.lashName} tabName='Nazwa rzęs: ' onChange={ (lashName) => this.setState({lashName}) } />
                     <InfoTabEdit toDisplay={data.lashType} tabName='Skręt:  ' onChange={ (lashType) => this.setState({lashType}) } />
                     <InfoTabEdit toDisplay={data.size} tabName='Grubość: ' onChange={ (size) => this.setState({size}) } />
