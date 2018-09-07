@@ -3,10 +3,7 @@ import  axios  from 'axios'
 import { sha512 } from 'js-sha512'
 import { AsyncStorage } from 'react-native'
 
-import FancyBackground from '../components/FancyBackground'
-import FancyInput from '../components/FancyInput'
-import FancyButton from '../components/FancyButton'
-import FancyHeader from '../components/FancyHeader'
+import { FancyBackground, FancyInput, FancyButton, FancyHeader } from '../components'
 
 export default class Register extends React.Component {
 

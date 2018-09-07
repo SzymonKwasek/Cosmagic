@@ -5,11 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import axios from 'axios'
 
-import InfoTab from '../components/InfoTab'
-import FancyButton from '../components/FancyButton'
-import FancyHeader from '../components/FancyHeader'
-import FancyBackground from '../components/FancyBackground'
-import HeaderButton from '../components/HeaderButton'
+import { InfoTab, FancyButton, FancyHeader, FancyBackground, HeaderButton } from '../components'
 
 
 export default class Client extends React.Component {

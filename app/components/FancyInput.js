@@ -41,7 +41,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
         borderColor: '#9e79c6',
         borderBottomWidth: 1.5,
-        color: '#fff'
+        color: '#fff',
+        marginLeft: 25,
+        marginRight: 25
     }
 })
 

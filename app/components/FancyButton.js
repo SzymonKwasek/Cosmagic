@@ -38,6 +38,9 @@ const styles = StyleSheet.create({
         borderColor: '#9e79c6',
         borderWidth: 1.5,
         alignItems: 'center',
+        marginBottom: 20,
+        marginLeft: 15,
+        marginRight: 15
     },
     btnText: {
         fontSize: 22,

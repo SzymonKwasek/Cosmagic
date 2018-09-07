@@ -1,6 +1,6 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
-import axios from 'axios'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+
 import { connect } from 'react-redux'
 
 
@@ -25,7 +25,7 @@ render() {
                         {this.props.data.name}
                     </Text>
                     <Text style={styles.infoText}>
-                        {this.props.data.lashType}
+                        {this.props.data.applicationDate}
                     </Text>
                 </View>
             </TouchableOpacity>
@@ -54,10 +54,10 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     photo: {
-        backgroundColor: '#e8e5b7',
+        backgroundColor: 'transparent',
         borderRadius: 50,
-        borderWidth: .5,
-        borderColor:'#b2947b',
+        borderWidth: 1,
+        borderColor:'#9e79c6',
         height: 80,
         width: 80
     },

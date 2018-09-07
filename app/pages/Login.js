@@ -4,9 +4,7 @@ import { sha512 } from 'js-sha512'
 import axios from 'axios'
 import { connect } from 'react-redux'
 
-import FancyInput from '../components/FancyInput'
-import FancyButton from '../components/FancyButton'
-import FancyBackground from '../components/FancyBackground'
+import { FancyInput, FancyButton, FancyBackground } from '../components'
 
 import appIcon from '../../assets/images/eye.png'
 
