@@ -85,6 +85,7 @@ class Main extends React.Component {
 
     getAllClients = async () => {
         this.setState({clients: []})
+
         const data = {
             userUUID: this.props.user.uuid
         }
@@ -106,6 +107,11 @@ class Main extends React.Component {
     }
 
     render() {
+        const clientList = this.state.clients.map((item, x) => {
+            return(
+                <ClientTab data={item} key={x} onPress={() => this.props.navigation.dispatch(this.resetClientAction(item))}/>
+            )
+        })
         return (    
         <FancyBackground>
 
@@ -116,13 +122,17 @@ class Main extends React.Component {
                     </View>
                 </Modal>
 
+                {/* TUTAJ FAJNY HEADER USERA HEHE */}
+
                 <ScrollView style={styles.scrollContainer}> 
-                    <FlatList 
+                    {/* <FlatList 
                         data={this.state.clients}
                         keyExtractor={(x) => x}
                         renderItem={({ item }) =>
                         <ClientTab data={item} onPress={() => this.props.navigation.dispatch(this.resetClientAction(item))}/>
-                        }/>          
+                        }/>           */}
+
+                        {clientList}
                 </ScrollView>
 
                 <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor='#fff' />

@@ -35,9 +35,7 @@ const styles = StyleSheet.create({
     infoTab: {
         flex: 1,
         alignSelf: 'stretch',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        justifyContent: 'space-around',
         marginTop: 10,
         marginBottom: 20,
         height: 60,

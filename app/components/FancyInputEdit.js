@@ -4,6 +4,7 @@ import { StyleSheet, TextInput } from 'react-native'
 import DatePicker from 'react-native-datepicker'
 
 
+
 export default class FancyInputEdit extends React.Component {
 
     constructor(props) {
@@ -16,23 +17,23 @@ export default class FancyInputEdit extends React.Component {
     renderDataPicker() {
         return (
             <DatePicker
-                style={{width:150}}
-                date={this.props.placeholder}
+                style={{ width:150, margin: 10} }
+                date={ this.props.placeholder }
                 mode='date'
-                placeholder={this.props.placeholder}
+                placeholder={ this.state.date }
                 format='DD-MM-YYYY'
                 confirmBtnText='Confirm'
                 cancelBtnText='Cancel'
-                onDateChange = {this.props.onChange}
+                onDateChange = { this.props.onChange }
             />
         )
     }
     renderInput() {
         return (
             <TextInput 
-                style={styles.textInput} 
-                placeholder= { this.props.placeholder }
-                placeholderTextColor={this.props.placeholderColor}
+                style={ styles.textInput } 
+                placeholder= { this.props.placeholder ? this.props.placeholder : 'Press to input' }
+                placeholderTextColor={ this.props.placeholderColor }
                 onChangeText={ this.props.onChange }
                 secureTextEntry = { this.props.password }
                 underlineColorAndroid='transparent'/>
@@ -60,7 +61,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         fontSize: 20,
         color: '#fff',
-        textAlign: 'right',
+        alignSelf: 'stretch',
+        padding: 5,
+        marginTop: 5,
+        marginBottom: 5
     }
 })
 
