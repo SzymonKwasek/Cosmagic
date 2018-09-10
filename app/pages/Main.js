@@ -4,9 +4,9 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { BackHandler} from 'react-native'
 import { StackActions, NavigationActions } from 'react-navigation'
+import GLOBALS from '../../assets/utils/Global'
 
-
-import { UserHeader, ClientTab, FancyBackground, HeaderButton, AddButton, LogOutModal } from '../components'
+import { UserHeader, UserAvatar, ClientTab, FancyBackground, HeaderButton, AddButton, LogOutModal } from '../components'
 
 class Main extends React.Component {
 
@@ -117,6 +117,8 @@ class Main extends React.Component {
                 {/* TUTAJ FAJNY HEADER USERA HEHE */}
                 <UserHeader userName={this.props.user.email} />
 
+                <UserAvatar />
+
                 <ScrollView style={styles.scrollContainer}> 
                     {/* <FlatList 
                         data={this.state.clients}
@@ -128,7 +130,7 @@ class Main extends React.Component {
                         {clientList}
                 </ScrollView>
 
-                <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor='#fff' />
+                <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} />
 
                 <AddButton onPress={() => this.props.navigation.dispatch(this.resetAddAction())} />
 

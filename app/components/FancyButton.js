@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import { StyleSheet, TouchableOpacity, Text } from 'react-native'
-
+import GLOBALS from '../../assets/utils/Global'
 
 export default class FancyButton extends React.Component {
 
@@ -35,16 +35,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         padding: 18,      
         borderRadius: 30,
-        borderColor: '#9e79c6',
-        borderWidth: 1.5,
+        borderColor: GLOBALS.COLOR.PRIMARY,
+        borderWidth: 2,
         alignItems: 'center',
         marginBottom: 20,
         marginLeft: 15,
         marginRight: 15
     },
     btnText: {
-        fontSize: 22,
-        color: '#fff',
+        fontSize: 27,
+        color: GLOBALS.COLOR.SECONDARY,
         fontWeight: 'bold'
     },
 })

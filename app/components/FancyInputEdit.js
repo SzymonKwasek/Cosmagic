@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, TextInput } from 'react-native'
 import DatePicker from 'react-native-datepicker'
-
+import GLOBALS from '../../assets/utils/Global'
 
 
 export default class FancyInputEdit extends React.Component {
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         width: 150,
         backgroundColor: 'transparent',
         fontSize: 20,
-        color: '#fff',
+        color: GLOBALS.COLOR.TEXT,
         alignSelf: 'stretch',
         padding: 5,
         marginTop: 5,

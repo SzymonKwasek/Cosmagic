@@ -1,8 +1,8 @@
 import React from 'react'
-import { ImageBackground, StyleSheet} from 'react-native'
+import { ImageBackground, StyleSheet, Dimensions} from 'react-native'
 
 
-import bgImage from '../../assets/images/meduza.jpeg'
+import bgImage from '../../assets/images/roses.jpg'
 
 
 export default class FancyBackground extends React.Component {
@@ -25,13 +25,15 @@ export default class FancyBackground extends React.Component {
 
 }
 
+const width = Dimensions.get('window').width
+
 
 const styles = StyleSheet.create({
     image: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-        width: null,
+        width: width,
         height: null,
         paddingLeft: 15,
         paddingRight: 15,

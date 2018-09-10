@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import  FancyInputEdit  from './FancyInputEdit'
-
+import GLOBALS from '../../assets/utils/Global'
 
 export default class InfoTab extends React.Component {
 
@@ -39,11 +39,11 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 20,
         height: 60,
-        borderColor: '#9e79c6',
+        borderColor: GLOBALS.COLOR.PRIMARY,
         borderBottomWidth: 1.5,
     },
     infoName: {
-        color: '#9e79c6',
+        color: GLOBALS.COLOR.PRIMARY,
         fontSize: 20,
         fontWeight: 'bold'
     }

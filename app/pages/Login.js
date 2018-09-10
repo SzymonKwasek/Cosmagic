@@ -133,14 +133,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 const styles = StyleSheet.create({
     bottomText: {
-        color: '#fff',
+        color: '#000',
         textAlign: 'center'
     },
     linkText: {
         color: '#90b1e5',
     },
     appIcon: {
-        paddingTop: 20,
+        marginTop: 50,
         alignSelf: 'center',
         marginBottom: 80
 

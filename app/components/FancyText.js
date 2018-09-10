@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text } from 'react-native'
-
+import GLOBALS from '../../assets/utils/Global'
 
 export default class FancyText extends React.Component {
 
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         backgroundColor: 'transparent',
         fontSize: 20,
-        color: '#fff',
+        color: GLOBALS.COLOR.TEXT,
         height: 60,
         padding: 14
     }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View} from 'react-native'
-
+import GLOBALS from '../../assets/utils/Global'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -12,7 +12,6 @@ export default class HeaderButton extends React.Component {
         return (    
 
            <View style={styles.container}>
-                <View style={styles.userPhoto}/>
                 <Text style={styles.userTitle}> {this.props.userName} </Text>
             </View>
 
@@ -33,25 +32,13 @@ const styles = StyleSheet.create({
         height: 60,
         padding: 0,
         borderBottomWidth: 2.5,
-        borderColor: '#9e79c6',
+        borderColor: GLOBALS.COLOR.SECONDARY,
         marginBottom: 20
     },
     userTitle: {
-        fontSize: 20,
-        color: '#fff',
-    },
-    userPhoto: {
-        backgroundColor: 'transparent',
-        borderRadius: 80,
-        borderWidth: 3.5,
-        borderColor:'#9e79c6',
-        height: 90,
-        width: 90,
-        margin: 20,
-        overflow: 'visible',
-        position: 'relative',
-        top: 10,
-        zIndex: 99,
-        margin: 10
+        fontSize: 23,
+        color: GLOBALS.COLOR.TEXT,
+        paddingLeft: 150,
+        fontWeight: 'bold'
     }
 });

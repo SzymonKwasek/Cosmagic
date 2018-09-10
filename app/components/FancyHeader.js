@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-
+import GLOBALS from '../../assets/utils/Global'
 
 export default class FancyHeader extends React.Component {
 
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         justifyContent: 'center',
         borderBottomWidth: 3,
-        borderColor: '#9e79c6',
+        borderColor: GLOBALS.COLOR.PRIMARY,
         marginBottom: 30
     },
     headerText: {
