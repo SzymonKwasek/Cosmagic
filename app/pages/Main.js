@@ -1,12 +1,12 @@
 import React from 'react'
-import { StyleSheet, ScrollView, AsyncStorage } from 'react-native'
+import { StyleSheet, ScrollView, AsyncStorage, Animated, View } from 'react-native'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { BackHandler} from 'react-native'
 import { StackActions, NavigationActions } from 'react-navigation'
 import GLOBALS from '../../assets/utils/Global'
 
-import { UserHeader, UserAvatar, ClientTab, FancyBackground, HeaderButton, AddButton, LogOutModal } from '../components'
+import { UserHeader, UserAvatar, ClientTab, FancyBackground, HeaderButton, AddButton, MenuSlide } from '../components'
 
 class Main extends React.Component {
 
@@ -17,8 +17,13 @@ class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            modalToggle: false,
-            clients : []
+            modalToggle: true,
+            clients : [],
+            menu: {
+                height: new Animated.Value(0),
+                top: new Animated.Value(0),
+                opacity: new Animated.Value(0)
+            }
         }
         this.lastBackButtonPress = null
     }
@@ -78,6 +83,37 @@ class Main extends React.Component {
         this.setState({
             modalToggle: !this.state.modalToggle
         })
+        this.openMenu()
+    }
+
+    animationHandler = (a, b, c) => {
+        const timing = Animated.timing
+        Animated.parallel([
+            timing(this.state.menu.height, {
+                toValue: a,
+                duration: 300
+            }),
+            timing(this.state.menu.top, {
+                toValue: b,
+                duration: 300
+            }),
+            timing(this.state.menu.opacity, {
+                toValue: c,
+                duration: 300
+            })
+        ]).start()
+    }
+
+    openMenu = () => {
+        
+        if(this.state.modalToggle) {
+            this.animationHandler(90, 0, 1)
+            console.log(this.state.menu)
+        } else {
+            this.animationHandler(0, 0, 0)
+            console.log(this.state.menu)
+
+        }
     }
 
     getAllClients = async () => {
@@ -112,12 +148,14 @@ class Main extends React.Component {
         return (    
         <FancyBackground>
 
-                <LogOutModal visible={this.state.modalToggle} onPressFirst={this.logout} onPressSecond={this.toggleModal} />
-
                 {/* TUTAJ FAJNY HEADER USERA HEHE */}
                 <UserHeader userName={this.props.user.email} />
 
                 <UserAvatar />
+
+                <Animated.View style={{ alignSelf: 'stretch', position: 'relative', height: this.state.menu.height, top: this.state.menu.top, opacity: this.state.menu.opacity}}>
+                    <MenuSlide  onPressFirst={this.logout} onPressSecond={this.toggleModal} />
+                </Animated.View>
 
                 <ScrollView style={styles.scrollContainer}> 
                     {/* <FlatList 

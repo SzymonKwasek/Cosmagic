@@ -10,9 +10,9 @@ import  FancyText  from './UserHeader'
 import  HeaderButton  from './HeaderButton'
 import  InfoTab  from './InfoTab'
 import  InfoTabEdit  from './InfoTabEdit'
-import  LogOutModal  from './LogOutModal'
+import  MenuSlide   from './MenuSlide'
 import  UserAvatar  from './UserAvatar'
 import  UserHeader  from './UserHeader'
 
 export  { AddButton, ClientAvatar, ClientTab, FancyBackground, FancyButton, FancyHeader, FancyInput, FancyInputEdit, FancyText, HeaderButton, 
-            InfoTab, InfoTabEdit, LogOutModal, UserAvatar, UserHeader }
+            InfoTab, InfoTabEdit, MenuSlide, UserAvatar, UserHeader }

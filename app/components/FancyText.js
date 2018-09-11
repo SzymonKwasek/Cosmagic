@@ -30,12 +30,10 @@ export default class FancyText extends React.Component {
 const styles = StyleSheet.create({
     text: {
         alignSelf: 'stretch',
-        marginBottom: 20,
         backgroundColor: 'transparent',
         fontSize: 20,
         color: GLOBALS.COLOR.TEXT,
-        height: 60,
-        padding: 14
+        padding: 5
     }
 })
 

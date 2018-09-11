@@ -33,11 +33,9 @@ export default class InfoTab extends React.Component {
 
 const styles = StyleSheet.create({
     infoTab: {
-        flex: 0,
+        flex: 1,
         alignSelf: 'stretch',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        justifyContent: 'space-around',
         marginTop: 10,
         marginBottom: 20,
         height: 60,
@@ -47,7 +45,8 @@ const styles = StyleSheet.create({
     infoName: {
         color: GLOBALS.COLOR.PRIMARY,
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBottom: 5
     }
 })
 
