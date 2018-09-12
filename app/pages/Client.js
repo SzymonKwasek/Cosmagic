@@ -1,7 +1,9 @@
 import React from 'react'
-import { ScrollView, StyleSheet, Modal, View, Text } from 'react-native'
+import { ScrollView, StyleSheet, Modal, View, Text, BackHandler } from 'react-native'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import { StackActions, NavigationActions } from 'react-navigation'
 
 import axios from 'axios'
 
@@ -21,10 +23,47 @@ export default class Client extends React.Component {
         }
     }
 
+    componentDidMount () {
+        const reset = StackActions.reset({
+            index: 1,
+            actions: [
+                NavigationActions.navigate({routeName: 'Menu'}),
+                NavigationActions.navigate({routeName: 'Main'})
+            ]
+        })
+        if(this.props.navigation.isFocused()) {
+            this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+                this.props.navigation.dispatch(reset)
+            })
+        }
+    }
+
+    // componentWillUnmount() {
+    //     const reset = StackActions.reset({
+    //         index: 0,
+    //         actions: [
+    //             NavigationActions.navigate({routeName: 'Main'})
+    //         ]
+    //     })
+    //     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+    //         this.props.navigation.dispatch(reset)
+    //     })
+    // }
+
     toggleModal = () => {
         this.setState({
             modalToggle: !this.state.modalToggle
         })
+    }
+
+    resetAction (data) {
+        const reset = StackActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({routeName: 'Main', params: data}),
+            ]
+        })
+        return reset
     }
 
     delete = async () => {
@@ -32,13 +71,14 @@ export default class Client extends React.Component {
         const response = await axios.delete('http://10.0.2.2:8080/public/client/'+prop.uuid)
         if( response.data.response ) {
             this.toggleModal()
-            this.props.navigation.push('Main')
+            this.props.navigation.dispatch(this.resetAction(this.props.navigation.state.params))
         }
     }
 
 
     render() {
-        const data = this.props.navigation.state.params
+        const data = this.props.navigation.state.params 
+        console.log(data)
         return (
             <FancyBackground>
 
@@ -61,7 +101,7 @@ export default class Client extends React.Component {
 
                 <HeaderButton onPress={this.toggleModal} iconName='trash' iconColor='#a8555e'/>
 
-                <FancyButton action={() => this.props.navigation.navigate('EditClient', data)} btnText='Edit' />
+                <FancyButton action={() => this.props.navigation.push('EditClient', data)} btnText='Edit' />
 
             </FancyBackground>
         );

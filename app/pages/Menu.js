@@ -1,12 +1,11 @@
 import React from 'react'
-import { StyleSheet, ScrollView, AsyncStorage, Animated, View } from 'react-native'
-import axios from 'axios'
+import { StyleSheet, AsyncStorage, Animated, View } from 'react-native'
 import { connect } from 'react-redux'
-import { BackHandler} from 'react-native'
+import { BackHandler } from 'react-native'
 import { StackActions, NavigationActions } from 'react-navigation'
 import GLOBALS from '../../assets/utils/Global'
 
-import { UserHeader, UserAvatar, ClientTab, FancyBackground, HeaderButton, AddButton, MenuSlide } from '../components'
+import { UserHeader, UserAvatar, FancyBackground, FancyButton, MenuSlide, HeaderButton } from '../components'
 
 class Main extends React.Component {
 
@@ -18,7 +17,6 @@ class Main extends React.Component {
         super(props)
         this.state = {
             modalToggle: true,
-            clients : [],
             menu: {
                 height: new Animated.Value(0),
                 top: new Animated.Value(0),
@@ -30,7 +28,15 @@ class Main extends React.Component {
 
     componentDidMount() {   
         if(this.props.navigation.isFocused()) {
-            this.getAllClients()
+            this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+                if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
+                    BackHandler.exitApp();
+                    return true
+                }
+                this.lastBackButtonPress = new Date().getTime()
+
+                return true;
+            })
         }
     }
 
@@ -38,7 +44,7 @@ class Main extends React.Component {
         const reset = StackActions.reset({
             index: 0,
             actions: [
-                NavigationActions.navigate({routeName: 'Main'}),
+                NavigationActions.navigate({routeName: 'Menu'})
             ]
         })
         this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
@@ -47,33 +53,12 @@ class Main extends React.Component {
     }
 
 
-    resetClientAction(data) {
+    resetAction(data) {
        const reset = StackActions.reset({
             index: 1,
             actions: [
-                NavigationActions.navigate({routeName: 'Main'}),
-                NavigationActions.navigate({routeName: 'Client', params: data})
-            ]
-        })
-        return reset
-    }
-    
-    resetAddAction(data) {
-        const reset = StackActions.reset({
-            index: 1,
-            actions: [
-                NavigationActions.navigate({routeName: 'Main'}),
-                NavigationActions.navigate({routeName: 'AddClient', params: data})
-            ]
-        })
-        return reset
-    }
-
-    resetLogoutAction () {
-        const reset = StackActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({routeName: 'Login'}),
+                NavigationActions.navigate({routeName: 'Menu'}),
+                NavigationActions.navigate({routeName: 'Main', params: data})
             ]
         })
         return reset
@@ -109,28 +94,24 @@ class Main extends React.Component {
         
         if(this.state.modalToggle) {
             this.animationHandler(90, 0, 1)
+            console.log(this.state.menu)
         } else {
             this.animationHandler(0, 0, 0)
+            console.log(this.state.menu)
+
         }
     }
 
-    getAllClients = async () => {
-        this.setState({clients: []})
-        const type = this.props.navigation.state.params
-        const data = {
-            userUUID: this.props.user.uuid,
-            cosType: type
-        }
-        const response = await axios.post('http://10.0.2.2:8080/public/client/clients', data)
-        if( response.data.response ) {
-            const size = Object.keys(response.data.response).length
-            const temp = []
-            for( let i = 0; i < size; i++ ) {     
-                temp.push(response.data.response[i])      
-            }
-            this.setState({clients: temp})
-        }   
+    resetLogoutAction () {
+        const reset = StackActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({routeName: 'Login'}),
+            ]
+        })
+        return reset
     }
+
 
     logout = () => {
         AsyncStorage.removeItem('user')
@@ -139,12 +120,7 @@ class Main extends React.Component {
     }
 
     render() {
-        const clientList = this.state.clients.map((item, x) => {
-            const data = {...this.props.navigation.state.params, ...item}
-            return(
-                <ClientTab data={item} key={x} onPress={() => this.props.navigation.dispatch(this.resetClientAction(data))}/>
-            )
-        })
+
         return (    
         <FancyBackground>
 
@@ -156,13 +132,14 @@ class Main extends React.Component {
                     <MenuSlide  onPressFirst={this.logout} onPressSecond={this.toggleModal} />
                 </Animated.View>
 
-                <ScrollView style={styles.scrollContainer}>
-                        {clientList}
-                </ScrollView>
-
                 <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} />
 
-                <AddButton onPress={() => this.props.navigation.dispatch(this.resetAddAction(this.props.navigation.state.params))} />
+                <View>
+                    <FancyButton action={() => this.props.navigation.dispatch(this.resetAction({lashes: true, nails: false, both: false}))} btnText='Lashes'/>
+                </View>
+                <View>
+                    <FancyButton action={() => this.props.navigation.dispatch(this.resetAction({lashes: false, nails: true, both: false}))} btnText='Nails'/>
+                </View>
 
         </FancyBackground>
         );

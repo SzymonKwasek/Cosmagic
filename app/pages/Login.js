@@ -54,7 +54,7 @@ class Login extends React.Component {
 
         let value = await AsyncStorage.getItem('user');
         if( value !== null) {
-            this.props.navigation.navigate('Main');
+            this.props.navigation.navigate('Menu');
         }
     }
 
@@ -75,7 +75,7 @@ class Login extends React.Component {
         if(response.data.response) {
             AsyncStorage.setItem('user', response.data.response)
             this.props.setUser(response.data.response)
-            this.props.navigation.navigate('Main')
+            this.props.navigation.navigate('Menu')
         } else {
             alert('User does not exist!')
         }

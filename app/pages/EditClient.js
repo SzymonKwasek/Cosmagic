@@ -2,6 +2,8 @@ import React from 'react'
 import { ScrollView } from 'react-native'
 import { connect } from 'react-redux'
 import axios from 'axios'
+import { StackActions, NavigationActions } from 'react-navigation'
+
 
 import InfoTabEdit from '../components/InfoTabEdit'
 import FancyButton from '../components/FancyButton'
@@ -27,12 +29,22 @@ class EditClient extends React.Component {
         }
     }
 
+    goBackFunction(data) {
+        const reset = StackActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({routeName: 'Main', params: data})
+            ]
+        })
+        return reset
+    }
+
     edit = async () => {
         const response = await axios.put('http://10.0.2.2:8080/public/client',
             this.state)
         if(response.data.response) {
             alert('Client edited successfully !')
-            this.props.navigation.push('Main')
+            this.props.navigation.dispatch(this.goBackFunction(this.props.navigation.state.params))
         } else {
             alert('Something went wrong !')
         }
