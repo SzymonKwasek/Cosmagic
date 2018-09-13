@@ -6665,9 +6665,30 @@
                     "startLine": 1220,
                     "startColumn": 4,
                     "startOffset": 94000,
-                    "endLine": 1223,
+                    "endLine": 1227,
+                    "endColumn": 12,
+                    "endOffset": 94406
+                },
+                "from": {
+                    "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/shadowClient/react-native-image-picker/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 9,
+                        "endColumn": 12,
+                        "endOffset": 461
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1228,
+                    "startColumn": 4,
+                    "startOffset": 94411,
+                    "endLine": 1231,
                     "endColumn": 10,
-                    "endOffset": 94197
+                    "endOffset": 94608
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -6683,12 +6704,12 @@
             },
             {
                 "to": {
-                    "startLine": 1224,
+                    "startLine": 1232,
                     "startColumn": 4,
-                    "startOffset": 94202,
-                    "endLine": 1227,
+                    "startOffset": 94613,
+                    "endLine": 1235,
                     "endColumn": 10,
-                    "endOffset": 94403
+                    "endOffset": 94814
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -6704,12 +6725,12 @@
             },
             {
                 "to": {
-                    "startLine": 1228,
+                    "startLine": 1236,
                     "startColumn": 4,
-                    "startOffset": 94408,
-                    "endLine": 1265,
+                    "startOffset": 94819,
+                    "endLine": 1273,
                     "endColumn": 12,
-                    "endOffset": 97265
+                    "endOffset": 97676
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6725,12 +6746,12 @@
             },
             {
                 "to": {
-                    "startLine": 1266,
+                    "startLine": 1274,
                     "startColumn": 4,
-                    "startOffset": 97270,
-                    "endLine": 1304,
+                    "startOffset": 97681,
+                    "endLine": 1312,
                     "endColumn": 12,
-                    "endOffset": 100267
+                    "endOffset": 100678
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6746,11 +6767,11 @@
             },
             {
                 "to": {
-                    "startLine": 1305,
+                    "startLine": 1313,
                     "startColumn": 4,
-                    "startOffset": 100272,
+                    "startOffset": 100683,
                     "endColumn": 61,
-                    "endOffset": 100329
+                    "endOffset": 100740
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6765,12 +6786,12 @@
             },
             {
                 "to": {
-                    "startLine": 1306,
+                    "startLine": 1314,
                     "startColumn": 4,
-                    "startOffset": 100334,
-                    "endLine": 1315,
+                    "startOffset": 100745,
+                    "endLine": 1323,
                     "endColumn": 12,
-                    "endOffset": 100959
+                    "endOffset": 101370
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6786,12 +6807,12 @@
             },
             {
                 "to": {
-                    "startLine": 1316,
+                    "startLine": 1324,
                     "startColumn": 4,
-                    "startOffset": 100964,
-                    "endLine": 1324,
+                    "startOffset": 101375,
+                    "endLine": 1332,
                     "endColumn": 12,
-                    "endOffset": 101573
+                    "endOffset": 101984
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6807,11 +6828,11 @@
             },
             {
                 "to": {
-                    "startLine": 1325,
+                    "startLine": 1333,
                     "startColumn": 4,
-                    "startOffset": 101578,
+                    "startOffset": 101989,
                     "endColumn": 85,
-                    "endOffset": 101659
+                    "endOffset": 102070
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6826,12 +6847,12 @@
             },
             {
                 "to": {
-                    "startLine": 1326,
+                    "startLine": 1334,
                     "startColumn": 4,
-                    "startOffset": 101664,
-                    "endLine": 1327,
+                    "startOffset": 102075,
+                    "endLine": 1335,
                     "endColumn": 12,
-                    "endOffset": 101772
+                    "endOffset": 102183
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6847,12 +6868,12 @@
             },
             {
                 "to": {
-                    "startLine": 1328,
+                    "startLine": 1336,
                     "startColumn": 4,
-                    "startOffset": 101777,
-                    "endLine": 1331,
+                    "startOffset": 102188,
+                    "endLine": 1339,
                     "endColumn": 12,
-                    "endOffset": 102001
+                    "endOffset": 102412
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6868,12 +6889,12 @@
             },
             {
                 "to": {
-                    "startLine": 1332,
+                    "startLine": 1340,
                     "startColumn": 4,
-                    "startOffset": 102006,
-                    "endLine": 1335,
+                    "startOffset": 102417,
+                    "endLine": 1343,
                     "endColumn": 12,
-                    "endOffset": 102339
+                    "endOffset": 102750
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6889,12 +6910,12 @@
             },
             {
                 "to": {
-                    "startLine": 1336,
+                    "startLine": 1344,
                     "startColumn": 4,
-                    "startOffset": 102344,
-                    "endLine": 1338,
+                    "startOffset": 102755,
+                    "endLine": 1346,
                     "endColumn": 12,
-                    "endOffset": 102499
+                    "endOffset": 102910
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6910,12 +6931,12 @@
             },
             {
                 "to": {
-                    "startLine": 1339,
+                    "startLine": 1347,
                     "startColumn": 4,
-                    "startOffset": 102504,
-                    "endLine": 1341,
+                    "startOffset": 102915,
+                    "endLine": 1349,
                     "endColumn": 12,
-                    "endOffset": 102651
+                    "endOffset": 103062
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6931,12 +6952,12 @@
             },
             {
                 "to": {
-                    "startLine": 1342,
+                    "startLine": 1350,
                     "startColumn": 4,
-                    "startOffset": 102656,
-                    "endLine": 1344,
+                    "startOffset": 103067,
+                    "endLine": 1352,
                     "endColumn": 12,
-                    "endOffset": 102822
+                    "endOffset": 103233
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6952,12 +6973,12 @@
             },
             {
                 "to": {
-                    "startLine": 1345,
+                    "startLine": 1353,
                     "startColumn": 4,
-                    "startOffset": 102827,
-                    "endLine": 1347,
+                    "startOffset": 103238,
+                    "endLine": 1355,
                     "endColumn": 12,
-                    "endOffset": 102989
+                    "endOffset": 103400
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6973,12 +6994,12 @@
             },
             {
                 "to": {
-                    "startLine": 1348,
+                    "startLine": 1356,
                     "startColumn": 4,
-                    "startOffset": 102994,
-                    "endLine": 1351,
+                    "startOffset": 103405,
+                    "endLine": 1359,
                     "endColumn": 12,
-                    "endOffset": 103232
+                    "endOffset": 103643
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -6994,12 +7015,12 @@
             },
             {
                 "to": {
-                    "startLine": 1352,
+                    "startLine": 1360,
                     "startColumn": 4,
-                    "startOffset": 103237,
-                    "endLine": 1354,
+                    "startOffset": 103648,
+                    "endLine": 1362,
                     "endColumn": 12,
-                    "endOffset": 103402
+                    "endOffset": 103813
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7015,12 +7036,12 @@
             },
             {
                 "to": {
-                    "startLine": 1355,
+                    "startLine": 1363,
                     "startColumn": 4,
-                    "startOffset": 103407,
-                    "endLine": 1357,
+                    "startOffset": 103818,
+                    "endLine": 1365,
                     "endColumn": 12,
-                    "endOffset": 103575
+                    "endOffset": 103986
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7036,12 +7057,12 @@
             },
             {
                 "to": {
-                    "startLine": 1358,
+                    "startLine": 1366,
                     "startColumn": 4,
-                    "startOffset": 103580,
-                    "endLine": 1360,
+                    "startOffset": 103991,
+                    "endLine": 1368,
                     "endColumn": 12,
-                    "endOffset": 103746
+                    "endOffset": 104157
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7057,12 +7078,12 @@
             },
             {
                 "to": {
-                    "startLine": 1361,
+                    "startLine": 1369,
                     "startColumn": 4,
-                    "startOffset": 103751,
-                    "endLine": 1364,
+                    "startOffset": 104162,
+                    "endLine": 1372,
                     "endColumn": 12,
-                    "endOffset": 104020
+                    "endOffset": 104431
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7078,12 +7099,12 @@
             },
             {
                 "to": {
-                    "startLine": 1365,
+                    "startLine": 1373,
                     "startColumn": 4,
-                    "startOffset": 104025,
-                    "endLine": 1367,
+                    "startOffset": 104436,
+                    "endLine": 1375,
                     "endColumn": 12,
-                    "endOffset": 104219
+                    "endOffset": 104630
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7099,12 +7120,12 @@
             },
             {
                 "to": {
-                    "startLine": 1368,
+                    "startLine": 1376,
                     "startColumn": 4,
-                    "startOffset": 104224,
-                    "endLine": 1370,
+                    "startOffset": 104635,
+                    "endLine": 1378,
                     "endColumn": 12,
-                    "endOffset": 104420
+                    "endOffset": 104831
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -7120,12 +7141,12 @@
             },
             {
                 "to": {
-                    "startLine": 1371,
+                    "startLine": 1379,
                     "startColumn": 4,
-                    "startOffset": 104425,
-                    "endLine": 1373,
+                    "startOffset": 104836,
+                    "endLine": 1381,
                     "endColumn": 12,
-                    "endOffset": 104609
+                    "endOffset": 105020
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -7141,12 +7162,12 @@
             },
             {
                 "to": {
-                    "startLine": 1374,
+                    "startLine": 1382,
                     "startColumn": 4,
-                    "startOffset": 104614,
-                    "endLine": 1376,
+                    "startOffset": 105025,
+                    "endLine": 1384,
                     "endColumn": 12,
-                    "endOffset": 104808
+                    "endOffset": 105219
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -7162,12 +7183,12 @@
             },
             {
                 "to": {
-                    "startLine": 1377,
+                    "startLine": 1385,
                     "startColumn": 4,
-                    "startOffset": 104813,
-                    "endLine": 1379,
+                    "startOffset": 105224,
+                    "endLine": 1387,
                     "endColumn": 12,
-                    "endOffset": 104995
+                    "endOffset": 105406
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -7183,11 +7204,11 @@
             },
             {
                 "to": {
-                    "startLine": 1380,
+                    "startLine": 1388,
                     "startColumn": 4,
-                    "startOffset": 105000,
+                    "startOffset": 105411,
                     "endColumn": 83,
-                    "endOffset": 105079
+                    "endOffset": 105490
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7202,11 +7223,11 @@
             },
             {
                 "to": {
-                    "startLine": 1381,
+                    "startLine": 1389,
                     "startColumn": 4,
-                    "startOffset": 105084,
+                    "startOffset": 105495,
                     "endColumn": 95,
-                    "endOffset": 105175
+                    "endOffset": 105586
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7221,11 +7242,11 @@
             },
             {
                 "to": {
-                    "startLine": 1382,
+                    "startLine": 1390,
                     "startColumn": 4,
-                    "startOffset": 105180,
+                    "startOffset": 105591,
                     "endColumn": 95,
-                    "endOffset": 105271
+                    "endOffset": 105682
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7240,11 +7261,11 @@
             },
             {
                 "to": {
-                    "startLine": 1383,
+                    "startLine": 1391,
                     "startColumn": 4,
-                    "startOffset": 105276,
+                    "startOffset": 105687,
                     "endColumn": 97,
-                    "endOffset": 105369
+                    "endOffset": 105780
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7259,11 +7280,11 @@
             },
             {
                 "to": {
-                    "startLine": 1384,
+                    "startLine": 1392,
                     "startColumn": 4,
-                    "startOffset": 105374,
+                    "startOffset": 105785,
                     "endColumn": 99,
-                    "endOffset": 105469
+                    "endOffset": 105880
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7278,11 +7299,11 @@
             },
             {
                 "to": {
-                    "startLine": 1385,
+                    "startLine": 1393,
                     "startColumn": 4,
-                    "startOffset": 105474,
+                    "startOffset": 105885,
                     "endColumn": 101,
-                    "endOffset": 105571
+                    "endOffset": 105982
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7297,11 +7318,11 @@
             },
             {
                 "to": {
-                    "startLine": 1386,
+                    "startLine": 1394,
                     "startColumn": 4,
-                    "startOffset": 105576,
+                    "startOffset": 105987,
                     "endColumn": 101,
-                    "endOffset": 105673
+                    "endOffset": 106084
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7316,11 +7337,11 @@
             },
             {
                 "to": {
-                    "startLine": 1387,
+                    "startLine": 1395,
                     "startColumn": 4,
-                    "startOffset": 105678,
+                    "startOffset": 106089,
                     "endColumn": 101,
-                    "endOffset": 105775
+                    "endOffset": 106186
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7335,11 +7356,11 @@
             },
             {
                 "to": {
-                    "startLine": 1388,
+                    "startLine": 1396,
                     "startColumn": 4,
-                    "startOffset": 105780,
+                    "startOffset": 106191,
                     "endColumn": 101,
-                    "endOffset": 105877
+                    "endOffset": 106288
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7354,11 +7375,11 @@
             },
             {
                 "to": {
-                    "startLine": 1389,
+                    "startLine": 1397,
                     "startColumn": 4,
-                    "startOffset": 105882,
+                    "startOffset": 106293,
                     "endColumn": 101,
-                    "endOffset": 105979
+                    "endOffset": 106390
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7373,11 +7394,11 @@
             },
             {
                 "to": {
-                    "startLine": 1390,
+                    "startLine": 1398,
                     "startColumn": 4,
-                    "startOffset": 105984,
+                    "startOffset": 106395,
                     "endColumn": 99,
-                    "endOffset": 106079
+                    "endOffset": 106490
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7392,11 +7413,11 @@
             },
             {
                 "to": {
-                    "startLine": 1391,
+                    "startLine": 1399,
                     "startColumn": 4,
-                    "startOffset": 106084,
+                    "startOffset": 106495,
                     "endColumn": 95,
-                    "endOffset": 106175
+                    "endOffset": 106586
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7411,11 +7432,11 @@
             },
             {
                 "to": {
-                    "startLine": 1392,
+                    "startLine": 1400,
                     "startColumn": 4,
-                    "startOffset": 106180,
+                    "startOffset": 106591,
                     "endColumn": 111,
-                    "endOffset": 106287
+                    "endOffset": 106698
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7430,11 +7451,11 @@
             },
             {
                 "to": {
-                    "startLine": 1393,
+                    "startLine": 1401,
                     "startColumn": 4,
-                    "startOffset": 106292,
+                    "startOffset": 106703,
                     "endColumn": 128,
-                    "endOffset": 106416
+                    "endOffset": 106827
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7449,11 +7470,11 @@
             },
             {
                 "to": {
-                    "startLine": 1394,
+                    "startLine": 1402,
                     "startColumn": 4,
-                    "startOffset": 106421,
+                    "startOffset": 106832,
                     "endColumn": 122,
-                    "endOffset": 106539
+                    "endOffset": 106950
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7468,12 +7489,12 @@
             },
             {
                 "to": {
-                    "startLine": 1395,
+                    "startLine": 1403,
                     "startColumn": 4,
-                    "startOffset": 106544,
-                    "endLine": 1396,
+                    "startOffset": 106955,
+                    "endLine": 1404,
                     "endColumn": 12,
-                    "endOffset": 106693
+                    "endOffset": 107104
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7489,12 +7510,12 @@
             },
             {
                 "to": {
-                    "startLine": 1397,
+                    "startLine": 1405,
                     "startColumn": 4,
-                    "startOffset": 106698,
-                    "endLine": 1398,
+                    "startOffset": 107109,
+                    "endLine": 1406,
                     "endColumn": 12,
-                    "endOffset": 106847
+                    "endOffset": 107258
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7510,11 +7531,11 @@
             },
             {
                 "to": {
-                    "startLine": 1399,
+                    "startLine": 1407,
                     "startColumn": 4,
-                    "startOffset": 106852,
+                    "startOffset": 107263,
                     "endColumn": 97,
-                    "endOffset": 106945
+                    "endOffset": 107356
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7529,11 +7550,11 @@
             },
             {
                 "to": {
-                    "startLine": 1400,
+                    "startLine": 1408,
                     "startColumn": 4,
-                    "startOffset": 106950,
+                    "startOffset": 107361,
                     "endColumn": 113,
-                    "endOffset": 107059
+                    "endOffset": 107470
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7548,11 +7569,11 @@
             },
             {
                 "to": {
-                    "startLine": 1401,
+                    "startLine": 1409,
                     "startColumn": 4,
-                    "startOffset": 107064,
+                    "startOffset": 107475,
                     "endColumn": 93,
-                    "endOffset": 107153
+                    "endOffset": 107564
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7567,12 +7588,12 @@
             },
             {
                 "to": {
-                    "startLine": 1402,
+                    "startLine": 1410,
                     "startColumn": 4,
-                    "startOffset": 107158,
-                    "endLine": 1403,
+                    "startOffset": 107569,
+                    "endLine": 1411,
                     "endColumn": 12,
-                    "endOffset": 107293
+                    "endOffset": 107704
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7588,12 +7609,12 @@
             },
             {
                 "to": {
-                    "startLine": 1404,
+                    "startLine": 1412,
                     "startColumn": 4,
-                    "startOffset": 107298,
-                    "endLine": 1405,
+                    "startOffset": 107709,
+                    "endLine": 1413,
                     "endColumn": 12,
-                    "endOffset": 107427
+                    "endOffset": 107838
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7609,11 +7630,11 @@
             },
             {
                 "to": {
-                    "startLine": 1406,
+                    "startLine": 1414,
                     "startColumn": 4,
-                    "startOffset": 107432,
+                    "startOffset": 107843,
                     "endColumn": 95,
-                    "endOffset": 107523
+                    "endOffset": 107934
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7628,11 +7649,11 @@
             },
             {
                 "to": {
-                    "startLine": 1407,
+                    "startLine": 1415,
                     "startColumn": 4,
-                    "startOffset": 107528,
+                    "startOffset": 107939,
                     "endColumn": 111,
-                    "endOffset": 107635
+                    "endOffset": 108046
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7647,11 +7668,11 @@
             },
             {
                 "to": {
-                    "startLine": 1408,
+                    "startLine": 1416,
                     "startColumn": 4,
-                    "startOffset": 107640,
+                    "startOffset": 108051,
                     "endColumn": 99,
-                    "endOffset": 107735
+                    "endOffset": 108146
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7666,11 +7687,11 @@
             },
             {
                 "to": {
-                    "startLine": 1409,
+                    "startLine": 1417,
                     "startColumn": 4,
-                    "startOffset": 107740,
+                    "startOffset": 108151,
                     "endColumn": 115,
-                    "endOffset": 107851
+                    "endOffset": 108262
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7685,11 +7706,11 @@
             },
             {
                 "to": {
-                    "startLine": 1410,
+                    "startLine": 1418,
                     "startColumn": 4,
-                    "startOffset": 107856,
+                    "startOffset": 108267,
                     "endColumn": 95,
-                    "endOffset": 107947
+                    "endOffset": 108358
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7704,11 +7725,11 @@
             },
             {
                 "to": {
-                    "startLine": 1411,
+                    "startLine": 1419,
                     "startColumn": 4,
-                    "startOffset": 107952,
+                    "startOffset": 108363,
                     "endColumn": 111,
-                    "endOffset": 108059
+                    "endOffset": 108470
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7723,12 +7744,12 @@
             },
             {
                 "to": {
-                    "startLine": 1412,
+                    "startLine": 1420,
                     "startColumn": 4,
-                    "startOffset": 108064,
-                    "endLine": 1413,
+                    "startOffset": 108475,
+                    "endLine": 1421,
                     "endColumn": 12,
-                    "endOffset": 108199
+                    "endOffset": 108610
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7744,11 +7765,11 @@
             },
             {
                 "to": {
-                    "startLine": 1414,
+                    "startLine": 1422,
                     "startColumn": 4,
-                    "startOffset": 108204,
+                    "startOffset": 108615,
                     "endColumn": 135,
-                    "endOffset": 108335
+                    "endOffset": 108746
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7763,12 +7784,12 @@
             },
             {
                 "to": {
-                    "startLine": 1415,
+                    "startLine": 1423,
                     "startColumn": 4,
-                    "startOffset": 108340,
-                    "endLine": 1416,
+                    "startOffset": 108751,
+                    "endLine": 1424,
                     "endColumn": 12,
-                    "endOffset": 108499
+                    "endOffset": 108910
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7784,11 +7805,11 @@
             },
             {
                 "to": {
-                    "startLine": 1417,
+                    "startLine": 1425,
                     "startColumn": 4,
-                    "startOffset": 108504,
+                    "startOffset": 108915,
                     "endColumn": 129,
-                    "endOffset": 108629
+                    "endOffset": 109040
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7803,12 +7824,12 @@
             },
             {
                 "to": {
-                    "startLine": 1418,
+                    "startLine": 1426,
                     "startColumn": 4,
-                    "startOffset": 108634,
-                    "endLine": 1419,
+                    "startOffset": 109045,
+                    "endLine": 1427,
                     "endColumn": 12,
-                    "endOffset": 108787
+                    "endOffset": 109198
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7824,12 +7845,12 @@
             },
             {
                 "to": {
-                    "startLine": 1420,
+                    "startLine": 1428,
                     "startColumn": 4,
-                    "startOffset": 108792,
-                    "endLine": 1421,
+                    "startOffset": 109203,
+                    "endLine": 1429,
                     "endColumn": 12,
-                    "endOffset": 108937
+                    "endOffset": 109348
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7845,11 +7866,11 @@
             },
             {
                 "to": {
-                    "startLine": 1422,
+                    "startLine": 1430,
                     "startColumn": 4,
-                    "startOffset": 108942,
+                    "startOffset": 109353,
                     "endColumn": 140,
-                    "endOffset": 109078
+                    "endOffset": 109489
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7864,12 +7885,12 @@
             },
             {
                 "to": {
-                    "startLine": 1423,
+                    "startLine": 1431,
                     "startColumn": 4,
-                    "startOffset": 109083,
-                    "endLine": 1424,
+                    "startOffset": 109494,
+                    "endLine": 1432,
                     "endColumn": 12,
-                    "endOffset": 109222
+                    "endOffset": 109633
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7885,11 +7906,11 @@
             },
             {
                 "to": {
-                    "startLine": 1425,
+                    "startLine": 1433,
                     "startColumn": 4,
-                    "startOffset": 109227,
+                    "startOffset": 109638,
                     "endColumn": 134,
-                    "endOffset": 109357
+                    "endOffset": 109768
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7904,11 +7925,11 @@
             },
             {
                 "to": {
-                    "startLine": 1426,
+                    "startLine": 1434,
                     "startColumn": 4,
-                    "startOffset": 109362,
+                    "startOffset": 109773,
                     "endColumn": 111,
-                    "endOffset": 109469
+                    "endOffset": 109880
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7923,11 +7944,11 @@
             },
             {
                 "to": {
-                    "startLine": 1427,
+                    "startLine": 1435,
                     "startColumn": 4,
-                    "startOffset": 109474,
+                    "startOffset": 109885,
                     "endColumn": 127,
-                    "endOffset": 109597
+                    "endOffset": 110008
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7942,12 +7963,12 @@
             },
             {
                 "to": {
-                    "startLine": 1428,
+                    "startLine": 1436,
                     "startColumn": 4,
-                    "startOffset": 109602,
-                    "endLine": 1429,
+                    "startOffset": 110013,
+                    "endLine": 1437,
                     "endColumn": 12,
-                    "endOffset": 109733
+                    "endOffset": 110144
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7963,12 +7984,12 @@
             },
             {
                 "to": {
-                    "startLine": 1430,
+                    "startLine": 1438,
                     "startColumn": 4,
-                    "startOffset": 109738,
-                    "endLine": 1431,
+                    "startOffset": 110149,
+                    "endLine": 1439,
                     "endColumn": 12,
-                    "endOffset": 109875
+                    "endOffset": 110286
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -7984,12 +8005,12 @@
             },
             {
                 "to": {
-                    "startLine": 1432,
+                    "startLine": 1440,
                     "startColumn": 4,
-                    "startOffset": 109880,
-                    "endLine": 1433,
+                    "startOffset": 110291,
+                    "endLine": 1441,
                     "endColumn": 12,
-                    "endOffset": 110017
+                    "endOffset": 110428
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8005,11 +8026,11 @@
             },
             {
                 "to": {
-                    "startLine": 1434,
+                    "startLine": 1442,
                     "startColumn": 4,
-                    "startOffset": 110022,
+                    "startOffset": 110433,
                     "endColumn": 111,
-                    "endOffset": 110129
+                    "endOffset": 110540
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8024,11 +8045,11 @@
             },
             {
                 "to": {
-                    "startLine": 1435,
+                    "startLine": 1443,
                     "startColumn": 4,
-                    "startOffset": 110134,
+                    "startOffset": 110545,
                     "endColumn": 139,
-                    "endOffset": 110269
+                    "endOffset": 110680
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8043,11 +8064,11 @@
             },
             {
                 "to": {
-                    "startLine": 1436,
+                    "startLine": 1444,
                     "startColumn": 4,
-                    "startOffset": 110274,
+                    "startOffset": 110685,
                     "endColumn": 67,
-                    "endOffset": 110337
+                    "endOffset": 110748
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8062,11 +8083,11 @@
             },
             {
                 "to": {
-                    "startLine": 1437,
+                    "startLine": 1445,
                     "startColumn": 4,
-                    "startOffset": 110342,
+                    "startOffset": 110753,
                     "endColumn": 72,
-                    "endOffset": 110410
+                    "endOffset": 110821
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8081,11 +8102,11 @@
             },
             {
                 "to": {
-                    "startLine": 1438,
+                    "startLine": 1446,
                     "startColumn": 4,
-                    "startOffset": 110415,
+                    "startOffset": 110826,
                     "endColumn": 73,
-                    "endOffset": 110484
+                    "endOffset": 110895
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8100,11 +8121,11 @@
             },
             {
                 "to": {
-                    "startLine": 1439,
+                    "startLine": 1447,
                     "startColumn": 4,
-                    "startOffset": 110489,
+                    "startOffset": 110900,
                     "endColumn": 72,
-                    "endOffset": 110557
+                    "endOffset": 110968
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8119,11 +8140,11 @@
             },
             {
                 "to": {
-                    "startLine": 1440,
+                    "startLine": 1448,
                     "startColumn": 4,
-                    "startOffset": 110562,
+                    "startOffset": 110973,
                     "endColumn": 73,
-                    "endOffset": 110631
+                    "endOffset": 111042
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8138,12 +8159,12 @@
             },
             {
                 "to": {
-                    "startLine": 1441,
+                    "startLine": 1449,
                     "startColumn": 4,
-                    "startOffset": 110636,
-                    "endLine": 1442,
+                    "startOffset": 111047,
+                    "endLine": 1450,
                     "endColumn": 12,
-                    "endOffset": 110777
+                    "endOffset": 111188
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8159,12 +8180,12 @@
             },
             {
                 "to": {
-                    "startLine": 1443,
+                    "startLine": 1451,
                     "startColumn": 4,
-                    "startOffset": 110782,
-                    "endLine": 1444,
+                    "startOffset": 111193,
+                    "endLine": 1452,
                     "endColumn": 12,
-                    "endOffset": 110921
+                    "endOffset": 111332
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8180,12 +8201,12 @@
             },
             {
                 "to": {
-                    "startLine": 1445,
+                    "startLine": 1453,
                     "startColumn": 4,
-                    "startOffset": 110926,
-                    "endLine": 1446,
+                    "startOffset": 111337,
+                    "endLine": 1454,
                     "endColumn": 12,
-                    "endOffset": 111059
+                    "endOffset": 111470
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8201,11 +8222,11 @@
             },
             {
                 "to": {
-                    "startLine": 1447,
+                    "startLine": 1455,
                     "startColumn": 4,
-                    "startOffset": 111064,
+                    "startOffset": 111475,
                     "endColumn": 25,
-                    "endOffset": 111085
+                    "endOffset": 111496
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -8220,11 +8241,11 @@
             },
             {
                 "to": {
-                    "startLine": 1448,
+                    "startLine": 1456,
                     "startColumn": 4,
-                    "startOffset": 111090,
+                    "startOffset": 111501,
                     "endColumn": 65,
-                    "endOffset": 111151
+                    "endOffset": 111562
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8239,11 +8260,11 @@
             },
             {
                 "to": {
-                    "startLine": 1449,
+                    "startLine": 1457,
                     "startColumn": 4,
-                    "startOffset": 111156,
+                    "startOffset": 111567,
                     "endColumn": 89,
-                    "endOffset": 111241
+                    "endOffset": 111652
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8258,11 +8279,11 @@
             },
             {
                 "to": {
-                    "startLine": 1450,
+                    "startLine": 1458,
                     "startColumn": 4,
-                    "startOffset": 111246,
+                    "startOffset": 111657,
                     "endColumn": 79,
-                    "endOffset": 111321
+                    "endOffset": 111732
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8277,11 +8298,11 @@
             },
             {
                 "to": {
-                    "startLine": 1451,
+                    "startLine": 1459,
                     "startColumn": 4,
-                    "startOffset": 111326,
+                    "startOffset": 111737,
                     "endColumn": 91,
-                    "endOffset": 111413
+                    "endOffset": 111824
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8296,11 +8317,11 @@
             },
             {
                 "to": {
-                    "startLine": 1452,
+                    "startLine": 1460,
                     "startColumn": 4,
-                    "startOffset": 111418,
+                    "startOffset": 111829,
                     "endColumn": 97,
-                    "endOffset": 111511
+                    "endOffset": 111922
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8315,12 +8336,12 @@
             },
             {
                 "to": {
-                    "startLine": 1453,
+                    "startLine": 1461,
                     "startColumn": 4,
-                    "startOffset": 111516,
-                    "endLine": 1454,
+                    "startOffset": 111927,
+                    "endLine": 1462,
                     "endColumn": 12,
-                    "endOffset": 111621
+                    "endOffset": 112032
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8336,11 +8357,11 @@
             },
             {
                 "to": {
-                    "startLine": 1455,
+                    "startLine": 1463,
                     "startColumn": 4,
-                    "startOffset": 111626,
+                    "startOffset": 112037,
                     "endColumn": 77,
-                    "endOffset": 111699
+                    "endOffset": 112110
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8355,11 +8376,11 @@
             },
             {
                 "to": {
-                    "startLine": 1456,
+                    "startLine": 1464,
                     "startColumn": 4,
-                    "startOffset": 111704,
+                    "startOffset": 112115,
                     "endColumn": 105,
-                    "endOffset": 111805
+                    "endOffset": 112216
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8374,11 +8395,11 @@
             },
             {
                 "to": {
-                    "startLine": 1457,
+                    "startLine": 1465,
                     "startColumn": 4,
-                    "startOffset": 111810,
+                    "startOffset": 112221,
                     "endColumn": 91,
-                    "endOffset": 111897
+                    "endOffset": 112308
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8393,11 +8414,11 @@
             },
             {
                 "to": {
-                    "startLine": 1458,
+                    "startLine": 1466,
                     "startColumn": 4,
-                    "startOffset": 111902,
+                    "startOffset": 112313,
                     "endColumn": 103,
-                    "endOffset": 112001
+                    "endOffset": 112412
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8412,11 +8433,11 @@
             },
             {
                 "to": {
-                    "startLine": 1459,
+                    "startLine": 1467,
                     "startColumn": 4,
-                    "startOffset": 112006,
+                    "startOffset": 112417,
                     "endColumn": 109,
-                    "endOffset": 112111
+                    "endOffset": 112522
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8431,12 +8452,12 @@
             },
             {
                 "to": {
-                    "startLine": 1460,
+                    "startLine": 1468,
                     "startColumn": 4,
-                    "startOffset": 112116,
-                    "endLine": 1461,
+                    "startOffset": 112527,
+                    "endLine": 1469,
                     "endColumn": 12,
-                    "endOffset": 112233
+                    "endOffset": 112644
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8452,12 +8473,12 @@
             },
             {
                 "to": {
-                    "startLine": 1462,
+                    "startLine": 1470,
                     "startColumn": 4,
-                    "startOffset": 112238,
-                    "endLine": 1465,
+                    "startOffset": 112649,
+                    "endLine": 1473,
                     "endColumn": 12,
-                    "endOffset": 112396
+                    "endOffset": 112807
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8473,12 +8494,12 @@
             },
             {
                 "to": {
-                    "startLine": 1466,
+                    "startLine": 1474,
                     "startColumn": 4,
-                    "startOffset": 112401,
-                    "endLine": 1469,
+                    "startOffset": 112812,
+                    "endLine": 1477,
                     "endColumn": 12,
-                    "endOffset": 112553
+                    "endOffset": 112964
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8494,11 +8515,11 @@
             },
             {
                 "to": {
-                    "startLine": 1470,
+                    "startLine": 1478,
                     "startColumn": 4,
-                    "startOffset": 112558,
+                    "startOffset": 112969,
                     "endColumn": 34,
-                    "endOffset": 112588
+                    "endOffset": 112999
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -8513,12 +8534,12 @@
             },
             {
                 "to": {
-                    "startLine": 1471,
+                    "startLine": 1479,
                     "startColumn": 4,
-                    "startOffset": 112593,
-                    "endLine": 1477,
+                    "startOffset": 113004,
+                    "endLine": 1485,
                     "endColumn": 10,
-                    "endOffset": 113006
+                    "endOffset": 113417
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -8534,12 +8555,12 @@
             },
             {
                 "to": {
-                    "startLine": 1478,
+                    "startLine": 1486,
                     "startColumn": 4,
-                    "startOffset": 113011,
-                    "endLine": 1484,
+                    "startOffset": 113422,
+                    "endLine": 1492,
                     "endColumn": 10,
-                    "endOffset": 113384
+                    "endOffset": 113795
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -8555,12 +8576,12 @@
             },
             {
                 "to": {
-                    "startLine": 1485,
+                    "startLine": 1493,
                     "startColumn": 4,
-                    "startOffset": 113389,
-                    "endLine": 1487,
+                    "startOffset": 113800,
+                    "endLine": 1495,
                     "endColumn": 10,
-                    "endOffset": 113561
+                    "endOffset": 113972
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -8576,12 +8597,12 @@
             },
             {
                 "to": {
-                    "startLine": 1488,
+                    "startLine": 1496,
                     "startColumn": 4,
-                    "startOffset": 113566,
-                    "endLine": 1490,
+                    "startOffset": 113977,
+                    "endLine": 1498,
                     "endColumn": 10,
-                    "endOffset": 113740
+                    "endOffset": 114151
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -8597,12 +8618,12 @@
             },
             {
                 "to": {
-                    "startLine": 1491,
+                    "startLine": 1499,
                     "startColumn": 4,
-                    "startOffset": 113745,
-                    "endLine": 1493,
+                    "startOffset": 114156,
+                    "endLine": 1501,
                     "endColumn": 12,
-                    "endOffset": 113923
+                    "endOffset": 114334
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -8618,12 +8639,12 @@
             },
             {
                 "to": {
-                    "startLine": 1494,
+                    "startLine": 1502,
                     "startColumn": 4,
-                    "startOffset": 113928,
-                    "endLine": 1499,
+                    "startOffset": 114339,
+                    "endLine": 1507,
                     "endColumn": 12,
-                    "endOffset": 114288
+                    "endOffset": 114699
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",
@@ -8639,11 +8660,11 @@
             },
             {
                 "to": {
-                    "startLine": 1500,
+                    "startLine": 1508,
                     "startColumn": 4,
-                    "startOffset": 114293,
+                    "startOffset": 114704,
                     "endColumn": 79,
-                    "endOffset": 114368
+                    "endOffset": 114779
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8658,11 +8679,11 @@
             },
             {
                 "to": {
-                    "startLine": 1501,
+                    "startLine": 1509,
                     "startColumn": 4,
-                    "startOffset": 114373,
+                    "startOffset": 114784,
                     "endColumn": 99,
-                    "endOffset": 114468
+                    "endOffset": 114879
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8677,11 +8698,11 @@
             },
             {
                 "to": {
-                    "startLine": 1502,
+                    "startLine": 1510,
                     "startColumn": 4,
-                    "startOffset": 114473,
+                    "startOffset": 114884,
                     "endColumn": 89,
-                    "endOffset": 114558
+                    "endOffset": 114969
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8696,11 +8717,11 @@
             },
             {
                 "to": {
-                    "startLine": 1503,
+                    "startLine": 1511,
                     "startColumn": 4,
-                    "startOffset": 114563,
+                    "startOffset": 114974,
                     "endColumn": 109,
-                    "endOffset": 114668
+                    "endOffset": 115079
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8715,11 +8736,11 @@
             },
             {
                 "to": {
-                    "startLine": 1504,
+                    "startLine": 1512,
                     "startColumn": 4,
-                    "startOffset": 114673,
+                    "startOffset": 115084,
                     "endColumn": 91,
-                    "endOffset": 114760
+                    "endOffset": 115171
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8734,12 +8755,12 @@
             },
             {
                 "to": {
-                    "startLine": 1505,
+                    "startLine": 1513,
                     "startColumn": 4,
-                    "startOffset": 114765,
-                    "endLine": 1506,
+                    "startOffset": 115176,
+                    "endLine": 1514,
                     "endColumn": 12,
-                    "endOffset": 114860
+                    "endOffset": 115271
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8755,12 +8776,12 @@
             },
             {
                 "to": {
-                    "startLine": 1507,
+                    "startLine": 1515,
                     "startColumn": 4,
-                    "startOffset": 114865,
-                    "endLine": 1508,
+                    "startOffset": 115276,
+                    "endLine": 1516,
                     "endColumn": 12,
-                    "endOffset": 114972
+                    "endOffset": 115383
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8776,12 +8797,12 @@
             },
             {
                 "to": {
-                    "startLine": 1509,
+                    "startLine": 1517,
                     "startColumn": 4,
-                    "startOffset": 114977,
-                    "endLine": 1510,
+                    "startOffset": 115388,
+                    "endLine": 1518,
                     "endColumn": 12,
-                    "endOffset": 115086
+                    "endOffset": 115497
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8797,12 +8818,12 @@
             },
             {
                 "to": {
-                    "startLine": 1511,
+                    "startLine": 1519,
                     "startColumn": 4,
-                    "startOffset": 115091,
-                    "endLine": 1512,
+                    "startOffset": 115502,
+                    "endLine": 1520,
                     "endColumn": 12,
-                    "endOffset": 115202
+                    "endOffset": 115613
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8818,12 +8839,12 @@
             },
             {
                 "to": {
-                    "startLine": 1513,
+                    "startLine": 1521,
                     "startColumn": 4,
-                    "startOffset": 115207,
-                    "endLine": 1514,
+                    "startOffset": 115618,
+                    "endLine": 1522,
                     "endColumn": 12,
-                    "endOffset": 115318
+                    "endOffset": 115729
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8839,11 +8860,11 @@
             },
             {
                 "to": {
-                    "startLine": 1515,
+                    "startLine": 1523,
                     "startColumn": 4,
-                    "startOffset": 115323,
+                    "startOffset": 115734,
                     "endColumn": 93,
-                    "endOffset": 115412
+                    "endOffset": 115823
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8858,11 +8879,11 @@
             },
             {
                 "to": {
-                    "startLine": 1516,
+                    "startLine": 1524,
                     "startColumn": 4,
-                    "startOffset": 115417,
+                    "startOffset": 115828,
                     "endColumn": 113,
-                    "endOffset": 115526
+                    "endOffset": 115937
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8877,11 +8898,11 @@
             },
             {
                 "to": {
-                    "startLine": 1517,
+                    "startLine": 1525,
                     "startColumn": 4,
-                    "startOffset": 115531,
+                    "startOffset": 115942,
                     "endColumn": 117,
-                    "endOffset": 115644
+                    "endOffset": 116055
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8896,12 +8917,12 @@
             },
             {
                 "to": {
-                    "startLine": 1518,
+                    "startLine": 1526,
                     "startColumn": 4,
-                    "startOffset": 115649,
-                    "endLine": 1519,
+                    "startOffset": 116060,
+                    "endLine": 1527,
                     "endColumn": 12,
-                    "endOffset": 115746
+                    "endOffset": 116157
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8917,12 +8938,12 @@
             },
             {
                 "to": {
-                    "startLine": 1520,
+                    "startLine": 1528,
                     "startColumn": 4,
-                    "startOffset": 115751,
-                    "endLine": 1521,
+                    "startOffset": 116162,
+                    "endLine": 1529,
                     "endColumn": 12,
-                    "endOffset": 115866
+                    "endOffset": 116277
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8938,12 +8959,12 @@
             },
             {
                 "to": {
-                    "startLine": 1522,
+                    "startLine": 1530,
                     "startColumn": 4,
-                    "startOffset": 115871,
-                    "endLine": 1523,
+                    "startOffset": 116282,
+                    "endLine": 1531,
                     "endColumn": 12,
-                    "endOffset": 115988
+                    "endOffset": 116399
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8959,11 +8980,11 @@
             },
             {
                 "to": {
-                    "startLine": 1524,
+                    "startLine": 1532,
                     "startColumn": 4,
-                    "startOffset": 115993,
+                    "startOffset": 116404,
                     "endColumn": 81,
-                    "endOffset": 116070
+                    "endOffset": 116481
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8978,11 +8999,11 @@
             },
             {
                 "to": {
-                    "startLine": 1525,
+                    "startLine": 1533,
                     "startColumn": 4,
-                    "startOffset": 116075,
+                    "startOffset": 116486,
                     "endColumn": 103,
-                    "endOffset": 116174
+                    "endOffset": 116585
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -8997,11 +9018,11 @@
             },
             {
                 "to": {
-                    "startLine": 1526,
+                    "startLine": 1534,
                     "startColumn": 4,
-                    "startOffset": 116179,
+                    "startOffset": 116590,
                     "endColumn": 119,
-                    "endOffset": 116294
+                    "endOffset": 116705
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9016,11 +9037,11 @@
             },
             {
                 "to": {
-                    "startLine": 1527,
+                    "startLine": 1535,
                     "startColumn": 4,
-                    "startOffset": 116299,
+                    "startOffset": 116710,
                     "endColumn": 125,
-                    "endOffset": 116420
+                    "endOffset": 116831
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9035,11 +9056,11 @@
             },
             {
                 "to": {
-                    "startLine": 1528,
+                    "startLine": 1536,
                     "startColumn": 4,
-                    "startOffset": 116425,
+                    "startOffset": 116836,
                     "endColumn": 97,
-                    "endOffset": 116518
+                    "endOffset": 116929
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9054,11 +9075,11 @@
             },
             {
                 "to": {
-                    "startLine": 1529,
+                    "startLine": 1537,
                     "startColumn": 4,
-                    "startOffset": 116523,
+                    "startOffset": 116934,
                     "endColumn": 93,
-                    "endOffset": 116612
+                    "endOffset": 117023
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9073,11 +9094,11 @@
             },
             {
                 "to": {
-                    "startLine": 1530,
+                    "startLine": 1538,
                     "startColumn": 4,
-                    "startOffset": 116617,
+                    "startOffset": 117028,
                     "endColumn": 87,
-                    "endOffset": 116700
+                    "endOffset": 117111
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9092,11 +9113,11 @@
             },
             {
                 "to": {
-                    "startLine": 1531,
+                    "startLine": 1539,
                     "startColumn": 4,
-                    "startOffset": 116705,
+                    "startOffset": 117116,
                     "endColumn": 111,
-                    "endOffset": 116812
+                    "endOffset": 117223
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9111,11 +9132,11 @@
             },
             {
                 "to": {
-                    "startLine": 1532,
+                    "startLine": 1540,
                     "startColumn": 4,
-                    "startOffset": 116817,
+                    "startOffset": 117228,
                     "endColumn": 115,
-                    "endOffset": 116928
+                    "endOffset": 117339
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9130,11 +9151,11 @@
             },
             {
                 "to": {
-                    "startLine": 1533,
+                    "startLine": 1541,
                     "startColumn": 4,
-                    "startOffset": 116933,
+                    "startOffset": 117344,
                     "endColumn": 121,
-                    "endOffset": 117050
+                    "endOffset": 117461
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9149,11 +9170,11 @@
             },
             {
                 "to": {
-                    "startLine": 1534,
+                    "startLine": 1542,
                     "startColumn": 4,
-                    "startOffset": 117055,
+                    "startOffset": 117466,
                     "endColumn": 111,
-                    "endOffset": 117162
+                    "endOffset": 117573
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9168,12 +9189,12 @@
             },
             {
                 "to": {
-                    "startLine": 1535,
+                    "startLine": 1543,
                     "startColumn": 4,
-                    "startOffset": 117167,
-                    "endLine": 1537,
+                    "startOffset": 117578,
+                    "endLine": 1545,
                     "endColumn": 12,
-                    "endOffset": 117337
+                    "endOffset": 117748
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9189,11 +9210,11 @@
             },
             {
                 "to": {
-                    "startLine": 1538,
+                    "startLine": 1546,
                     "startColumn": 4,
-                    "startOffset": 117342,
+                    "startOffset": 117753,
                     "endColumn": 115,
-                    "endOffset": 117453
+                    "endOffset": 117864
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9208,11 +9229,11 @@
             },
             {
                 "to": {
-                    "startLine": 1539,
+                    "startLine": 1547,
                     "startColumn": 4,
-                    "startOffset": 117458,
+                    "startOffset": 117869,
                     "endColumn": 85,
-                    "endOffset": 117539
+                    "endOffset": 117950
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9227,12 +9248,12 @@
             },
             {
                 "to": {
-                    "startLine": 1540,
+                    "startLine": 1548,
                     "startColumn": 4,
-                    "startOffset": 117544,
-                    "endLine": 1541,
+                    "startOffset": 117955,
+                    "endLine": 1549,
                     "endColumn": 12,
-                    "endOffset": 117651
+                    "endOffset": 118062
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9248,12 +9269,12 @@
             },
             {
                 "to": {
-                    "startLine": 1542,
+                    "startLine": 1550,
                     "startColumn": 4,
-                    "startOffset": 117656,
-                    "endLine": 1543,
+                    "startOffset": 118067,
+                    "endLine": 1551,
                     "endColumn": 12,
-                    "endOffset": 117775
+                    "endOffset": 118186
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9269,11 +9290,11 @@
             },
             {
                 "to": {
-                    "startLine": 1544,
+                    "startLine": 1552,
                     "startColumn": 4,
-                    "startOffset": 117780,
+                    "startOffset": 118191,
                     "endColumn": 66,
-                    "endOffset": 117842
+                    "endOffset": 118253
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9288,12 +9309,12 @@
             },
             {
                 "to": {
-                    "startLine": 1545,
+                    "startLine": 1553,
                     "startColumn": 4,
-                    "startOffset": 117847,
-                    "endLine": 1546,
+                    "startOffset": 118258,
+                    "endLine": 1554,
                     "endColumn": 12,
-                    "endOffset": 117968
+                    "endOffset": 118379
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9309,11 +9330,11 @@
             },
             {
                 "to": {
-                    "startLine": 1547,
+                    "startLine": 1555,
                     "startColumn": 4,
-                    "startOffset": 117973,
+                    "startOffset": 118384,
                     "endColumn": 67,
-                    "endOffset": 118036
+                    "endOffset": 118447
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9328,12 +9349,12 @@
             },
             {
                 "to": {
-                    "startLine": 1548,
+                    "startLine": 1556,
                     "startColumn": 4,
-                    "startOffset": 118041,
-                    "endLine": 1549,
+                    "startOffset": 118452,
+                    "endLine": 1557,
                     "endColumn": 12,
-                    "endOffset": 118164
+                    "endOffset": 118575
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9349,12 +9370,12 @@
             },
             {
                 "to": {
-                    "startLine": 1550,
+                    "startLine": 1558,
                     "startColumn": 4,
-                    "startOffset": 118169,
-                    "endLine": 1551,
+                    "startOffset": 118580,
+                    "endLine": 1559,
                     "endColumn": 12,
-                    "endOffset": 118308
+                    "endOffset": 118719
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9370,12 +9391,12 @@
             },
             {
                 "to": {
-                    "startLine": 1552,
+                    "startLine": 1560,
                     "startColumn": 4,
-                    "startOffset": 118313,
-                    "endLine": 1553,
+                    "startOffset": 118724,
+                    "endLine": 1561,
                     "endColumn": 12,
-                    "endOffset": 118436
+                    "endOffset": 118847
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9391,11 +9412,11 @@
             },
             {
                 "to": {
-                    "startLine": 1554,
+                    "startLine": 1562,
                     "startColumn": 4,
-                    "startOffset": 118441,
+                    "startOffset": 118852,
                     "endColumn": 68,
-                    "endOffset": 118505
+                    "endOffset": 118916
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9410,11 +9431,11 @@
             },
             {
                 "to": {
-                    "startLine": 1555,
+                    "startLine": 1563,
                     "startColumn": 4,
-                    "startOffset": 118510,
+                    "startOffset": 118921,
                     "endColumn": 94,
-                    "endOffset": 118600
+                    "endOffset": 119011
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9429,11 +9450,11 @@
             },
             {
                 "to": {
-                    "startLine": 1556,
+                    "startLine": 1564,
                     "startColumn": 4,
-                    "startOffset": 118605,
+                    "startOffset": 119016,
                     "endColumn": 114,
-                    "endOffset": 118715
+                    "endOffset": 119126
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9448,11 +9469,11 @@
             },
             {
                 "to": {
-                    "startLine": 1557,
+                    "startLine": 1565,
                     "startColumn": 4,
-                    "startOffset": 118720,
+                    "startOffset": 119131,
                     "endColumn": 112,
-                    "endOffset": 118828
+                    "endOffset": 119239
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9467,11 +9488,11 @@
             },
             {
                 "to": {
-                    "startLine": 1558,
+                    "startLine": 1566,
                     "startColumn": 4,
-                    "startOffset": 118833,
+                    "startOffset": 119244,
                     "endColumn": 98,
-                    "endOffset": 118927
+                    "endOffset": 119338
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9486,11 +9507,11 @@
             },
             {
                 "to": {
-                    "startLine": 1559,
+                    "startLine": 1567,
                     "startColumn": 4,
-                    "startOffset": 118932,
+                    "startOffset": 119343,
                     "endColumn": 108,
-                    "endOffset": 119036
+                    "endOffset": 119447
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9505,11 +9526,11 @@
             },
             {
                 "to": {
-                    "startLine": 1560,
+                    "startLine": 1568,
                     "startColumn": 4,
-                    "startOffset": 119041,
+                    "startOffset": 119452,
                     "endColumn": 110,
-                    "endOffset": 119147
+                    "endOffset": 119558
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9524,11 +9545,11 @@
             },
             {
                 "to": {
-                    "startLine": 1561,
+                    "startLine": 1569,
                     "startColumn": 4,
-                    "startOffset": 119152,
+                    "startOffset": 119563,
                     "endColumn": 110,
-                    "endOffset": 119258
+                    "endOffset": 119669
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9543,11 +9564,11 @@
             },
             {
                 "to": {
-                    "startLine": 1562,
+                    "startLine": 1570,
                     "startColumn": 4,
-                    "startOffset": 119263,
+                    "startOffset": 119674,
                     "endColumn": 100,
-                    "endOffset": 119359
+                    "endOffset": 119770
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9562,11 +9583,11 @@
             },
             {
                 "to": {
-                    "startLine": 1563,
+                    "startLine": 1571,
                     "startColumn": 4,
-                    "startOffset": 119364,
+                    "startOffset": 119775,
                     "endColumn": 104,
-                    "endOffset": 119464
+                    "endOffset": 119875
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9581,12 +9602,12 @@
             },
             {
                 "to": {
-                    "startLine": 1564,
+                    "startLine": 1572,
                     "startColumn": 4,
-                    "startOffset": 119469,
-                    "endLine": 1565,
+                    "startOffset": 119880,
+                    "endLine": 1573,
                     "endColumn": 12,
-                    "endOffset": 119576
+                    "endOffset": 119987
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9602,12 +9623,12 @@
             },
             {
                 "to": {
-                    "startLine": 1566,
+                    "startLine": 1574,
                     "startColumn": 4,
-                    "startOffset": 119581,
-                    "endLine": 1567,
+                    "startOffset": 119992,
+                    "endLine": 1575,
                     "endColumn": 12,
-                    "endOffset": 119706
+                    "endOffset": 120117
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9623,11 +9644,11 @@
             },
             {
                 "to": {
-                    "startLine": 1568,
+                    "startLine": 1576,
                     "startColumn": 4,
-                    "startOffset": 119711,
+                    "startOffset": 120122,
                     "endColumn": 90,
-                    "endOffset": 119797
+                    "endOffset": 120208
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9642,11 +9663,11 @@
             },
             {
                 "to": {
-                    "startLine": 1569,
+                    "startLine": 1577,
                     "startColumn": 4,
-                    "startOffset": 119802,
+                    "startOffset": 120213,
                     "endColumn": 122,
-                    "endOffset": 119920
+                    "endOffset": 120331
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9661,12 +9682,12 @@
             },
             {
                 "to": {
-                    "startLine": 1570,
+                    "startLine": 1578,
                     "startColumn": 4,
-                    "startOffset": 119925,
-                    "endLine": 1571,
+                    "startOffset": 120336,
+                    "endLine": 1579,
                     "endColumn": 12,
-                    "endOffset": 120032
+                    "endOffset": 120443
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9682,11 +9703,11 @@
             },
             {
                 "to": {
-                    "startLine": 1572,
+                    "startLine": 1580,
                     "startColumn": 4,
-                    "startOffset": 120037,
+                    "startOffset": 120448,
                     "endColumn": 85,
-                    "endOffset": 120118
+                    "endOffset": 120529
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9701,11 +9722,11 @@
             },
             {
                 "to": {
-                    "startLine": 1573,
+                    "startLine": 1581,
                     "startColumn": 4,
-                    "startOffset": 120123,
+                    "startOffset": 120534,
                     "endColumn": 103,
-                    "endOffset": 120222
+                    "endOffset": 120633
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9720,12 +9741,12 @@
             },
             {
                 "to": {
-                    "startLine": 1574,
+                    "startLine": 1582,
                     "startColumn": 4,
-                    "startOffset": 120227,
-                    "endLine": 1575,
+                    "startOffset": 120638,
+                    "endLine": 1583,
                     "endColumn": 12,
-                    "endOffset": 120330
+                    "endOffset": 120741
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9741,12 +9762,12 @@
             },
             {
                 "to": {
-                    "startLine": 1576,
+                    "startLine": 1584,
                     "startColumn": 4,
-                    "startOffset": 120335,
-                    "endLine": 1577,
+                    "startOffset": 120746,
+                    "endLine": 1585,
                     "endColumn": 12,
-                    "endOffset": 120430
+                    "endOffset": 120841
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9762,12 +9783,12 @@
             },
             {
                 "to": {
-                    "startLine": 1578,
+                    "startLine": 1586,
                     "startColumn": 4,
-                    "startOffset": 120435,
-                    "endLine": 1579,
+                    "startOffset": 120846,
+                    "endLine": 1587,
                     "endColumn": 12,
-                    "endOffset": 120548
+                    "endOffset": 120959
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9783,12 +9804,12 @@
             },
             {
                 "to": {
-                    "startLine": 1580,
+                    "startLine": 1588,
                     "startColumn": 4,
-                    "startOffset": 120553,
-                    "endLine": 1581,
+                    "startOffset": 120964,
+                    "endLine": 1589,
                     "endColumn": 12,
-                    "endOffset": 120652
+                    "endOffset": 121063
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9804,12 +9825,12 @@
             },
             {
                 "to": {
-                    "startLine": 1582,
+                    "startLine": 1590,
                     "startColumn": 4,
-                    "startOffset": 120657,
-                    "endLine": 1583,
+                    "startOffset": 121068,
+                    "endLine": 1591,
                     "endColumn": 12,
-                    "endOffset": 120756
+                    "endOffset": 121167
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9825,12 +9846,12 @@
             },
             {
                 "to": {
-                    "startLine": 1584,
+                    "startLine": 1592,
                     "startColumn": 4,
-                    "startOffset": 120761,
-                    "endLine": 1585,
+                    "startOffset": 121172,
+                    "endLine": 1593,
                     "endColumn": 12,
-                    "endOffset": 120882
+                    "endOffset": 121293
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9846,11 +9867,11 @@
             },
             {
                 "to": {
-                    "startLine": 1586,
+                    "startLine": 1594,
                     "startColumn": 4,
-                    "startOffset": 120887,
+                    "startOffset": 121298,
                     "endColumn": 87,
-                    "endOffset": 120970
+                    "endOffset": 121381
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9865,11 +9886,11 @@
             },
             {
                 "to": {
-                    "startLine": 1587,
+                    "startLine": 1595,
                     "startColumn": 4,
-                    "startOffset": 120975,
+                    "startOffset": 121386,
                     "endColumn": 89,
-                    "endOffset": 121060
+                    "endOffset": 121471
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9884,11 +9905,11 @@
             },
             {
                 "to": {
-                    "startLine": 1588,
+                    "startLine": 1596,
                     "startColumn": 4,
-                    "startOffset": 121065,
+                    "startOffset": 121476,
                     "endColumn": 109,
-                    "endOffset": 121170
+                    "endOffset": 121581
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9903,11 +9924,11 @@
             },
             {
                 "to": {
-                    "startLine": 1589,
+                    "startLine": 1597,
                     "startColumn": 4,
-                    "startOffset": 121175,
+                    "startOffset": 121586,
                     "endColumn": 83,
-                    "endOffset": 121254
+                    "endOffset": 121665
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9922,11 +9943,11 @@
             },
             {
                 "to": {
-                    "startLine": 1590,
+                    "startLine": 1598,
                     "startColumn": 4,
-                    "startOffset": 121259,
+                    "startOffset": 121670,
                     "endColumn": 53,
-                    "endOffset": 121308
+                    "endOffset": 121719
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9941,11 +9962,11 @@
             },
             {
                 "to": {
-                    "startLine": 1591,
+                    "startLine": 1599,
                     "startColumn": 4,
-                    "startOffset": 121313,
+                    "startOffset": 121724,
                     "endColumn": 63,
-                    "endOffset": 121372
+                    "endOffset": 121783
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9960,11 +9981,11 @@
             },
             {
                 "to": {
-                    "startLine": 1592,
+                    "startLine": 1600,
                     "startColumn": 4,
-                    "startOffset": 121377,
+                    "startOffset": 121788,
                     "endColumn": 105,
-                    "endOffset": 121478
+                    "endOffset": 121889
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9979,11 +10000,11 @@
             },
             {
                 "to": {
-                    "startLine": 1593,
+                    "startLine": 1601,
                     "startColumn": 4,
-                    "startOffset": 121483,
+                    "startOffset": 121894,
                     "endColumn": 109,
-                    "endOffset": 121588
+                    "endOffset": 121999
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -9998,11 +10019,11 @@
             },
             {
                 "to": {
-                    "startLine": 1594,
+                    "startLine": 1602,
                     "startColumn": 4,
-                    "startOffset": 121593,
+                    "startOffset": 122004,
                     "endColumn": 83,
-                    "endOffset": 121672
+                    "endOffset": 122083
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -10017,11 +10038,11 @@
             },
             {
                 "to": {
-                    "startLine": 1595,
+                    "startLine": 1603,
                     "startColumn": 4,
-                    "startOffset": 121677,
+                    "startOffset": 122088,
                     "endColumn": 119,
-                    "endOffset": 121792
+                    "endOffset": 122203
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml",
@@ -10036,12 +10057,12 @@
             },
             {
                 "to": {
-                    "startLine": 1596,
+                    "startLine": 1604,
                     "startColumn": 4,
-                    "startOffset": 121797,
-                    "endLine": 1605,
+                    "startOffset": 122208,
+                    "endLine": 1613,
                     "endColumn": 10,
-                    "endOffset": 122233
+                    "endOffset": 122644
                 },
                 "from": {
                     "file": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/values/values.xml",

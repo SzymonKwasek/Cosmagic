@@ -1,5 +1,8 @@
 import React from 'react'
-import { StyleSheet, View} from 'react-native'
+import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
+
+import PhotoUpload from 'react-native-photo-upload'
+import ImagePicker from 'react-native-image-picker'
 import GLOBALS from '../../assets/utils/Global'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -7,13 +10,27 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class HeaderButton extends React.Component {
 
+    constructor(props){
+        super(props)
+        this.state ={ 
+            pickedImage: { uri: null}
+        }
+    }
+    pickImage = () => {
+        ImagePicker.showImagePicker({} , response => {
+            console.log(response)
+            this.setState({pickedImage: {uri: response.uri}})
+            console.log(this.state)
+        })
+    }
 
     render() {
+        console.log(this.state)
         return (    
 
-           <View style={styles.userPhoto}>
-                <Icon  name="user" size={80} color={GLOBALS.COLOR.SECONDARY}/>
-            </View>
+           <TouchableOpacity style={styles.userPhoto} onPress={this.pickImage} >
+                <Image source={this.state.pickedImage} style={{width: '100%', height: '100%', borderRadius: 50}}/>
+           </TouchableOpacity>
 
         );
     }

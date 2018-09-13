@@ -12,7 +12,8 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "jest"
+    "test": "jest",
+    "linking": "react-native link react-native-fs"
   },
   "jest": {
     "preset": "react-native"
@@ -25,6 +26,8 @@
     "react-native": "~0.55.2",
     "react-native-datepicker": "^1.7.2",
     "react-native-elements": "^0.19.1",
+    "react-native-image-picker": "^0.26.10",
+    "react-native-photo-upload": "^1.3.0",
     "react-native-vector-icons": "^5.0.0",
     "react-native-view-overflow": "0.0.3",
     "react-navigation": "^2.12.1",

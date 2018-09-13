@@ -47,33 +47,13 @@ class Main extends React.Component {
     }
 
 
-    resetClientAction(data) {
-       const reset = StackActions.reset({
-            index: 1,
-            actions: [
-                NavigationActions.navigate({routeName: 'Main'}),
-                NavigationActions.navigate({routeName: 'Client', params: data})
-            ]
-        })
-        return reset
-    }
     
-    resetAddAction(data) {
+    resetAction(route, data) {
         const reset = StackActions.reset({
             index: 1,
             actions: [
                 NavigationActions.navigate({routeName: 'Main'}),
-                NavigationActions.navigate({routeName: 'AddClient', params: data})
-            ]
-        })
-        return reset
-    }
-
-    resetLogoutAction () {
-        const reset = StackActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({routeName: 'Login'}),
+                NavigationActions.navigate({routeName: route, params: data})
             ]
         })
         return reset
@@ -135,14 +115,14 @@ class Main extends React.Component {
     logout = () => {
         AsyncStorage.removeItem('user')
         this.toggleModal()
-        this.props.navigation.dispatch(this.resetLogoutAction())
+        this.props.navigation.dispatch(this.resetAction('Login', null))
     }
 
     render() {
         const clientList = this.state.clients.map((item, x) => {
             const data = {...this.props.navigation.state.params, ...item}
             return(
-                <ClientTab data={item} key={x} onPress={() => this.props.navigation.dispatch(this.resetClientAction(data))}/>
+                <ClientTab data={item} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
             )
         })
         return (    
@@ -162,7 +142,7 @@ class Main extends React.Component {
 
                 <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} />
 
-                <AddButton onPress={() => this.props.navigation.dispatch(this.resetAddAction(this.props.navigation.state.params))} />
+                <AddButton onPress={() => this.props.navigation.dispatch(this.resetAction('AddClient', this.props.navigation.state.params))} />
 
         </FancyBackground>
         );

@@ -25,10 +25,9 @@ export default class Client extends React.Component {
 
     componentDidMount () {
         const reset = StackActions.reset({
-            index: 1,
+            index: 0,
             actions: [
-                NavigationActions.navigate({routeName: 'Menu'}),
-                NavigationActions.navigate({routeName: 'Main'})
+                NavigationActions.navigate({routeName: 'Main', params: this.props.navigation.state})
             ]
         })
         if(this.props.navigation.isFocused()) {
@@ -38,17 +37,6 @@ export default class Client extends React.Component {
         }
     }
 
-    // componentWillUnmount() {
-    //     const reset = StackActions.reset({
-    //         index: 0,
-    //         actions: [
-    //             NavigationActions.navigate({routeName: 'Main'})
-    //         ]
-    //     })
-    //     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-    //         this.props.navigation.dispatch(reset)
-    //     })
-    // }
 
     toggleModal = () => {
         this.setState({

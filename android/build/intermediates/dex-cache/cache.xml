@@ -66,6 +66,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/shadowClient/react-native-image-resizer/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="53a2e4832ab7842946e84b23bc755b2416ccc290">
+        <dex dex="/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/pre-dexed/debug/shadowClient-react-native-image-resizer-unspecified_70df9f545b6b58b37ef9364b01bf8e173e512327.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -174,6 +183,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/shadowClient/react-native-fs/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="29737b7df4910a710e023bcd755ffd28c0631548">
+        <dex dex="/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/pre-dexed/debug/shadowClient-react-native-fs-unspecified_c1d5c93eeb101d027826857463e40c7a1527273f.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/pola/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
@@ -189,6 +207,15 @@
         revision="23.0.1"
         sha1="6975da39a7040257bd51d21a231b76c915872d38">
         <dex dex="/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_b91904b20274086823e81617e1a0e2cbeb616eaa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/shadowClient/react-native-image-picker/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="beca3a29d7f67ed2242e46811ce303ec5417bb39">
+        <dex dex="/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/pre-dexed/debug/shadowClient-react-native-image-picker-unspecified_63b23f33f021220baa6465bba151c053962a3195.jar" />
     </item>
 
 </items>

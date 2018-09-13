@@ -120,6 +120,10 @@
         "source": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.55.4/res/layout/fps_view.xml"
     },
     {
+        "merged": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/res/merged/debug/layout/list_item.xml",
+        "source": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/shadowClient/react-native-image-picker/unspecified/res/layout/list_item.xml"
+    },
+    {
         "merged": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
         "source": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/notification_media_action.xml"
     },

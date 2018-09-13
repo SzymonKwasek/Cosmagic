@@ -7,7 +7,7 @@ import GLOBALS from '../../assets/utils/Global'
 
 import { UserHeader, UserAvatar, FancyBackground, FancyButton, MenuSlide, HeaderButton } from '../components'
 
-class Main extends React.Component {
+class Menu extends React.Component {
 
     static navigationOptions = {
         header: null
@@ -53,12 +53,11 @@ class Main extends React.Component {
     }
 
 
-    resetAction(data) {
+    resetAction(route, data) {
        const reset = StackActions.reset({
-            index: 1,
+            index: 0,
             actions: [
-                NavigationActions.navigate({routeName: 'Menu'}),
-                NavigationActions.navigate({routeName: 'Main', params: data})
+                NavigationActions.navigate({routeName: route, params: data})
             ]
         })
         return reset
@@ -94,29 +93,17 @@ class Main extends React.Component {
         
         if(this.state.modalToggle) {
             this.animationHandler(90, 0, 1)
-            console.log(this.state.menu)
         } else {
             this.animationHandler(0, 0, 0)
-            console.log(this.state.menu)
 
         }
-    }
-
-    resetLogoutAction () {
-        const reset = StackActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({routeName: 'Login'}),
-            ]
-        })
-        return reset
     }
 
 
     logout = () => {
         AsyncStorage.removeItem('user')
         this.toggleModal()
-        this.props.navigation.dispatch(this.resetLogoutAction())
+        this.props.navigation.dispatch(this.resetAction('Login', null))
     }
 
     render() {
@@ -135,10 +122,10 @@ class Main extends React.Component {
                 <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} />
 
                 <View>
-                    <FancyButton action={() => this.props.navigation.dispatch(this.resetAction({lashes: true, nails: false, both: false}))} btnText='Lashes'/>
+                    <FancyButton action={() => this.props.navigation.dispatch(this.resetAction('Main', {lashes: true, nails: false, both: false}))} btnText='Lashes'/>
                 </View>
                 <View>
-                    <FancyButton action={() => this.props.navigation.dispatch(this.resetAction({lashes: false, nails: true, both: false}))} btnText='Nails'/>
+                    <FancyButton action={() => this.props.navigation.dispatch(this.resetAction('Main', {lashes: false, nails: true, both: false}))} btnText='Nails'/>
                 </View>
 
         </FancyBackground>
@@ -156,7 +143,7 @@ function mapStateToProps (state) {
 }
 
 
-export default connect(mapStateToProps)(Main)
+export default connect(mapStateToProps)(Menu)
 
 const styles = StyleSheet.create({
     scrollContainer: {
