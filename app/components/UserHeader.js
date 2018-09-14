@@ -5,7 +5,7 @@ import GLOBALS from '../../assets/utils/Global'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
-export default class HeaderButton extends React.Component {
+export default class UserHeader extends React.Component {
 
 
     render() {

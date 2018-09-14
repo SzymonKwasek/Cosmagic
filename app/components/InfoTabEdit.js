@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import  FancyInputEdit  from './FancyInputEdit'
 import GLOBALS from '../../assets/utils/Global'
 
-export default class InfoTab extends React.Component {
+export default class InfoTabEdit extends React.Component {
 
     constructor(props) {
         super(props)

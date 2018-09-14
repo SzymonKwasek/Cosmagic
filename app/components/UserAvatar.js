@@ -1,14 +1,17 @@
 import React from 'react'
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 
-import PhotoUpload from 'react-native-photo-upload'
 import ImagePicker from 'react-native-image-picker'
 import GLOBALS from '../../assets/utils/Global'
+import { Base64 } from 'js-base64'
+import { connect } from 'react-redux'
+import axios from 'axios'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
-export default class HeaderButton extends React.Component {
+
+ class UserAvatar extends React.Component {
 
     constructor(props){
         super(props)
@@ -16,16 +19,34 @@ export default class HeaderButton extends React.Component {
             pickedImage: { uri: null}
         }
     }
+    componentDidMount() {
+        if(this.props.user.image) {
+            this.setState({pickedImage: {uri: this.props.user.image}})
+        }
+    }
     pickImage = () => {
+        // async waterfall ??
+        let data = {}
         ImagePicker.showImagePicker({} , response => {
-            console.log(response)
-            this.setState({pickedImage: {uri: response.uri}})
-            console.log(this.state)
+            const image = 'data:image/png;base64,'+response.data
+            data = { 
+                image: image,
+                uuid: this.props.user.uuid
+            }
+            const res = axios.put('http://10.0.2.2:8080/public/user', data)
+            console.log(res)
+            if(res) {
+                this.setState({pickedImage: {uri: image} })
+            } else {
+                console.log("NOPE")
+            }
+           
         })
+
+        
     }
 
     render() {
-        console.log(this.state)
         return (    
 
            <TouchableOpacity style={styles.userPhoto} onPress={this.pickImage} >
@@ -36,6 +57,14 @@ export default class HeaderButton extends React.Component {
     }
 
 }
+
+function mapStateToProps (state) {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps)(UserAvatar)
 
 
 
