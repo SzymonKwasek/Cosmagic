@@ -43,7 +43,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
                             image: 'data:image/png;base64,'+res.data,
                             uuid: this.props.user.uuid
                         }
-                        console.log(Base64.encode(res.data))
+                        console.log(res)
                         this.setState({pickedImage: {uri: data.image} })
                         callback(null, data)
                     }             
@@ -52,7 +52,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
         ], (err, res) => {
             if(res) {
                 console.log(res)
-                this.saveImage(res)
+                // this.saveImage(res)
             }
             else {
                 console.log(err)
