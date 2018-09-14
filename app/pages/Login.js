@@ -7,6 +7,8 @@ import { connect } from 'react-redux'
 import { FancyInput, FancyButton, FancyBackground } from '../components'
 
 import appIcon from '../../assets/images/eye.png'
+import * as firebase from 'firebase'
+
 
 class Login extends React.Component {
     static navigationOptions = {

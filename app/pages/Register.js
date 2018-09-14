@@ -5,6 +5,10 @@ import { AsyncStorage } from 'react-native'
 
 import { FancyBackground, FancyInput, FancyButton, FancyHeader } from '../components'
 
+import firebase from 'firebase'
+
+
+
 export default class Register extends React.Component {
 
     static navigationOptions = {
@@ -52,6 +56,27 @@ export default class Register extends React.Component {
         return true;
     }
 
+    signUp = (email, password) => {
+        
+        try {
+            if(this.state.password.length < 2){
+                alert('Please enter atleast 2 characters')
+                return
+            }
+            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .then( res => {
+                console.log(res)
+            })
+            .catch( err => {
+                err
+            })
+        }
+        catch (error) {
+            console.log(error)
+        }
+
+    }
+
     async onRegisterPressed() {
        
         if(!this.formValidator()) {
@@ -95,7 +120,7 @@ export default class Register extends React.Component {
                 <FancyInput placeholder='Password' placeholderColor="#a592b7" onChange={ (password) => this.setState({password}) } password={true} />
                 <FancyInput placeholder='Repeat Password' placeholderColor="#a592b7" onChange={ (password_confirmation) => this.setState({password_confirmation}) } password={true} />
 
-                <FancyButton btnText='Register' action={this.onRegisterPressed.bind(this)} />
+                <FancyButton btnText='Register' action={() => this.signUp(this.state.email, this.state.password)} />
 
             </FancyBackground>
         );

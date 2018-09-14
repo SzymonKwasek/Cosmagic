@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "910297652899",
+    "firebase_url": "https://cosmagic-af754.firebaseio.com",
+    "project_id": "cosmagic-af754",
+    "storage_bucket": "cosmagic-af754.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910297652899:android:667022b290ba97d4",
+        "android_client_info": {
+          "package_name": "com.cosmagic.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910297652899-1s4ourt2om73v5sh3f7444im72vg4j2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOip3kWqYarE69VR_gvH-SETFKxqnP32o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
