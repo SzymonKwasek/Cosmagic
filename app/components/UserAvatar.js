@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Image, TouchableOpacity } from 'react-native'
 
 import ImagePicker from 'react-native-image-picker'
 import GLOBALS from '../../assets/utils/Global'
 import { Base64 } from 'js-base64'
 import { connect } from 'react-redux'
 import axios from 'axios'
+import async from 'async'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -15,35 +16,48 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
     constructor(props){
         super(props)
-        this.state ={ 
+        this.state ={
             pickedImage: { uri: null}
         }
     }
     componentDidMount() {
         if(this.props.user.image) {
             this.setState({pickedImage: {uri: this.props.user.image}})
+        } else {
+            console.log("NO IMAGE")
         }
     }
-    pickImage = () => {
-        // async waterfall ??
-        let data = {}
-        ImagePicker.showImagePicker({} , response => {
-            const image = 'data:image/png;base64,'+response.data
-            data = { 
-                image: image,
-                uuid: this.props.user.uuid
-            }
-            const res = axios.put('http://10.0.2.2:8080/public/user', data)
-            console.log(res)
-            if(res) {
-                this.setState({pickedImage: {uri: image} })
-            } else {
-                console.log("NOPE")
-            }
-           
-        })
+    
+    saveImage = async (data) => {
+        const res = await axios.put('http://10.0.2.2:8080/public/user', data)
+        console.log(res)
+    }
 
-        
+    pickImage = () => {
+        async.waterfall([
+            (callback) => {
+                let data = {}
+                ImagePicker.showImagePicker({}, res => {
+                    if(!res.error) {
+                        data = {
+                            image: 'data:image/png;base64,'+res.data,
+                            uuid: this.props.user.uuid
+                        }
+                        console.log(Base64.encode(res.data))
+                        this.setState({pickedImage: {uri: data.image} })
+                        callback(null, data)
+                    }             
+                })      
+            }
+        ], (err, res) => {
+            if(res) {
+                console.log(res)
+                this.saveImage(res)
+            }
+            else {
+                console.log(err)
+            }
+        })
     }
 
     render() {
