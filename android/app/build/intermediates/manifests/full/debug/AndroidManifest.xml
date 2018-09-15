@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="25" />
+        android:targetSdkVersion="27" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -54,10 +54,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="25.4.0" />
 
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"

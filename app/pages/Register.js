@@ -5,7 +5,7 @@ import { AsyncStorage } from 'react-native'
 
 import { FancyBackground, FancyInput, FancyButton, FancyHeader } from '../components'
 
-import firebase from 'firebase'
+import firebase from 'react-native-firebase'
 
 
 
@@ -63,12 +63,12 @@ export default class Register extends React.Component {
                 alert('Please enter atleast 2 characters')
                 return
             }
-            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.email, this.state.password)
             .then( res => {
                 console.log(res)
             })
             .catch( err => {
-                err
+                console.log(err)
             })
         }
         catch (error) {

@@ -4,7 +4,7 @@
             "outputFile": "/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "/Users/pola/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/c94297248a8099c74b9a6895aed519c7/res/values-v11/values-v11.xml",
+                    "source": "/Users/pola/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/4033b41c56e4e1901b9954f4facc7ed4/res/values-v11/values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

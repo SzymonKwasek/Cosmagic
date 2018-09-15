@@ -3,7 +3,7 @@ import { StyleSheet, Image, TouchableOpacity } from 'react-native'
 
 import ImagePicker from 'react-native-image-picker'
 import GLOBALS from '../../assets/utils/Global'
-import { Base64 } from 'js-base64'
+
 import { connect } from 'react-redux'
 import axios from 'axios'
 import async from 'async'
