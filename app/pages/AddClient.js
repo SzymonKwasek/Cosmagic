@@ -5,7 +5,7 @@ import { StackActions, NavigationActions } from 'react-navigation'
 
 import { FancyButton, FancyInput, FancyHeader, FancyBackground } from '../components'
 
-
+import firebase from 'react-native-firebase'
 
 class AddClient extends React.Component {
 
@@ -15,6 +15,7 @@ class AddClient extends React.Component {
 
     constructor(props) {
         super(props)
+        this.ref = firebase.firestore().collection('clients')
         this.state = {
             name: '',
             userUUID: this.props.user.uuid,
@@ -41,6 +42,15 @@ class AddClient extends React.Component {
         }
     }
 
+    addNewClient = async () => {
+        const response = await this.ref.add({
+            name: this.state.name,
+            userUUID: this.props.user.uid,
+            cosType: this.props.navigation.state.params
+        })
+        if (response) this.props.navigation.dispatch(this.goBackFunction(this.props.navigation.state.params))
+    }
+
 
   render() {
     return (
@@ -49,7 +59,7 @@ class AddClient extends React.Component {
 
             <FancyInput placeholder='Name' placeholderColor='#fff' onChange = {(name) => this.setState({name})} password={false}/>
 
-            <FancyButton action={this.addClient} btnText='Add'/>
+            <FancyButton action={this.addNewClient} btnText='Add'/>
         </FancyBackground>
     );
   }

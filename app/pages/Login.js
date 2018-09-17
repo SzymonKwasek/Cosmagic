@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { FancyInput, FancyButton, FancyBackground } from '../components'
 
 import appIcon from '../../assets/images/eye.png'
-import * as firebase from 'firebase'
+import firebase from 'react-native-firebase'
 
 
 class Login extends React.Component {
@@ -26,6 +26,7 @@ class Login extends React.Component {
             }
         }
     }
+    
     componentDidMount() {
         this._loadInitialState().done();
         const timing = Animated.timing
@@ -40,6 +41,7 @@ class Login extends React.Component {
             })
         ]).start()
     }
+
     formValidator () {
         if(!this.state.email) {
             alert('Fill in Email field !')
@@ -56,30 +58,35 @@ class Login extends React.Component {
 
         let value = await AsyncStorage.getItem('user');
         if( value !== null) {
-            this.props.navigation.navigate('Menu');
+            this.props.navigation.dispatch(this.resetAction('Main', null));
         }
     }
 
-    login = async () => {
+    resetAction(route, data) {
+        const reset = StackActions.push({
+             routeName: route,
+             params: data
+         })
+         return reset
+     }
 
+    signIn = () => {
         if(!this.formValidator()) {
             return
         }
-
-        const password = sha512(this.state.password)
-
-        const data = {
-            email: this.state.email,
-            password: password
-        }
-        const response = await axios.post('http://10.0.2.2:8080/public/user/login',
-            data)
-        if(response.data.response) {
-            AsyncStorage.setItem('user', response.data.response)
-            this.props.setUser(response.data.response)
-            this.props.navigation.navigate('Menu')
-        } else {
-            alert('User does not exist!')
+        try {
+            firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.email, this.state.password)
+            .then( res => {
+                AsyncStorage.setItem('user', res.user._user)
+                this.props.setUser(res.user._user)
+                this.props.navigation.navigate('Menu')
+            })
+            .catch ( err => {
+                alert(err)
+            })
+        } 
+        catch( err ) {
+            alert(err)
         }
     }
 
@@ -107,7 +114,7 @@ class Login extends React.Component {
                         placeholderColor='#a592b7'/>
                 </Animated.View>
 
-                <FancyButton action={this.login} btnText='Login' />
+                <FancyButton action={this.signIn} btnText='Login' />
 
                 <Text style={styles.bottomText}>
                     Don't have an account ? {'\n'}

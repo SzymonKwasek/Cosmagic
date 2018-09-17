@@ -27,38 +27,38 @@ class Menu extends React.Component {
     }
 
     componentDidMount() {   
-        if(this.props.navigation.isFocused()) {
-            this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-                if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
-                    BackHandler.exitApp();
-                    return true
-                }
-                this.lastBackButtonPress = new Date().getTime()
+        // if(this.props.navigation.isFocused()) {
+        //     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+        //         if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
+        //             BackHandler.exitApp();
+        //             return true
+        //         }
+        //         this.lastBackButtonPress = new Date().getTime()
 
-                return true;
-            })
-        }
+        //         return true;
+        //     })
+        // }
     }
 
     componentWillUnmount() {
-        const reset = StackActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({routeName: 'Menu'})
-            ]
-        })
-        this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-            this.props.navigation.dispatch(reset)
-        })
+        // const reset = StackActions.reset({
+        //     index: 0,
+        //     actions: [
+        //         NavigationActions.navigate({routeName: 'Menu'})
+        //     ]
+        // })
+        // this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+        //     this.props.navigation.dispatch(reset)
+        // })
+        console.log("Unmount from Menu")
+
     }
 
 
     resetAction(route, data) {
-       const reset = StackActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({routeName: route, params: data})
-            ]
+       const reset = StackActions.push({
+            routeName: route,
+            params: data
         })
         return reset
     }

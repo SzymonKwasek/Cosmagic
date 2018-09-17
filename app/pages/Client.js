@@ -24,17 +24,17 @@ export default class Client extends React.Component {
     }
 
     componentDidMount () {
-        const reset = StackActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({routeName: 'Main', params: this.props.navigation.state})
-            ]
-        })
-        if(this.props.navigation.isFocused()) {
-            this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-                this.props.navigation.dispatch(reset)
-            })
-        }
+        // const reset = StackActions.reset({
+        //     index: 0,
+        //     actions: [
+        //         NavigationActions.navigate({routeName: 'Main', params: this.props.navigation.state})
+        //     ]
+        // })
+        // if(this.props.navigation.isFocused()) {
+        //     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+        //         this.props.navigation.dispatch(reset)
+        //     })
+        // }
     }
 
 

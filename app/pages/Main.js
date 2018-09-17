@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { BackHandler} from 'react-native'
 import { StackActions, NavigationActions } from 'react-navigation'
 import GLOBALS from '../../assets/utils/Global'
+import firebase from 'react-native-firebase'
 
 import { UserHeader, UserAvatar, ClientTab, FancyBackground, HeaderButton, AddButton, MenuSlide } from '../components'
 
@@ -16,9 +17,12 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props)
+        this.ref = firebase.firestore().collection('clients');
+        this.unsubscribe = null;
         this.state = {
             modalToggle: true,
             clients : [],
+            loading: true,
             menu: {
                 height: new Animated.Value(0),
                 top: new Animated.Value(0),
@@ -30,31 +34,40 @@ class Main extends React.Component {
 
     componentDidMount() {   
         if(this.props.navigation.isFocused()) {
-            this.getAllClients()
+            let type = ''
+            if( this.props.navigation.state.params.lashes ) {
+                type = 'cosType.lashes'
+            } else if( this.props.navigation.state.params.nails ) {
+                type = 'cosType.nails'
+            }
+            this.unsubscribe = this.ref
+            .where('userUUID', '==', this.props.user.uid)
+            .where(type, '==', true)
+            .onSnapshot(this.getClients)
+            // this.getAllClients()
         }
     }
 
     componentWillUnmount() {
-        const reset = StackActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({routeName: 'Main'}),
-            ]
-        })
-        this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-            this.props.navigation.dispatch(reset)
-        })
+        // const reset = StackActions.reset({
+        //     index: 0,
+        //     actions: [
+        //         NavigationActions.navigate({routeName: 'Main', params: this.props.navigation.state.params}),
+        //     ]
+        // })
+        // this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+        //     this.props.navigation.dispatch(reset)
+        // })
+        console.log("Unmount from Main")
+        // this.unsubscribe()
     }
 
 
     
     resetAction(route, data) {
-        const reset = StackActions.reset({
-            index: 1,
-            actions: [
-                NavigationActions.navigate({routeName: 'Main'}),
-                NavigationActions.navigate({routeName: route, params: data})
-            ]
+        const reset = StackActions.push({
+            routeName: route,
+            params: data
         })
         return reset
     }
@@ -94,22 +107,12 @@ class Main extends React.Component {
         }
     }
 
-    getAllClients = async () => {
-        this.setState({clients: []})
-        const type = this.props.navigation.state.params
-        const data = {
-            userUUID: this.props.user.uuid,
-            cosType: type
-        }
-        const response = await axios.post('http://10.0.2.2:8080/public/client/clients', data)
-        if( response.data.response ) {
-            const size = Object.keys(response.data.response).length
-            const temp = []
-            for( let i = 0; i < size; i++ ) {     
-                temp.push(response.data.response[i])      
-            }
-            this.setState({clients: temp})
-        }   
+    getClients = (querySnapshot) => {
+        const clients = []
+        querySnapshot.forEach( client => {
+            clients.push({name: client.data().name})
+        })
+        this.setState({clients})
     }
 
     logout = () => {

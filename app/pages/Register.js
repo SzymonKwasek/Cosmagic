@@ -56,7 +56,8 @@ export default class Register extends React.Component {
         return true;
     }
 
-    signUp = (email, password) => {
+    signUp = () => {
+
         
         try {
             if(this.state.password.length < 2){
@@ -66,35 +67,19 @@ export default class Register extends React.Component {
             firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.email, this.state.password)
             .then( res => {
                 console.log(res)
+                this.props.navigation.navigate('Login')
             })
             .catch( err => {
-                console.log(err)
+                alert(err)
             })
         }
         catch (error) {
             console.log(error)
         }
 
+        
     }
 
-    async onRegisterPressed() {
-       
-        if(!this.formValidator()) {
-            return
-        }
-        
-        const password = sha512(this.state.password)
-        const data = {
-            name: this.state.name,
-            email: this.state.email,
-            password: password
-        }
-        const response = await axios.post('http://10.0.2.2:8080/public/user/new', data)
-        if(response.data.response) {
-            this.props.navigation.navigate('Login')
-        }
-        
-    }
 
     componentDidMount() {
         this._loadInitialState().done();
@@ -120,7 +105,7 @@ export default class Register extends React.Component {
                 <FancyInput placeholder='Password' placeholderColor="#a592b7" onChange={ (password) => this.setState({password}) } password={true} />
                 <FancyInput placeholder='Repeat Password' placeholderColor="#a592b7" onChange={ (password_confirmation) => this.setState({password_confirmation}) } password={true} />
 
-                <FancyButton btnText='Register' action={() => this.signUp(this.state.email, this.state.password)} />
+                <FancyButton btnText='Register' action={() => this.signUp()} />
 
             </FancyBackground>
         );

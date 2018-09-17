@@ -5,6 +5,7 @@ INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/androi
 INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/src/main/AndroidManifest.xml:1:1-29:12
 INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/src/main/AndroidManifest.xml:1:1-29:12
 MERGED from [:react-native-firebase] /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/node_modules/react-native-firebase/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:multidex:1.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/8cb3389287d5ae77d08ad09947fb6cd0/AndroidManifest.xml:17:1-22:12
 MERGED from [:react-native-fs] /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/node_modules/react-native-fs/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-image-resizer] /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/node_modules/react-native-image-resizer/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-image-picker] /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-23:12
@@ -20,14 +21,15 @@ MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] /Users/pola/.gr
 MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/fcb716ec4b1af5be9cf3fcde1d9e12b0/AndroidManifest.xml:17:1-65:12
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.0.aar/d99b3e977cdf48156ae079dc23a09570/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/29a530d7909064f0ebc69762b5ed35f4/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-common:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.0.aar/1548d4084c2e41e0468ac2ed9b8cacb5/AndroidManifest.xml:2:1-16:12
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/58439cbd89a40fed31b3b1514df4a11b/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-database-collection:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-15.0.1.aar/34cf9efd80d044442ca1c35100e21c7b/AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-stats-15.0.1.aar/2db7e5ad7e9d4910bef5e71a2b5c045e/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-16.0.0.aar/d10f645ba81e81c6611ef0ecacba0ce9/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-15.0.1.aar/b00609347da0d66e4091d01882194f71/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d0b093120b280b1aa654594fdc17a4d3/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/9b8a5afdb9c9960b54ac6a249ab1f23f/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:multidex:1.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/8cb3389287d5ae77d08ad09947fb6cd0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/fb6a9c9abe8efa25ff30b5e0dc00a743/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/2b6bdb49c0cfd34ac7922330eecbb882/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/e292f211faf29356da6e2f853bfc29f9/AndroidManifest.xml:17:1-22:12
@@ -35,17 +37,18 @@ MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/pola/.gr
 MERGED from [com.android.support:support-core-ui:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/64ecfb318fd697a66388502bf9887681/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/a194df7c6a952ce6c7230bcef89fb9d2/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/cd477c40f741a55ddec59c81e4b819fa/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/pola/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/78c4a91b14c1ef908d18f693e647bab9/AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/220e15c3a9877a453a90cd056428f11f/AndroidManifest.xml:10:1-18:12
 MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/56014ba7c35f1b8981182c0f596720a1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/db886f894e53c24955871040ec5a68b6/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/6c190621fd07159eb9ed10bfc23cb5e8/AndroidManifest.xml:1:1-4:12
 MERGED from [org.webkit:android-jsc:r174650] /Users/pola/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/b207a130861113cfb71fc01ee5bfb509/AndroidManifest.xml:1:1-3:12
+MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-15.0.0.aar/0059f8908c52537f38e9f9dacc617dab/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/c3af1f6b3dac5eafa3b94b0e3c8ec904/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/a7b67ac5eeaaf1eb9837c3687fb49b5e/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/16216315da3a9a47da4e1ec5f3ca04e8/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/b50c632bc4df97de3701a9c9ca5d90cc/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.0.aar/40a1ed6431f0202d27434e5c40292b7a/AndroidManifest.xml:17:1-24:12
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/pola/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/78c4a91b14c1ef908d18f693e647bab9/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/src/main/AndroidManifest.xml:1:1-29:12
 INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/src/main/AndroidManifest.xml:1:1-29:12
 INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/src/main/AndroidManifest.xml:1:1-29:12
@@ -117,6 +120,8 @@ MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/pola/.gradl
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.0.aar/d99b3e977cdf48156ae079dc23a09570/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/29a530d7909064f0ebc69762b5ed35f4/AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/29a530d7909064f0ebc69762b5ed35f4/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:10:5-16:19
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:10:5-16:19
 MERGED from [com.google.firebase:firebase-common:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.0.aar/1548d4084c2e41e0468ac2ed9b8cacb5/AndroidManifest.xml:8:5-14:19
 MERGED from [com.google.firebase:firebase-common:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.0.aar/1548d4084c2e41e0468ac2ed9b8cacb5/AndroidManifest.xml:8:5-14:19
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/58439cbd89a40fed31b3b1514df4a11b/AndroidManifest.xml:7:5-20
@@ -175,6 +180,8 @@ INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/androi
 INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/src/main/AndroidManifest.xml
 MERGED from [:react-native-firebase] /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/node_modules/react-native-firebase/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-firebase] /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/node_modules/react-native-firebase/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:multidex:1.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/8cb3389287d5ae77d08ad09947fb6cd0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/8cb3389287d5ae77d08ad09947fb6cd0/AndroidManifest.xml:20:5-43
 MERGED from [:react-native-fs] /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/node_modules/react-native-fs/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-fs] /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/node_modules/react-native-fs/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-image-resizer] /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/node_modules/react-native-image-resizer/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
@@ -205,10 +212,14 @@ MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/pola/.gradl
 MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.0.aar/d99b3e977cdf48156ae079dc23a09570/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/29a530d7909064f0ebc69762b5ed35f4/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/29a530d7909064f0ebc69762b5ed35f4/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-common:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.0.aar/1548d4084c2e41e0468ac2ed9b8cacb5/AndroidManifest.xml:5:5-6:37
 MERGED from [com.google.firebase:firebase-common:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.0.aar/1548d4084c2e41e0468ac2ed9b8cacb5/AndroidManifest.xml:5:5-6:37
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/58439cbd89a40fed31b3b1514df4a11b/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/58439cbd89a40fed31b3b1514df4a11b/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database-collection:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-15.0.1.aar/34cf9efd80d044442ca1c35100e21c7b/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-database-collection:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-15.0.1.aar/34cf9efd80d044442ca1c35100e21c7b/AndroidManifest.xml:6:5-44
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-stats-15.0.1.aar/2db7e5ad7e9d4910bef5e71a2b5c045e/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-stats-15.0.1.aar/2db7e5ad7e9d4910bef5e71a2b5c045e/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-16.0.0.aar/d10f645ba81e81c6611ef0ecacba0ce9/AndroidManifest.xml:20:5-44
@@ -219,8 +230,6 @@ MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/pola/.
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d0b093120b280b1aa654594fdc17a4d3/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/9b8a5afdb9c9960b54ac6a249ab1f23f/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/9b8a5afdb9c9960b54ac6a249ab1f23f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:multidex:1.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/8cb3389287d5ae77d08ad09947fb6cd0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/8cb3389287d5ae77d08ad09947fb6cd0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-fragment:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/fb6a9c9abe8efa25ff30b5e0dc00a743/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/fb6a9c9abe8efa25ff30b5e0dc00a743/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/2b6bdb49c0cfd34ac7922330eecbb882/AndroidManifest.xml:20:5-44
@@ -235,6 +244,8 @@ MERGED from [com.android.support:support-media-compat:27.0.2] /Users/pola/.gradl
 MERGED from [com.android.support:support-media-compat:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/a194df7c6a952ce6c7230bcef89fb9d2/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/cd477c40f741a55ddec59c81e4b819fa/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/cd477c40f741a55ddec59c81e4b819fa/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/pola/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/78c4a91b14c1ef908d18f693e647bab9/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/pola/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/78c4a91b14c1ef908d18f693e647bab9/AndroidManifest.xml:20:5-22:41
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/220e15c3a9877a453a90cd056428f11f/AndroidManifest.xml:14:5-16:41
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/220e15c3a9877a453a90cd056428f11f/AndroidManifest.xml:14:5-16:41
 MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/56014ba7c35f1b8981182c0f596720a1/AndroidManifest.xml:5:5-7:41
@@ -243,6 +254,8 @@ MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/pola/.gradl
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/db886f894e53c24955871040ec5a68b6/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/6c190621fd07159eb9ed10bfc23cb5e8/AndroidManifest.xml:2:3-70
 MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/6c190621fd07159eb9ed10bfc23cb5e8/AndroidManifest.xml:2:3-70
+MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-15.0.0.aar/0059f8908c52537f38e9f9dacc617dab/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-15.0.0.aar/0059f8908c52537f38e9f9dacc617dab/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/c3af1f6b3dac5eafa3b94b0e3c8ec904/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/c3af1f6b3dac5eafa3b94b0e3c8ec904/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/a7b67ac5eeaaf1eb9837c3687fb49b5e/AndroidManifest.xml:5:5-7:41
@@ -253,8 +266,6 @@ MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/pola/.gradle/caches/transf
 MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/b50c632bc4df97de3701a9c9ca5d90cc/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.0.aar/40a1ed6431f0202d27434e5c40292b7a/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.0.aar/40a1ed6431f0202d27434e5c40292b7a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/pola/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/78c4a91b14c1ef908d18f693e647bab9/AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/pola/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/78c4a91b14c1ef908d18f693e647bab9/AndroidManifest.xml:20:5-22:41
 INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
@@ -327,6 +338,8 @@ MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Us
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/6cf1f9c6d0a87c704c130421d11173ed/AndroidManifest.xml:27:9-31:19
 MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/fcb716ec4b1af5be9cf3fcde1d9e12b0/AndroidManifest.xml:35:9-39:19
 MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/fcb716ec4b1af5be9cf3fcde1d9e12b0/AndroidManifest.xml:35:9-39:19
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:11:9-15:19
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:11:9-15:19
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:16.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.0.2.aar/3a3a0f022f6464953cbf5f591fa92f6a/AndroidManifest.xml:31:18-89
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
@@ -467,6 +480,12 @@ ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/pola/.gradl
 		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/29a530d7909064f0ebc69762b5ed35f4/AndroidManifest.xml:26:13-72
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/pola/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/29a530d7909064f0ebc69762b5ed35f4/AndroidManifest.xml:24:13-79
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:17.0.2] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.0.2.aar/f0c40bf1c9bd197f90276013ef90b75e/AndroidManifest.xml:13:17-111
 provider#com.google.firebase.provider.FirebaseInitProvider
 ADDED from [com.google.firebase:firebase-common:16.0.0] /Users/pola/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.0.aar/1548d4084c2e41e0468ac2ed9b8cacb5/AndroidManifest.xml:9:9-13:39
 	android:authorities
