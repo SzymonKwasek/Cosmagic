@@ -1,11 +1,5 @@
 import React from 'react';
-import Register from './app/pages/Register'
-import Login from './app/pages/Login'
-import Main from './app/pages/Main'
-import Menu from './app/pages/Menu'
-import AddClient from './app/pages/AddClient'
-import Client from './app/pages/Client'
-import EditClient from './app/pages/EditClient'
+import { AddClient, Client, EditClient, Login, Main, Menu, Register } from './app/pages'
 import { createStackNavigator } from 'react-navigation'
 import store from './app/store/store'
 import { Provider } from 'react-redux'
