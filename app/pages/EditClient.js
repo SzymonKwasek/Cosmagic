@@ -1,12 +1,10 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
 import { connect } from 'react-redux'
-import axios from 'axios'
+import { StackActions } from 'react-navigation'
+import firebase from 'react-native-firebase'
 
-import InfoTabEdit from '../components/InfoTabEdit'
-import FancyButton from '../components/FancyButton'
-import FancyHeader from '../components/FancyHeader'
-import FancyBackground from '../components/FancyBackground'
+import { InfoTabEdit, FancyButton, FancyHeader, FancyBackground } from '../components'
 
 
 class EditClient extends React.Component {
@@ -18,24 +16,28 @@ class EditClient extends React.Component {
     constructor(props) {
         super(props)
         const data = this.props.navigation.state.params
+        this.ref = firebase.firestore().collection('clients');
         this.state = {
             applicationDate: data.applicationDate,
             lashName: data.lashName,
             lashType: data.lashType,
             size: data.size,
-            uuid: data.uuid
         }
     }
 
-    edit = async () => {
-        const response = await axios.put('http://10.0.2.2:8080/public/client',
-            this.state)
-        if(response.data.response) {
-            alert('Client edited successfully !')
-            this.props.navigation.push('Main')
-        } else {
-            alert('Something went wrong !')
-        }
+    goBackFunction() {
+        const reset = StackActions.pop({
+            n: 1
+        })
+        return reset
+    }
+
+    editClient = () => {
+        const data = this.props.navigation.state.params
+        this.ref.doc(data.id).update(this.state)
+        .then( () => {
+            this.props.navigation.dispatch(this.goBackFunction())
+        })
     }
 
 
@@ -48,13 +50,13 @@ render() {
                 <FancyHeader headerText={data.name} />
 
                 <ScrollView style={{alignSelf: 'stretch'}}>
-                    <InfoTabEdit toDisplay={data.applicationDate} tabName='Data aplikacji: ' onChange={ (applicationDate) => this.setState({applicationDate}) } />
+                    <InfoTabEdit toDisplay={data.applicationDate} tabName='Data aplikacji: ' datepicker={true} onChange={ (applicationDate) => this.setState({applicationDate}) } />
                     <InfoTabEdit toDisplay={data.lashName} tabName='Nazwa rzęs: ' onChange={ (lashName) => this.setState({lashName}) } />
                     <InfoTabEdit toDisplay={data.lashType} tabName='Skręt:  ' onChange={ (lashType) => this.setState({lashType}) } />
                     <InfoTabEdit toDisplay={data.size} tabName='Grubość: ' onChange={ (size) => this.setState({size}) } />
                 </ScrollView>
 
-                <FancyButton action={this.edit} btnText='Apply' />
+                <FancyButton action={this.editClient} btnText='Apply' />
 
         </FancyBackground>
     );

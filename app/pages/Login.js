@@ -1,14 +1,14 @@
 import React from 'react'
 import { Image, StyleSheet, Animated, Text, AsyncStorage } from 'react-native'
 import { sha512 } from 'js-sha512'
-import axios from 'axios'
+import { StackActions, NavigationActions } from 'react-navigation'
 import { connect } from 'react-redux'
 
-import FancyInput from '../components/FancyInput'
-import FancyButton from '../components/FancyButton'
-import FancyBackground from '../components/FancyBackground'
+import { FancyInput, FancyButton, FancyBackground } from '../components'
 
 import appIcon from '../../assets/images/eye.png'
+import firebase from 'react-native-firebase'
+
 
 class Login extends React.Component {
     static navigationOptions = {
@@ -26,6 +26,7 @@ class Login extends React.Component {
             }
         }
     }
+    
     componentDidMount() {
         this._loadInitialState().done();
         const timing = Animated.timing
@@ -40,6 +41,7 @@ class Login extends React.Component {
             })
         ]).start()
     }
+
     formValidator () {
         if(!this.state.email) {
             alert('Fill in Email field !')
@@ -56,30 +58,35 @@ class Login extends React.Component {
 
         let value = await AsyncStorage.getItem('user');
         if( value !== null) {
-            this.props.navigation.navigate('Main');
+            this.props.navigation.dispatch(this.resetAction('Menu', null));
         }
     }
 
-    login = async () => {
+    resetAction(route, data) {
+        const reset = StackActions.replace({
+             routeName: route,
+             params: data
+         })
+         return reset
+     }
 
+    signIn = () => {
         if(!this.formValidator()) {
             return
         }
-
-        const password = sha512(this.state.password)
-
-        const data = {
-            email: this.state.email,
-            password: password
-        }
-        const response = await axios.post('http://10.0.2.2:8080/public/user/login',
-            data)
-        if(response.data.response) {
-            AsyncStorage.setItem('user', response.data.response)
-            this.props.setUser(response.data.response)
-            this.props.navigation.navigate('Main')
-        } else {
-            alert('User does not exist!')
+        try {
+            firebase.auth().signInAndRetrieveDataWithEmailAndPassword(this.state.email, this.state.password)
+            .then( res => {
+                AsyncStorage.setItem('user', res.user._user)
+                this.props.setUser(res.user._user)
+                this.props.navigation.dispatch(this.resetAction('Menu', null));
+            })
+            .catch ( err => {
+                alert(err)
+            })
+        } 
+        catch( err ) {
+            alert(err)
         }
     }
 
@@ -94,7 +101,7 @@ class Login extends React.Component {
                 <Animated.View style={{position: 'relative', left: this.state.animation.emailPositionLeft, alignSelf: 'stretch'}}>
                     <FancyInput 
                         placeholder="Email"
-                        onChange={ (email) =>this.setState({email}) }
+                        onChange={ (email) => this.setState({email}) }
                         password={false}
                         placeholderColor='#a592b7'/>
                 </Animated.View>
@@ -102,12 +109,12 @@ class Login extends React.Component {
                 <Animated.View style={{position: 'relative', left: this.state.animation.passwordPositionLeft, alignSelf: 'stretch'}}>
                     <FancyInput 
                         placeholder="Password"
-                        onChange={ (password) =>this.setState({password}) }
+                        onChange={ (password) => this.setState({password}) }
                         password= {true}
                         placeholderColor='#a592b7'/>
                 </Animated.View>
 
-                <FancyButton action={this.login} btnText='Login' />
+                <FancyButton action={this.signIn} btnText='Login' />
 
                 <Text style={styles.bottomText}>
                     Don't have an account ? {'\n'}
@@ -135,14 +142,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 const styles = StyleSheet.create({
     bottomText: {
-        color: '#fff',
+        color: '#000',
         textAlign: 'center'
     },
     linkText: {
         color: '#90b1e5',
     },
     appIcon: {
-        paddingTop: 20,
+        marginTop: 50,
         alignSelf: 'center',
         marginBottom: 80
 

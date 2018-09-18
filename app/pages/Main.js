@@ -1,14 +1,12 @@
 import React from 'react'
-import { Modal, FlatList, StyleSheet, Text, View, Animated, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native'
-import axios from 'axios'
+import { StyleSheet, ScrollView, AsyncStorage, Animated } from 'react-native'
 import { connect } from 'react-redux'
-import { BackHandler} from 'react-native'
+import { BackHandler } from 'react-native'
+import { StackActions } from 'react-navigation'
+import GLOBALS from '../../assets/utils/Global'
+import firebase from 'react-native-firebase'
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-
-import ClientTab from '../components/ClientTab'
-import FancyBackground from '../components/FancyBackground'
-import HeaderButton from '../components/HeaderButton'
+import { UserHeader, UserAvatar, ClientInfo, FancyBackground, HeaderButton, AddButton, MenuSlide } from '../components'
 
 class Main extends React.Component {
 
@@ -18,91 +16,137 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props)
+        this.ref = firebase.firestore().collection('clients');
+        this.unsubscribe = null;
         this.state = {
-            modalToggle: false,
-            clients : []
+            modalToggle: true,
+            clients : [],
+            loading: true,
+            menu: {
+                height: new Animated.Value(0),
+                top: new Animated.Value(0),
+                opacity: new Animated.Value(0)
+            }
         }
         this.lastBackButtonPress = null
     }
 
-    componentDidMount() {
-        this.getAllClients()
-        // BackHandler.addEventListener('hardwareBackPress', () => {
-        //     if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
-        //         BackHandler.exitApp();
-        //         return true
-        //     }
-        //     this.lastBackButtonPress = new Date().getTime()
-
-        //     return true;
-        // })
+    componentDidMount() {   
+        if(this.props.navigation.isFocused()) {
+            let type = ''
+            if( this.props.navigation.state.params.lashes ) {
+                type = 'cosType.lashes'
+            } else if( this.props.navigation.state.params.nails ) {
+                type = 'cosType.nails'
+            }
+            this.unsubscribe = this.ref
+                .where('userUUID', '==', this.props.user.uid)
+                .where(type, '==', true)
+                .onSnapshot(this.getClients)
+            this.backHandlerListener()
+        }
     }
 
-    // componentWillUnmount() {
-    //     BackHandler.removeEventListener('hardwareBackPress', () => {this.props.navigation.goBack()})
-    // }
+    backHandlerListener = () => {
+        this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+            this.props.navigation.pop()
+            return true;
+        })
+    }
+
+    
+    resetAction(route, data) {
+        const reset = StackActions.push({
+            routeName: route,
+            params: data
+        })
+        return reset
+    }
+
 
     toggleModal = () => {
         this.setState({
             modalToggle: !this.state.modalToggle
         })
+        this.openMenu()
     }
 
-    getAllClients = async () => {
-        this.setState({clients: []})
-        const data = {
-            userUUID: this.props.user.uuid
+    animationHandler = (a, b, c) => {
+        const timing = Animated.timing
+        Animated.parallel([
+            timing(this.state.menu.height, {
+                toValue: a,
+                duration: 300
+            }),
+            timing(this.state.menu.top, {
+                toValue: b,
+                duration: 300
+            }),
+            timing(this.state.menu.opacity, {
+                toValue: c,
+                duration: 300
+            })
+        ]).start()
+    }
+
+    openMenu = () => {
+        
+        if(this.state.modalToggle) {
+            this.animationHandler(90, 0, 1)
+        } else {
+            this.animationHandler(0, 0, 0)
         }
-        const response = await axios.post('http://10.0.2.2:8080/public/client/clients', data)
-        if( response.data.response ) {
-            const size = Object.keys(response.data.response).length
-            const temp = []
-            for( let i = 0; i < size; i++ ) {     
-                temp.push(response.data.response[i])      
-            }
-            this.setState({clients: temp})
-        }   
+    }
+
+    getClients = async(querySnapshot) => {
+        const clients = []
+        await querySnapshot.forEach( client => {
+            const id = client.id
+            const data = {...client.data(), id}
+            clients.push(data)
+        })
+        this.setState({clients})
     }
 
     logout = () => {
         AsyncStorage.removeItem('user')
         this.toggleModal()
-        this.props.navigation.push('Login')
+        this.props.navigation.dispatch(this.resetAction('Login', null))
     }
 
     render() {
+        console.log(this.state.clients)
+        const clientList = this.state.clients.map((item, x) => {
+            const data = {...this.props.navigation.state.params, ...item}
+            return(
+                <ClientInfo data={data} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
+            )
+        })
         return (    
         <FancyBackground>
 
-                <Modal visible={this.state.modalToggle} transparent={true} onRequestClose={()=>{console.log('closed')}} >
-                    <View style={styles.modalContainer}>
-                        <Text style={styles.modalText} onPress={this.logout} > <Icon name="sign-out" size={30} color="#fff" /> Sign Out</Text>
-                        <Text style={styles.modalText} onPress={this.toggleModal} > <Icon name="times" size={30} color="#fff" /> Close</Text>
-                    </View>
-                </Modal>
+                <UserHeader userName={this.props.user.email} />
 
-                <ScrollView style={styles.scrollContainer}> 
-                    <FlatList 
-                        data={this.state.clients}
-                        keyExtractor={(x) => x}
-                        renderItem={({ item }) =>
-                        <ClientTab data={item} onPress={() => this.props.navigation.push('Client', item)}/>
-                        }/>          
+                <UserAvatar />
+
+                <Animated.View style={{ alignSelf: 'stretch', position: 'relative', height: this.state.menu.height, top: this.state.menu.top, opacity: this.state.menu.opacity}}>
+                    <MenuSlide  onPressFirst={this.logout} onPressSecond={this.toggleModal} icon='sign-out' text='SignOut' />
+                </Animated.View>
+
+                <ScrollView style={styles.scrollContainer}>
+                        {clientList}
                 </ScrollView>
 
-                <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor='#fff' />
+                <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} />
 
-                <TouchableOpacity
-                            style={styles.btn}
-                            onPress={() => this.props.navigation.navigate('AddClient')}>
-                            <Icon name="plus" size={40} color="#fff" />
-                </TouchableOpacity>
+                <AddButton onPress={() => this.props.navigation.dispatch(this.resetAction('AddClient', this.props.navigation.state.params))} />
 
         </FancyBackground>
         );
     }
 
 }
+
 
 
 function mapStateToProps (state) {
@@ -116,34 +160,7 @@ export default connect(mapStateToProps)(Main)
 
 const styles = StyleSheet.create({
     scrollContainer: {
+        flex: 1,
         alignSelf: 'stretch'
-    },
-    btn: {
-        position: 'absolute',
-        bottom: 0,
-        right: 0,
-        backgroundColor: 'transparent',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 20,
-        width: 80,
-        height: 80,
-        borderRadius: 40
-    },
-    modalContainer: {
-        marginTop: 200,
-        alignSelf: 'center',
-        backgroundColor: 'rgba(0,0,0,.8)',
-        borderRadius: 20,
-        width: 350,
-        padding: 40
-    },
-    modalText: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: "#fff",
-        marginTop: 10,
-        marginBottom: 10,
-        textAlign: 'center'
     }
 });

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">910297652899-1s4ourt2om73v5sh3f7444im72vg4j2u.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://cosmagic-af754.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">910297652899</string>
+    <string name="google_api_key" translatable="false">AIzaSyAOip3kWqYarE69VR_gvH-SETFKxqnP32o</string>
+    <string name="google_app_id" translatable="false">1:910297652899:android:667022b290ba97d4</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAOip3kWqYarE69VR_gvH-SETFKxqnP32o</string>
+    <string name="google_storage_bucket" translatable="false">cosmagic-af754.appspot.com</string>
+    <string name="project_id" translatable="false">cosmagic-af754</string>
+</resources>

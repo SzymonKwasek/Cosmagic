@@ -1,12 +1,12 @@
 import React from 'react'
-import  axios  from 'axios'
 import { sha512 } from 'js-sha512'
 import { AsyncStorage } from 'react-native'
 
-import FancyBackground from '../components/FancyBackground'
-import FancyInput from '../components/FancyInput'
-import FancyButton from '../components/FancyButton'
-import FancyHeader from '../components/FancyHeader'
+import { FancyBackground, FancyInput, FancyButton, FancyHeader } from '../components'
+
+import firebase from 'react-native-firebase'
+
+
 
 export default class Register extends React.Component {
 
@@ -55,24 +55,30 @@ export default class Register extends React.Component {
         return true;
     }
 
-    async onRegisterPressed() {
-       
-        if(!this.formValidator()) {
-            return
-        }
+    signUp = () => {
+
         
-        const password = sha512(this.state.password)
-        const data = {
-            name: this.state.name,
-            email: this.state.email,
-            password: password
+        try {
+            if(this.state.password.length < 2){
+                alert('Please enter atleast 2 characters')
+                return
+            }
+            firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(this.state.email, this.state.password)
+            .then( res => {
+                console.log(res)
+                this.props.navigation.navigate('Login')
+            })
+            .catch( err => {
+                alert(err)
+            })
         }
-        const response = await axios.post('http://10.0.2.2:8080/public/user/new', data)
-        if(response.data.response) {
-            this.props.navigation.navigate('Login')
+        catch (error) {
+            console.log(error)
         }
+
         
     }
+
 
     componentDidMount() {
         this._loadInitialState().done();
@@ -98,7 +104,7 @@ export default class Register extends React.Component {
                 <FancyInput placeholder='Password' placeholderColor="#a592b7" onChange={ (password) => this.setState({password}) } password={true} />
                 <FancyInput placeholder='Repeat Password' placeholderColor="#a592b7" onChange={ (password_confirmation) => this.setState({password_confirmation}) } password={true} />
 
-                <FancyButton btnText='Register' action={this.onRegisterPressed.bind(this)} />
+                <FancyButton btnText='Register' action={() => this.signUp()} />
 
             </FancyBackground>
         );

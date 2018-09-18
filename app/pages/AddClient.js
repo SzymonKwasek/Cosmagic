@@ -1,13 +1,10 @@
 import React from 'react'
-import axios from 'axios'
 import { connect } from 'react-redux'
+import { StackActions } from 'react-navigation'
 
-import FancyButton from '../components/FancyButton'
-import FancyInput from '../components/FancyInput'
-import FancyHeader from '../components/FancyHeader'
-import FancyBackground from '../components/FancyBackground'
+import { FancyButton, FancyInput, FancyHeader, FancyBackground } from '../components'
 
-
+import firebase from 'react-native-firebase'
 
 class AddClient extends React.Component {
 
@@ -17,22 +14,30 @@ class AddClient extends React.Component {
 
     constructor(props) {
         super(props)
+        this.ref = firebase.firestore().collection('clients')
         this.state = {
             name: '',
-            userUUID: this.props.user.uuid
+            userUUID: this.props.user.uuid,
+            cosType: this.props.navigation.state.params
         }
 
     }
 
+    goBackFunction(data) {
+        const reset = StackActions.pop({
+            n:1
+        })
+        return reset
+    }
 
-    addClient = async () => {
-        const response = await axios.post('http://10.0.2.2:8080/public/client', this.state)
-        const data = {
-            name: this.state.name
-        }
-        if(response) {
-            this.props.navigation.push('Main')
-        }
+
+    addNewClient = async () => {
+        const response = await this.ref.add({
+            name: this.state.name,
+            userUUID: this.props.user.uid,
+            cosType: this.props.navigation.state.params
+        })
+        if (response) this.props.navigation.pop()
     }
 
 
@@ -43,7 +48,7 @@ class AddClient extends React.Component {
 
             <FancyInput placeholder='Name' placeholderColor='#fff' onChange = {(name) => this.setState({name})} password={false}/>
 
-            <FancyButton action={this.addClient} btnText='Add'/>
+            <FancyButton action={this.addNewClient} btnText='Add'/>
         </FancyBackground>
     );
   }
