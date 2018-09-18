@@ -5,6 +5,7 @@ import ImagePicker from 'react-native-image-picker'
 import GLOBALS from '../../assets/utils/Global'
 
 import { connect } from 'react-redux'
+import firebase from 'react-native-firebase'
 import axios from 'axios'
 import async from 'async'
 
@@ -16,48 +17,52 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
     constructor(props){
         super(props)
+        this.ref = firebase.storage().ref('/useravatars/'+this.props.user.uid)
         this.state ={
             pickedImage: { uri: null}
         }
     }
     componentDidMount() {
-        if(this.props.user.image) {
-            this.setState({pickedImage: {uri: this.props.user.image}})
-        } else {
-            console.log("NO IMAGE")
-        }
-    }
-    
-    saveImage = async (data) => {
-        const res = await axios.put('http://10.0.2.2:8080/public/user', data)
-        console.log(res)
+        
+        this.getImage()
     }
 
-    pickImage = () => {
-        async.waterfall([
-            (callback) => {
-                let data = {}
-                ImagePicker.showImagePicker({}, res => {
-                    if(!res.error) {
-                        data = {
-                            image: 'data:image/png;base64,'+res.data,
-                            uuid: this.props.user.uuid
-                        }
-                        console.log(res)
-                        this.setState({pickedImage: {uri: data.image} })
-                        callback(null, data)
-                    }             
-                })      
-            }
-        ], (err, res) => {
-            if(res) {
-                console.log(res)
-                // this.saveImage(res)
-            }
-            else {
-                console.log(err)
-            }
+    getImage = () => {
+        this.ref.getDownloadURL()
+        .then( url => {
+            console.log(url)
+            this.setState({pickedImage: {uri: url}})
         })
+        .catch( err => {
+            console.log(err)
+        })
+    }
+    
+
+
+    pickImage = () => {
+        if(this.state.pickedImage.uri) {
+            this.ref.delete()
+            .then( deleted => {
+                console.log(deleted)
+            })
+            .catch( err => {
+                console.log(err)
+            })
+        }
+        ImagePicker.showImagePicker({}, res => {
+            if(!res.error) {
+                this.ref
+                .putFile(`${res.path}`)
+                .then( img => {
+                    console.log('Success !' + img)
+                    this.getImage()
+                })
+                .catch( err => {
+                    console.log("SOMETHING WRONG! " + err)
+                })
+            }             
+        })   
     }
 
     render() {
