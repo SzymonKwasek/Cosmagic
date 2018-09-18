@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import FancyInputEdit from '../'
+import { FancyInputEdit } from '../'
 import GLOBALS from '../../../assets/utils/Global'
 
 export default class InfoTabEdit extends React.Component {

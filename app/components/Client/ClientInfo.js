@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import ClientAvatar  from '../'
+import { ClientAvatar }   from '../'
 import GLOBALS from '../../../assets/utils/Global'
 
 class ClientInfo extends React.Component {
@@ -25,12 +25,12 @@ render() {
                 <ClientAvatar />
 
                 <TouchableOpacity style={styles.basicInfo} onPress={this.props.onPress}>
-                    {/* <Text style={styles.infoText}>
+                    <Text style={styles.infoText}>
                         {this.props.data.name}
                     </Text>
                     <Text style={styles.infoText}>
                         {this.props.data.applicationDate}
-                    </Text> */}
+                    </Text>
                 </TouchableOpacity>
             </View>
     );

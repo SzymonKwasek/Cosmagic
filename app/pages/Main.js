@@ -118,9 +118,9 @@ class Main extends React.Component {
         console.log(this.state.clients)
         const clientList = this.state.clients.map((item, x) => {
             const data = {...this.props.navigation.state.params, ...item}
-            // return(
-            //     <ClientInfo data={data} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
-            // )
+            return(
+                <ClientInfo data={data} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
+            )
         })
         return (    
         <FancyBackground>
