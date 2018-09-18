@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import GLOBALS from '../../assets/utils/Global'
+import GLOBALS from '../../../assets/utils/Global'
 
 
 export default class AddButton extends React.Component {

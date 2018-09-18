@@ -5,10 +5,10 @@ import { connect } from 'react-redux'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import ClientAvatar  from './ClientAvatar'
-import GLOBALS from '../../assets/utils/Global'
+import { ClientAvatar }   from '../'
+import GLOBALS from '../../../assets/utils/Global'
 
-class ClientTab extends React.Component {
+class ClientInfo extends React.Component {
 
 
     constructor(props) {
@@ -46,7 +46,7 @@ function mapStateToProps (state) {
 
 
 
-export default connect(mapStateToProps)(ClientTab)
+export default connect(mapStateToProps)(ClientInfo)
 
 const styles = StyleSheet.create({
     clientTab: {

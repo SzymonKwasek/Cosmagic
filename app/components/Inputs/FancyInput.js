@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, TextInput } from 'react-native'
-import GLOBALS from '../../assets/utils/Global'
+import GLOBALS from '../../../assets/utils/Global'
 
 export default class FancyInput extends React.Component {
 

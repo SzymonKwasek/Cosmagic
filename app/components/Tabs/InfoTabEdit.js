@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import  FancyText  from './FancyText'
-import GLOBALS from '../../assets/utils/Global'
+import { FancyInputEdit } from '../'
+import GLOBALS from '../../../assets/utils/Global'
 
-export default class InfoTab extends React.Component {
+export default class InfoTabEdit extends React.Component {
 
     constructor(props) {
         super(props)
@@ -17,7 +17,7 @@ export default class InfoTab extends React.Component {
                 <Text style={styles.infoName}>
                     {this.props.tabName}
                 </Text>
-                <FancyText text={this.props.toDisplay}/>
+                <FancyInputEdit password={false} datepicker={this.props.datepicker} placeholder={this.props.toDisplay} placeholderColor='#a592b7' onChange={this.props.onChange} />
             </View>
         );
     }
@@ -45,8 +45,7 @@ const styles = StyleSheet.create({
     infoName: {
         color: GLOBALS.COLOR.PRIMARY,
         fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 5
+        fontWeight: 'bold'
     }
 })
 

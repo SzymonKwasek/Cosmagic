@@ -4,11 +4,7 @@ import { connect } from 'react-redux'
 import { StackActions } from 'react-navigation'
 import firebase from 'react-native-firebase'
 
-
-import InfoTabEdit from '../components/InfoTabEdit'
-import FancyButton from '../components/FancyButton'
-import FancyHeader from '../components/FancyHeader'
-import FancyBackground from '../components/FancyBackground'
+import { InfoTabEdit, FancyButton, FancyHeader, FancyBackground } from '../components'
 
 
 class EditClient extends React.Component {

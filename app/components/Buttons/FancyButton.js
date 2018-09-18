@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 import { StyleSheet, TouchableOpacity, Text } from 'react-native'
-import GLOBALS from '../../assets/utils/Global'
-import * as firebase from 'firebase'
+import GLOBALS from '../../../assets/utils/Global'
+
 
 
 export default class FancyButton extends React.Component {
