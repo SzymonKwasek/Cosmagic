@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View} from 'react-native'
-import GLOBALS from '../../assets/utils/Global'
+import GLOBALS from '../../../assets/utils/Global'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, TextInput } from 'react-native'
 import DatePicker from 'react-native-datepicker'
-import GLOBALS from '../../assets/utils/Global'
+import GLOBALS from '../../../assets/utils/Global'
 
 
 export default class FancyInputEdit extends React.Component {

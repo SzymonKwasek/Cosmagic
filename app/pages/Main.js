@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyleSheet, ScrollView, AsyncStorage, Animated } from 'react-native'
 import { connect } from 'react-redux'
-import { BackHandler} from 'react-native'
+import { BackHandler } from 'react-native'
 import { StackActions } from 'react-navigation'
 import GLOBALS from '../../assets/utils/Global'
 import firebase from 'react-native-firebase'
 
-import { UserHeader, UserAvatar, ClientTab, FancyBackground, HeaderButton, AddButton, MenuSlide } from '../components'
+import { UserHeader, UserAvatar, ClientInfo, FancyBackground, HeaderButton, AddButton, MenuSlide } from '../components'
 
 class Main extends React.Component {
 
@@ -98,9 +98,9 @@ class Main extends React.Component {
         }
     }
 
-    getClients = (querySnapshot) => {
+    getClients = async(querySnapshot) => {
         const clients = []
-        querySnapshot.forEach( client => {
+        await querySnapshot.forEach( client => {
             const id = client.id
             const data = {...client.data(), id}
             clients.push(data)
@@ -118,9 +118,9 @@ class Main extends React.Component {
         console.log(this.state.clients)
         const clientList = this.state.clients.map((item, x) => {
             const data = {...this.props.navigation.state.params, ...item}
-            return(
-                <ClientTab data={data} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
-            )
+            // return(
+            //     <ClientInfo data={data} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
+            // )
         })
         return (    
         <FancyBackground>

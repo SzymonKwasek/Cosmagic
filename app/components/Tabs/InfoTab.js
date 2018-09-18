@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import  FancyText  from './FancyText'
-import GLOBALS from '../../assets/utils/Global'
+import FancyText from '../'
+import GLOBALS from '../../../assets/utils/Global'
 
 export default class InfoTab extends React.Component {
 

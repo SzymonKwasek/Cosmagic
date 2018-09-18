@@ -2,12 +2,11 @@ import React from 'react'
 import { StyleSheet, Image, TouchableOpacity } from 'react-native'
 
 import ImagePicker from 'react-native-image-picker'
-import GLOBALS from '../../assets/utils/Global'
+import GLOBALS from '../../../assets/utils/Global'
 
 import { connect } from 'react-redux'
 import firebase from 'react-native-firebase'
-import axios from 'axios'
-import async from 'async'
+
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 

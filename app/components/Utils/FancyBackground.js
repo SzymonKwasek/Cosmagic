@@ -2,7 +2,7 @@ import React from 'react'
 import { ImageBackground, StyleSheet, Dimensions} from 'react-native'
 
 
-import bgImage from '../../assets/images/roses.jpg'
+import bgImage from '../../../assets/images/roses.jpg'
 
 
 export default class FancyBackground extends React.Component {
