@@ -1,7 +1,6 @@
 import React from 'react'
-import axios from 'axios'
 import { connect } from 'react-redux'
-import { StackActions, NavigationActions } from 'react-navigation'
+import { StackActions } from 'react-navigation'
 
 import { FancyButton, FancyInput, FancyHeader, FancyBackground } from '../components'
 
@@ -25,22 +24,12 @@ class AddClient extends React.Component {
     }
 
     goBackFunction(data) {
-        const reset = StackActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({routeName: 'Main', params: data})
-            ]
+        const reset = StackActions.pop({
+            n:1
         })
         return reset
     }
 
-    addClient = async () => {
-        const response = await axios.post('http://10.0.2.2:8080/public/client', this.state)
-
-        if(response) {
-            this.props.navigation.dispatch(this.goBackFunction(this.props.navigation.state.params))
-        }
-    }
 
     addNewClient = async () => {
         const response = await this.ref.add({
@@ -48,7 +37,7 @@ class AddClient extends React.Component {
             userUUID: this.props.user.uid,
             cosType: this.props.navigation.state.params
         })
-        if (response) this.props.navigation.dispatch(this.goBackFunction(this.props.navigation.state.params))
+        if (response) this.props.navigation.pop()
     }
 
 

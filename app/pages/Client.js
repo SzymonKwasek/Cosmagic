@@ -1,13 +1,10 @@
 import React from 'react'
-import { ScrollView, StyleSheet, Modal, View, Text, BackHandler } from 'react-native'
+import { ScrollView, StyleSheet, Animated } from 'react-native'
+import { StackActions, NavigationActions } from 'react-navigation'
+import firebase from 'react-native-firebase'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-import { StackActions, NavigationActions } from 'react-navigation'
-
-import axios from 'axios'
-
-import { InfoTab, FancyButton, FancyHeader, FancyBackground, HeaderButton } from '../components'
+import { InfoTab, FancyButton, FancyHeader, FancyBackground, HeaderButton, MenuSlide } from '../components'
 
 
 export default class Client extends React.Component {
@@ -15,72 +12,97 @@ export default class Client extends React.Component {
     static navigationOptions = {
         header: null
       };
-
+      
     constructor(props) {
         super(props)
+        this.ref = firebase.firestore().collection('clients').doc(this.props.navigation.state.params.id);
+        this.unsubscribe = null;
         this.state = {
-            modalToggle : false
+            modalToggle : true,
+            client: {},
+            menu: {
+                height: new Animated.Value(0),
+                top: new Animated.Value(0),
+                opacity: new Animated.Value(0)
+            }
         }
     }
 
-    componentDidMount () {
-        // const reset = StackActions.reset({
-        //     index: 0,
-        //     actions: [
-        //         NavigationActions.navigate({routeName: 'Main', params: this.props.navigation.state})
-        //     ]
-        // })
-        // if(this.props.navigation.isFocused()) {
-        //     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-        //         this.props.navigation.dispatch(reset)
-        //     })
-        // }
+    componentDidMount() {
+        this.unsubscribe = this.ref.onSnapshot(this.getClient)
     }
 
+    getClient = (querySnapshot) => {
+        const id = this.props.navigation.state.params.id
+        const client = {...querySnapshot.data(), id}
+        this.setState({client})
+    }
+
+    animationHandler = (a, b, c) => {
+        const timing = Animated.timing
+        Animated.parallel([
+            timing(this.state.menu.height, {
+                toValue: a,
+                duration: 300
+            }),
+            timing(this.state.menu.top, {
+                toValue: b,
+                duration: 300
+            }),
+            timing(this.state.menu.opacity, {
+                toValue: c,
+                duration: 300
+            })
+        ]).start()
+    }
+
+    openMenu = () => {
+        
+        if(this.state.modalToggle) {
+            this.animationHandler(90, 0, 1)
+        } else {
+            this.animationHandler(0, 0, 0)
+        }
+        console.log(this.state.menu)
+    }
 
     toggleModal = () => {
         this.setState({
             modalToggle: !this.state.modalToggle
         })
+        this.openMenu()
     }
 
     resetAction (data) {
         const reset = StackActions.reset({
-            index: 0,
+            index: 1,
             actions: [
+                NavigationActions.navigate({routeName:'Menu'}),
                 NavigationActions.navigate({routeName: 'Main', params: data}),
             ]
         })
         return reset
     }
 
-    delete = async () => {
-        const prop = this.props.navigation.state.params
-        const response = await axios.delete('http://10.0.2.2:8080/public/client/'+prop.uuid)
-        if( response.data.response ) {
-            this.toggleModal()
-            this.props.navigation.dispatch(this.resetAction(this.props.navigation.state.params))
-        }
+
+    deleteClient = () => {
+        this.ref.delete()
+        this.toggleModal()
+        this.props.navigation.dispatch(this.resetAction(this.props.navigation.state.params))
     }
 
 
     render() {
-        const data = this.props.navigation.state.params 
-        console.log(data)
+        const data = this.state.client
         return (
-            <FancyBackground>
-
-                <Modal visible={this.state.modalToggle} transparent={true} onRequestClose={()=>{console.log('closed')}} >
-                    <View style={styles.modalContainer}>
-                        <Text style={styles.modalText}> Are you sure ? </Text>
-                        <Text style={styles.modalText} onPress={this.delete} > <Icon name="trash" size={30} color="#fff" /> Delete!</Text>
-                        <Text style={styles.modalText} onPress={this.toggleModal} > <Icon name="times" size={30} color="#fff" /> Close</Text>
-                    </View>
-                </Modal>
-
+            <FancyBackground>              
                 <FancyHeader headerText={data.name} />
 
-                <ScrollView style={{alignSelf: 'stretch'}}>
+                <Animated.View style={{ alignSelf: 'stretch', position: 'relative', height: this.state.menu.height, top: this.state.menu.top, opacity: this.state.menu.opacity}}>
+                    <MenuSlide  onPressFirst={this.deleteClient} onPressSecond={this.toggleModal} icon='trash' text='Delete' />
+                </Animated.View>
+
+                <ScrollView style={{alignSelf: 'stretch', flex: 1}}>
                     <InfoTab toDisplay={data.applicationDate} tabName='Data aplikacji: '/>
                     <InfoTab toDisplay={data.lashName} tabName='Nazwa rzęs: '/>
                     <InfoTab toDisplay={data.lashType} tabName='Skręt:  '/>
@@ -89,30 +111,12 @@ export default class Client extends React.Component {
 
                 <HeaderButton onPress={this.toggleModal} iconName='trash' iconColor='#a8555e'/>
 
-                <FancyButton action={() => this.props.navigation.push('EditClient', data)} btnText='Edit' />
+                <FancyButton action={() => this.props.navigation.push('EditClient', this.ref)} btnText='Edit' />
 
             </FancyBackground>
         );
     }
 }
 
-const styles = StyleSheet.create({
-    modalContainer: {
-        marginTop: 200,
-        alignSelf: 'center',
-        backgroundColor: 'rgba(0,0,0,.8)',
-        borderRadius: 20,
-        width: 350,
-        padding: 40
-    },
-    modalText: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: "#fff",
-        marginTop: 10,
-        marginBottom: 10,
-        textAlign: 'center'
-    }
-});
 
 

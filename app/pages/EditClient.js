@@ -1,8 +1,8 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
 import { connect } from 'react-redux'
-import axios from 'axios'
-import { StackActions, NavigationActions } from 'react-navigation'
+import { StackActions } from 'react-navigation'
+import firebase from 'react-native-firebase'
 
 
 import InfoTabEdit from '../components/InfoTabEdit'
@@ -20,34 +20,28 @@ class EditClient extends React.Component {
     constructor(props) {
         super(props)
         const data = this.props.navigation.state.params
+        this.ref = firebase.firestore().collection('clients');
         this.state = {
             applicationDate: data.applicationDate,
             lashName: data.lashName,
             lashType: data.lashType,
             size: data.size,
-            uuid: data.uuid
         }
     }
 
-    goBackFunction(data) {
-        const reset = StackActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({routeName: 'Main', params: data})
-            ]
+    goBackFunction() {
+        const reset = StackActions.pop({
+            n: 1
         })
         return reset
     }
 
-    edit = async () => {
-        const response = await axios.put('http://10.0.2.2:8080/public/client',
-            this.state)
-        if(response.data.response) {
-            alert('Client edited successfully !')
-            this.props.navigation.dispatch(this.goBackFunction(this.props.navigation.state.params))
-        } else {
-            alert('Something went wrong !')
-        }
+    editClient = () => {
+        const data = this.props.navigation.state.params
+        this.ref.doc(data.id).update(this.state)
+        .then( () => {
+            this.props.navigation.dispatch(this.goBackFunction())
+        })
     }
 
 
@@ -66,7 +60,7 @@ render() {
                     <InfoTabEdit toDisplay={data.size} tabName='Grubość: ' onChange={ (size) => this.setState({size}) } />
                 </ScrollView>
 
-                <FancyButton action={this.edit} btnText='Apply' />
+                <FancyButton action={this.editClient} btnText='Apply' />
 
         </FancyBackground>
     );

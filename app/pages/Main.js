@@ -1,9 +1,8 @@
 import React from 'react'
-import { StyleSheet, ScrollView, AsyncStorage, Animated, View } from 'react-native'
-import axios from 'axios'
+import { StyleSheet, ScrollView, AsyncStorage, Animated } from 'react-native'
 import { connect } from 'react-redux'
 import { BackHandler} from 'react-native'
-import { StackActions, NavigationActions } from 'react-navigation'
+import { StackActions } from 'react-navigation'
 import GLOBALS from '../../assets/utils/Global'
 import firebase from 'react-native-firebase'
 
@@ -41,27 +40,19 @@ class Main extends React.Component {
                 type = 'cosType.nails'
             }
             this.unsubscribe = this.ref
-            .where('userUUID', '==', this.props.user.uid)
-            .where(type, '==', true)
-            .onSnapshot(this.getClients)
-            // this.getAllClients()
+                .where('userUUID', '==', this.props.user.uid)
+                .where(type, '==', true)
+                .onSnapshot(this.getClients)
+            this.backHandlerListener()
         }
     }
 
-    componentWillUnmount() {
-        // const reset = StackActions.reset({
-        //     index: 0,
-        //     actions: [
-        //         NavigationActions.navigate({routeName: 'Main', params: this.props.navigation.state.params}),
-        //     ]
-        // })
-        // this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-        //     this.props.navigation.dispatch(reset)
-        // })
-        console.log("Unmount from Main")
-        // this.unsubscribe()
+    backHandlerListener = () => {
+        this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+            this.props.navigation.pop()
+            return true;
+        })
     }
-
 
     
     resetAction(route, data) {
@@ -110,7 +101,9 @@ class Main extends React.Component {
     getClients = (querySnapshot) => {
         const clients = []
         querySnapshot.forEach( client => {
-            clients.push({name: client.data().name})
+            const id = client.id
+            const data = {...client.data(), id}
+            clients.push(data)
         })
         this.setState({clients})
     }
@@ -122,10 +115,11 @@ class Main extends React.Component {
     }
 
     render() {
+        console.log(this.state.clients)
         const clientList = this.state.clients.map((item, x) => {
             const data = {...this.props.navigation.state.params, ...item}
             return(
-                <ClientTab data={item} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
+                <ClientTab data={data} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
             )
         })
         return (    
@@ -136,7 +130,7 @@ class Main extends React.Component {
                 <UserAvatar />
 
                 <Animated.View style={{ alignSelf: 'stretch', position: 'relative', height: this.state.menu.height, top: this.state.menu.top, opacity: this.state.menu.opacity}}>
-                    <MenuSlide  onPressFirst={this.logout} onPressSecond={this.toggleModal} />
+                    <MenuSlide  onPressFirst={this.logout} onPressSecond={this.toggleModal} icon='sign-out' text='SignOut' />
                 </Animated.View>
 
                 <ScrollView style={styles.scrollContainer}>

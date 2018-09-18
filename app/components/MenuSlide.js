@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, StyleSheet, Text, View} from 'react-native'
+import { StyleSheet, Text, View} from 'react-native'
 
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -20,7 +20,7 @@ export default class MenuSlide extends React.Component {
         return (    
 
             <View style={styles.menu}>
-                    <Text style={styles.menuButton} onPress={this.props.onPressFirst} > <Icon name="sign-out" size={30} color="#fff" /> Sign Out</Text>
+                    <Text style={styles.menuButton} onPress={this.props.onPressFirst} > <Icon name={this.props.icon} size={30} color="#fff" /> {this.props.text}</Text>
                     <Text style={styles.menuButton} onPress={this.props.onPressSecond} > <Icon name="times" size={30} color="#fff" /> Close</Text>
             </View>
 

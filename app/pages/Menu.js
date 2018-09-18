@@ -27,31 +27,17 @@ class Menu extends React.Component {
     }
 
     componentDidMount() {   
-        // if(this.props.navigation.isFocused()) {
-        //     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-        //         if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
-        //             BackHandler.exitApp();
-        //             return true
-        //         }
-        //         this.lastBackButtonPress = new Date().getTime()
+        if(this.props.navigation.isFocused()) {
+            this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+                if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
+                    BackHandler.exitApp();
+                    return true
+                }
+                this.lastBackButtonPress = new Date().getTime()
 
-        //         return true;
-        //     })
-        // }
-    }
-
-    componentWillUnmount() {
-        // const reset = StackActions.reset({
-        //     index: 0,
-        //     actions: [
-        //         NavigationActions.navigate({routeName: 'Menu'})
-        //     ]
-        // })
-        // this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-        //     this.props.navigation.dispatch(reset)
-        // })
-        console.log("Unmount from Menu")
-
+                return true;
+            })
+        }
     }
 
 
@@ -116,7 +102,7 @@ class Menu extends React.Component {
                 <UserAvatar />
 
                 <Animated.View style={{ alignSelf: 'stretch', position: 'relative', height: this.state.menu.height, top: this.state.menu.top, opacity: this.state.menu.opacity}}>
-                    <MenuSlide  onPressFirst={this.logout} onPressSecond={this.toggleModal} />
+                    <MenuSlide  onPressFirst={this.logout} onPressSecond={this.toggleModal} icon="sign-out" text='SignOut'/>
                 </Animated.View>
 
                 <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} />

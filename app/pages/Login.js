@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, StyleSheet, Animated, Text, AsyncStorage } from 'react-native'
 import { sha512 } from 'js-sha512'
-import axios from 'axios'
+import { StackActions, NavigationActions } from 'react-navigation'
 import { connect } from 'react-redux'
 
 import { FancyInput, FancyButton, FancyBackground } from '../components'
@@ -58,12 +58,12 @@ class Login extends React.Component {
 
         let value = await AsyncStorage.getItem('user');
         if( value !== null) {
-            this.props.navigation.dispatch(this.resetAction('Main', null));
+            this.props.navigation.dispatch(this.resetAction('Menu', null));
         }
     }
 
     resetAction(route, data) {
-        const reset = StackActions.push({
+        const reset = StackActions.replace({
              routeName: route,
              params: data
          })
@@ -79,7 +79,7 @@ class Login extends React.Component {
             .then( res => {
                 AsyncStorage.setItem('user', res.user._user)
                 this.props.setUser(res.user._user)
-                this.props.navigation.navigate('Menu')
+                this.props.navigation.dispatch(this.resetAction('Menu', null));
             })
             .catch ( err => {
                 alert(err)
@@ -101,7 +101,7 @@ class Login extends React.Component {
                 <Animated.View style={{position: 'relative', left: this.state.animation.emailPositionLeft, alignSelf: 'stretch'}}>
                     <FancyInput 
                         placeholder="Email"
-                        onChange={ (email) =>this.setState({email}) }
+                        onChange={ (email) => this.setState({email}) }
                         password={false}
                         placeholderColor='#a592b7'/>
                 </Animated.View>
@@ -109,7 +109,7 @@ class Login extends React.Component {
                 <Animated.View style={{position: 'relative', left: this.state.animation.passwordPositionLeft, alignSelf: 'stretch'}}>
                     <FancyInput 
                         placeholder="Password"
-                        onChange={ (password) =>this.setState({password}) }
+                        onChange={ (password) => this.setState({password}) }
                         password= {true}
                         placeholderColor='#a592b7'/>
                 </Animated.View>
