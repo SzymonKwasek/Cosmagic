@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Sep 17 13:04:15 CEST 2018
+#Tue Sep 18 14:42:30 CEST 2018
 17.baseType=DIRECTORY
 4.path=lib/armeabi-v7a/libimagepipeline.so
 25.base=/Users/pola/Desktop/Szymke/WORK/ShadowOfLashes/shadowClient/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
