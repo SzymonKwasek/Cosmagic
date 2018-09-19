@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     photo: {
         backgroundColor: 'transparent',
         borderRadius: 40,
+        borderTopRightRadius: 10,
         borderWidth: 2,
         borderColor: GLOBALS.COLOR.PRIMARY,
         height: 80,

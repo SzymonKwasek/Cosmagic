@@ -5,6 +5,7 @@
 
 # dependencies
 /node_modules
+/android/app/google-services.json
 
 # misc
 .env.local

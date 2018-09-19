@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ToastAndroid } from 'react-native'
 
 import { connect } from 'react-redux'
 
@@ -14,27 +14,36 @@ class ClientInfo extends React.Component {
     constructor(props) {
         super(props)
     }
+    
+    calendarPress = () => {
+        ToastAndroid.showWithGravity(`Last application was on: ${this.props.data.applicationDate}`,
+        ToastAndroid.LONG,
+        ToastAndroid.CENTER
+        )
+    }
 
+    render() {
+        return (
+                <View
+                    style={styles.clientTab}
+                    >
 
-render() {
-    return (
-            <View
-                style={styles.clientTab}
-                >
+                    <ClientAvatar />
 
-                <ClientAvatar />
+                    <TouchableOpacity style={styles.basicInfo} onPress={this.props.onPress}>
 
-                <TouchableOpacity style={styles.basicInfo} onPress={this.props.onPress}>
-                    <Text style={styles.infoText}>
-                        {this.props.data.name}
-                    </Text>
-                    <Text style={styles.infoText}>
-                        {this.props.data.applicationDate}
-                    </Text>
-                </TouchableOpacity>
-            </View>
-    );
-}
+                        <Text style={styles.infoText}>
+                            {this.props.data.name}
+                        </Text>
+                        
+                        <TouchableOpacity onPress={this.calendarPress}>
+                            <Icon name='calendar' size={25} color={GLOBALS.COLOR.SECONDARY}></Icon>                    
+                        </TouchableOpacity>
+
+                    </TouchableOpacity>
+                </View>
+        );
+    }
 
 }
 
@@ -60,13 +69,14 @@ const styles = StyleSheet.create({
     basicInfo: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: 'rgba(255, 255, 255, .3)',
         borderRadius: 40,
         height: 70,
         marginLeft: 15,
         padding: 15,
+        paddingHorizontal: 40,
         borderColor: GLOBALS.COLOR.PRIMARY,
         borderBottomWidth: 1
     },

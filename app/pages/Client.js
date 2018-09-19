@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, StyleSheet, Animated } from 'react-native'
+import { ScrollView, Animated } from 'react-native'
 import { StackActions, NavigationActions } from 'react-navigation'
 import firebase from 'react-native-firebase'
 
