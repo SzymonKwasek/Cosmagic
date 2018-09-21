@@ -16,8 +16,8 @@ class ClientInfo extends React.Component {
     }
     
     calendarPress = () => {
-        ToastAndroid.showWithGravity(`Last application was on: ${this.props.data.applicationDate}`,
-        ToastAndroid.LONG,
+        ToastAndroid.showWithGravity(`Last application was on: ${this.props.data.lastApplication} \n Next application will be on: ${this.props.data.nextApplication}`,
+        ToastAndroid.SHORT,
         ToastAndroid.CENTER
         )
     }
@@ -32,9 +32,15 @@ class ClientInfo extends React.Component {
 
                     <TouchableOpacity style={styles.basicInfo} onPress={this.props.onPress}>
 
-                        <Text style={styles.infoText}>
-                            {this.props.data.name}
-                        </Text>
+                        <View>
+                            <Text style={styles.infoText}>
+                                {this.props.data.name}
+                            </Text>
+                            <Text style={styles.infoTextDate}>
+                                {this.props.data.nextApplication}
+                            </Text>
+                        </View>
+                        
                         
                         <TouchableOpacity onPress={this.calendarPress}>
                             <Icon name='calendar' size={25} color={GLOBALS.COLOR.SECONDARY}></Icon>                    

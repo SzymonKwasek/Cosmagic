@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     userTitle: {
         fontSize: 23,
         color: GLOBALS.COLOR.TEXT,
-        paddingLeft: 150,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        paddingLeft: 150
     }
 });

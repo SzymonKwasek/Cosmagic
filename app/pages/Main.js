@@ -127,8 +127,6 @@ class Main extends React.Component {
 
                 <UserHeader userName={this.props.user.email} />
 
-                <UserAvatar />
-
                 <Animated.View style={{ alignSelf: 'stretch', position: 'relative', height: this.state.menu.height, top: this.state.menu.top, opacity: this.state.menu.opacity}}>
                     <MenuSlide  onPressFirst={this.logout} onPressSecond={this.toggleModal} icon='sign-out' text='SignOut' />
                 </Animated.View>
