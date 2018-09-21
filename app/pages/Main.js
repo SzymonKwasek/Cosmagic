@@ -35,9 +35,6 @@ export default class Main extends React.Component {
     
 
     componentDidMount() {
-        console.log(('------------------------------------'))
-            console.log('helo from did mount')
-            console.log(this.state.type)
             this.getClientsHandler()
             // this.backHandlerListener()
     }
@@ -141,7 +138,7 @@ export default class Main extends React.Component {
         const clientList = this.state.clients.map((item, x) => {
             const data = {...this.props.params, ...item}
             return(
-                <ClientInfo data={data} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
+                <ClientInfo data={data} key={x} index={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
             )
         })
         return (    
@@ -176,6 +173,6 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
     scrollContainer: {
         flex: 1,
-        alignSelf: 'stretch'
+        alignSelf: 'stretch',
     }
 });

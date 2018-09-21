@@ -5,7 +5,7 @@ import { BackHandler } from 'react-native'
 import { StackActions, NavigationActions } from 'react-navigation'
 import GLOBALS from '../../assets/utils/Global'
 
-import { UserHeader, UserAvatar, FancyBackground, FancyButton, MenuSlide, HeaderButton } from '../components'
+import { UserHeader, UserAvatar, FancyBackground, FancyButton, MenuSlide, HeaderButton, TopButtons } from '../components'
 import { Main } from './'
 class Menu extends React.Component {
 
@@ -104,14 +104,8 @@ class Menu extends React.Component {
                 </Animated.View>
 
                 <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} />
-                <View style={styles.topButtons}>
-                    <View>
-                        <FancyButton action={() => this.renderState('lashes')} btnText='Lashes'/>
-                    </View>
-                    <View>
-                        <FancyButton action={() => this.renderState('nails')} btnText='Nails'/>
-                    </View>
-                </View>
+                
+                <TopButtons action1={() => this.renderState('lashes')} action2={() => this.renderState('nails')} />
 
                 <Main navigation={this.props.navigation} params={this.state.type} user={this.props.user} />
 

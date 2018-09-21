@@ -22,11 +22,13 @@ class ClientInfo extends React.Component {
         )
     }
 
+    checkIfFirst = (n) =>{
+        return n === 0;
+    }
+
     render() {
         return (
-                <View
-                    style={styles.clientTab}
-                    >
+                <View  style={[styles.clientTab, {marginTop: this.checkIfFirst(this.props.index) ? 5 : 25}]}>
 
                     <ClientAvatar />
 
@@ -68,7 +70,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 30,
         marginBottom: 10
     },
     basicInfo: {
