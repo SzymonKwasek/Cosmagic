@@ -63,7 +63,6 @@ export default class Client extends React.Component {
         } else {
             this.animationHandler(0, 0, 0)
         }
-        console.log(this.state.menu)
     }
 
     toggleModal = () => {
@@ -103,15 +102,22 @@ export default class Client extends React.Component {
                 </Animated.View>
 
                 <ScrollView style={{alignSelf: 'stretch', flex: 1}}>
-                    <InfoTab toDisplay={data.applicationDate} tabName='Data aplikacji: '/>
+                    <InfoTab toDisplay={data.lastApplication} tabName='Poprzednia stylizacja: '/>
+                    <InfoTab toDisplay={data.nextApplication} tabName='Następna stylizacja: '/>
                     <InfoTab toDisplay={data.lashName} tabName='Nazwa rzęs: '/>
                     <InfoTab toDisplay={data.lashType} tabName='Skręt:  '/>
                     <InfoTab toDisplay={data.size} tabName='Grubość: '/>
+                    <InfoTab toDisplay={data.length} tabName='Długość: '/>
+                    <InfoTab toDisplay={data.method} tabName='Metoda: '/>
+                    <InfoTab toDisplay={data.glue} tabName='Klej: '/>
+                    <InfoTab toDisplay={data.style} tabName='Styl: '/>
+                    <InfoTab toDisplay={data.notes} tabName='Uwagi: '/>
+
                 </ScrollView>
 
                 <HeaderButton onPress={this.toggleModal} iconName='trash' iconColor='#a8555e'/>
 
-                <FancyButton action={() => this.props.navigation.push('EditClient', this.ref)} btnText='Edit' />
+                <FancyButton action={() => this.props.navigation.push('EditClient', data)} btnText='Edit' />
 
             </FancyBackground>
         );

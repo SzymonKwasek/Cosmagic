@@ -6,7 +6,7 @@ import { StackActions, NavigationActions } from 'react-navigation'
 import GLOBALS from '../../assets/utils/Global'
 
 import { UserHeader, UserAvatar, FancyBackground, FancyButton, MenuSlide, HeaderButton } from '../components'
-
+import { Main } from './'
 class Menu extends React.Component {
 
     static navigationOptions = {
@@ -17,6 +17,10 @@ class Menu extends React.Component {
         super(props)
         this.state = {
             modalToggle: true,
+            type: {
+                lashes: true,
+                nails: false,
+            },
             menu: {
                 height: new Animated.Value(0),
                 top: new Animated.Value(0),
@@ -24,20 +28,6 @@ class Menu extends React.Component {
             }
         }
         this.lastBackButtonPress = null
-    }
-
-    componentDidMount() {   
-        if(this.props.navigation.isFocused()) {
-            this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-                if(this.lastBackButtonPress + 2000 >= new Date().getTime()) {
-                    BackHandler.exitApp();
-                    return true
-                }
-                this.lastBackButtonPress = new Date().getTime()
-
-                return true;
-            })
-        }
     }
 
 
@@ -85,6 +75,15 @@ class Menu extends React.Component {
         }
     }
 
+    renderState = ( state ) => {
+        if ( state === 'lashes') {
+            this.setState({type: {lashes: true, nails: false}})
+        }
+        else if( state === 'nails') {
+            this.setState({type: {lashes: false, nails: true}})
+        }
+    }
+
 
     logout = () => {
         AsyncStorage.removeItem('user')
@@ -93,7 +92,6 @@ class Menu extends React.Component {
     }
 
     render() {
-
         return (    
         <FancyBackground>
 
@@ -106,13 +104,17 @@ class Menu extends React.Component {
                 </Animated.View>
 
                 <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} />
+                <View style={styles.topButtons}>
+                    <View>
+                        <FancyButton action={() => this.renderState('lashes')} btnText='Lashes'/>
+                    </View>
+                    <View>
+                        <FancyButton action={() => this.renderState('nails')} btnText='Nails'/>
+                    </View>
+                </View>
 
-                <View>
-                    <FancyButton action={() => this.props.navigation.dispatch(this.resetAction('Main', {lashes: true, nails: false, both: false}))} btnText='Lashes'/>
-                </View>
-                <View>
-                    <FancyButton action={() => this.props.navigation.dispatch(this.resetAction('Main', {lashes: false, nails: true, both: false}))} btnText='Nails'/>
-                </View>
+                <Main navigation={this.props.navigation} params={this.state.type} user={this.props.user} />
+
 
         </FancyBackground>
         );
@@ -135,5 +137,10 @@ const styles = StyleSheet.create({
     scrollContainer: {
         flex: 1,
         alignSelf: 'stretch'
+    },
+    topButtons: {
+        flexDirection: 'row',
+        alignSelf: 'flex-end',
+        height: 60
     }
 });

@@ -22,7 +22,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
         }
     }
     componentDidMount() {
-        
         this.getImage()
     }
 
