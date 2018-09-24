@@ -1,12 +1,11 @@
 import React from 'react'
 import { StyleSheet, ScrollView, AsyncStorage, Animated } from 'react-native'
-import { connect } from 'react-redux'
 import { BackHandler } from 'react-native'
 import { StackActions } from 'react-navigation'
 import GLOBALS from '../../assets/utils/Global'
 import firebase from 'react-native-firebase'
 
-import { UserHeader, UserAvatar, ClientInfo, FancyBackground, HeaderButton, AddButton, MenuSlide } from '../components'
+import { ClientInfo, FancyBackground, AddButton } from '../components'
 
 export default class Main extends React.Component {
 
@@ -22,12 +21,14 @@ export default class Main extends React.Component {
             modalToggle: true,
             clients : [],
             type: this.props.params,
+            search: this.props.search,
             loading: true,
             menu: {
                 height: new Animated.Value(0),
                 top: new Animated.Value(0),
                 opacity: new Animated.Value(0)
-            }
+            },
+            clientList: []
         }
         this.lastBackButtonPress = null
     }
@@ -41,18 +42,19 @@ export default class Main extends React.Component {
 
     static getDerivedStateFromProps(nextProps, prevState){
         if(nextProps.params !== prevState.params){
-            return { type: nextProps.params}
+            return { type: nextProps.params, search: nextProps.search  }
         }
         else return null
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.params !== prevProps.params) {
-            this.setState({type: prevProps.params}) 
-            this.getClientsHandler()    
+            this.setState({ type: prevProps.params, search: prevProps.search }) 
+            this.getClientsHandler()
         }      
         
     }
+
 
     getClientsHandler () {
         let type = ''
@@ -135,12 +137,25 @@ export default class Main extends React.Component {
     }
 
     render() {
-        const clientList = this.state.clients.map((item, x) => {
-            const data = {...this.props.params, ...item}
-            return(
-                <ClientInfo data={data} key={x} index={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
-            )
-        })
+        let clientList = []
+        if(this.state.search === '') {
+            clientList = this.state.clients.map((item, x) => {
+                const data = {...this.props.params, ...item}
+                return(
+                    <ClientInfo data={data} key={x} index={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
+                )
+            })
+        } else {
+            clientList = this.state.clients.filter( item => {
+                return item.name.startsWith(this.state.search)
+            }).map((item, x) => {
+                const data = {...this.props.params, ...item}
+                return(
+                    <ClientInfo data={data} key={x} index={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
+                )
+            })
+        }
+        
         return (    
         <FancyBackground>
 
