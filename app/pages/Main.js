@@ -159,7 +159,6 @@ export default class Main extends React.Component {
         return (    
         <FancyBackground>
 
-
                 <ScrollView style={styles.scrollContainer}>
                         {clientList}
                 </ScrollView>

@@ -98,7 +98,6 @@ export default class Client extends React.Component {
                     <InfoTab toDisplay={data.glue} tabName='Klej: '/>
                     <InfoTab toDisplay={data.style} tabName='Styl: '/>
                     <InfoTab toDisplay={data.notes} tabName='Uwagi: '/>
-
                 </ScrollView>
 
                 <HeaderButton onPress={this.toggleModal} iconName='trash' iconColor='#a8555e'/>

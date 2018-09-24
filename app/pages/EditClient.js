@@ -33,7 +33,6 @@ class EditClient extends React.Component {
             indicator: false
         }
     }
-
     editClient = () => {
         this.setState({ indicator: true })
         const data = this.props.navigation.state.params
