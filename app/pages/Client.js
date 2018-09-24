@@ -1,9 +1,7 @@
 import React from 'react'
 import { ScrollView, Animated } from 'react-native'
-import { StackActions, NavigationActions } from 'react-navigation'
 import firebase from 'react-native-firebase'
 
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { InfoTab, FancyButton, FancyHeader, FancyBackground, HeaderButton, MenuSlide } from '../components'
 
 
@@ -63,7 +61,6 @@ export default class Client extends React.Component {
         } else {
             this.animationHandler(0, 0, 0)
         }
-        console.log(this.state.menu)
     }
 
     toggleModal = () => {
@@ -73,22 +70,10 @@ export default class Client extends React.Component {
         this.openMenu()
     }
 
-    resetAction (data) {
-        const reset = StackActions.reset({
-            index: 1,
-            actions: [
-                NavigationActions.navigate({routeName:'Menu'}),
-                NavigationActions.navigate({routeName: 'Main', params: data}),
-            ]
-        })
-        return reset
-    }
-
-
     deleteClient = () => {
         this.ref.delete()
         this.toggleModal()
-        this.props.navigation.dispatch(this.resetAction(this.props.navigation.state.params))
+        this.props.navigation.pop()
     }
 
 

@@ -22,14 +22,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
         }
     }
     componentDidMount() {
-        
         this.getImage()
     }
 
     getImage = () => {
         this.ref.getDownloadURL()
         .then( url => {
-            console.log(url)
             this.setState({pickedImage: {uri: url}})
         })
         .catch( err => {
@@ -92,8 +90,8 @@ const styles = StyleSheet.create({
         borderRadius: 80,
         borderWidth: 3.5,
         borderColor: GLOBALS.COLOR.PRIMARY,
-        height: 100,
-        width: 100,
+        height: 80,
+        width: 80,
         margin: 20,
         position: 'absolute',
         top: 5,

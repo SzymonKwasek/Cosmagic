@@ -16,17 +16,19 @@ class ClientInfo extends React.Component {
     }
     
     calendarPress = () => {
-        ToastAndroid.showWithGravity(`Last application was on: ${this.props.data.lastApplication} \n Next application will be on: ${this.props.data.nextApplication}`,
+        ToastAndroid.showWithGravity(`Last application was on: ${this.props.data.lastApplication} \n Next application on: ${this.props.data.nextApplication}`,
         ToastAndroid.SHORT,
         ToastAndroid.CENTER
         )
     }
 
+    checkIfFirst = (n) =>{
+        return n === 0;
+    }
+
     render() {
         return (
-                <View
-                    style={styles.clientTab}
-                    >
+                <View  style={[styles.clientTab, {marginTop: this.checkIfFirst(this.props.index) ? 5 : 25}]}>
 
                     <ClientAvatar />
 
@@ -40,7 +42,6 @@ class ClientInfo extends React.Component {
                                 {this.props.data.nextApplication}
                             </Text>
                         </View>
-                        
                         
                         <TouchableOpacity onPress={this.calendarPress}>
                             <Icon name='calendar' size={25} color={GLOBALS.COLOR.SECONDARY}></Icon>                    
@@ -69,7 +70,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 30,
         marginBottom: 10
     },
     basicInfo: {
@@ -87,8 +87,12 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1
     },
     infoText: {
-        fontSize: 20,
+        fontSize: 22,
         fontWeight: 'bold',
+        color: GLOBALS.COLOR.TEXT
+    },
+    infoTextDate: {
+        fontSize: 17,
         color: GLOBALS.COLOR.TEXT
     }
 });

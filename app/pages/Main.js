@@ -1,14 +1,13 @@
 import React from 'react'
 import { StyleSheet, ScrollView, AsyncStorage, Animated } from 'react-native'
-import { connect } from 'react-redux'
 import { BackHandler } from 'react-native'
 import { StackActions } from 'react-navigation'
 import GLOBALS from '../../assets/utils/Global'
 import firebase from 'react-native-firebase'
 
-import { UserHeader, UserAvatar, ClientInfo, FancyBackground, HeaderButton, AddButton, MenuSlide } from '../components'
+import { ClientInfo, FancyBackground, AddButton } from '../components'
 
-class Main extends React.Component {
+export default class Main extends React.Component {
 
     static navigationOptions = {
         header: null
@@ -21,38 +20,61 @@ class Main extends React.Component {
         this.state = {
             modalToggle: true,
             clients : [],
+            type: this.props.params,
+            search: this.props.search,
             loading: true,
             menu: {
                 height: new Animated.Value(0),
                 top: new Animated.Value(0),
                 opacity: new Animated.Value(0)
-            }
+            },
+            clientList: []
         }
         this.lastBackButtonPress = null
     }
 
-    componentDidMount() {   
-        if(this.props.navigation.isFocused()) {
-            let type = ''
-            if( this.props.navigation.state.params.lashes ) {
+    
+
+    componentDidMount() {
+            this.getClientsHandler()
+            // this.backHandlerListener()
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState){
+        if(nextProps.params !== prevState.params){
+            return { type: nextProps.params, search: nextProps.search  }
+        }
+        else return null
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.params !== prevProps.params) {
+            this.setState({ type: prevProps.params, search: prevProps.search }) 
+            this.getClientsHandler()
+        }      
+        
+    }
+
+
+    getClientsHandler () {
+        let type = ''
+            if( this.state.type.lashes ) {
                 type = 'cosType.lashes'
-            } else if( this.props.navigation.state.params.nails ) {
+            } else if( this.state.type.nails ) {
                 type = 'cosType.nails'
             }
             this.unsubscribe = this.ref
                 .where('userUUID', '==', this.props.user.uid)
                 .where(type, '==', true)
                 .onSnapshot(this.getClients)
-            this.backHandlerListener()
-        }
     }
 
-    backHandlerListener = () => {
-        this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-            this.props.navigation.pop()
-            return true;
-        })
-    }
+    // backHandlerListener = () => {
+    //     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+    //         this.props.navigation.pop()
+    //         return true;
+    //     })
+    // }
 
     
     resetAction(route, data) {
@@ -115,29 +137,35 @@ class Main extends React.Component {
     }
 
     render() {
-        console.log(this.state.clients)
-        const clientList = this.state.clients.map((item, x) => {
-            const data = {...this.props.navigation.state.params, ...item}
-            return(
-                <ClientInfo data={data} key={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
-            )
-        })
+        let clientList = []
+        if(this.state.search === '') {
+            clientList = this.state.clients.map((item, x) => {
+                const data = {...this.props.params, ...item}
+                return(
+                    <ClientInfo data={data} key={x} index={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
+                )
+            })
+        } else {
+            clientList = this.state.clients.filter( item => {
+                return item.name.startsWith(this.state.search)
+            }).map((item, x) => {
+                const data = {...this.props.params, ...item}
+                return(
+                    <ClientInfo data={data} key={x} index={x} onPress={() => this.props.navigation.dispatch(this.resetAction('Client', data))}/>
+                )
+            })
+        }
+        
         return (    
         <FancyBackground>
-
-                <UserHeader userName={this.props.user.email} />
-
-                <Animated.View style={{ alignSelf: 'stretch', position: 'relative', height: this.state.menu.height, top: this.state.menu.top, opacity: this.state.menu.opacity}}>
-                    <MenuSlide  onPressFirst={this.logout} onPressSecond={this.toggleModal} icon='sign-out' text='SignOut' />
-                </Animated.View>
 
                 <ScrollView style={styles.scrollContainer}>
                         {clientList}
                 </ScrollView>
 
-                <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} />
+                {/* <HeaderButton onPress={this.toggleModal} iconName='cog' iconColor={GLOBALS.COLOR.SECONDARY} /> */}
 
-                <AddButton onPress={() => this.props.navigation.dispatch(this.resetAction('AddClient', this.props.navigation.state.params))} />
+                <AddButton onPress={() => this.props.navigation.dispatch(this.resetAction('AddClient', this.props.params))} />
 
         </FancyBackground>
         );
@@ -147,18 +175,18 @@ class Main extends React.Component {
 
 
 
-function mapStateToProps (state) {
-    return {
-        user: state.user
-    }
-}
+// function mapStateToProps (state) {
+//     return {
+//         user: state.user
+//     }
+// }
 
 
-export default connect(mapStateToProps)(Main)
+// export default connect(mapStateToProps)(Main)
 
 const styles = StyleSheet.create({
     scrollContainer: {
         flex: 1,
-        alignSelf: 'stretch'
+        alignSelf: 'stretch',
     }
 });

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
         alignSelf: 'stretch',
-        height: 60,
+        height: 50,
         padding: 0,
         borderBottomWidth: 2.5,
         borderColor: GLOBALS.COLOR.SECONDARY,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     userTitle: {
         fontSize: 23,
         color: GLOBALS.COLOR.TEXT,
-        fontWeight: 'bold',
-        paddingLeft: 150
+        paddingLeft: 110,
+        fontWeight: 'bold'
     }
 });

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { StackActions } from 'react-navigation'
 
-import { FancyButton, FancyInput, FancyHeader, FancyBackground } from '../components'
+import { FancyButton, FancyInput, FancyHeader, FancyBackground, Loading } from '../components'
 
 import firebase from 'react-native-firebase'
 
@@ -18,20 +18,14 @@ class AddClient extends React.Component {
         this.state = {
             name: '',
             userUUID: this.props.user.uuid,
-            cosType: this.props.navigation.state.params
+            cosType: this.props.navigation.state.params,
+            indicator: false
         }
 
     }
 
-    goBackFunction(data) {
-        const reset = StackActions.pop({
-            n:1
-        })
-        return reset
-    }
-
-
     addNewClient = async () => {
+        this.setState({ indicator: true })
         const response = await this.ref.add({
             name: this.state.name,
             userUUID: this.props.user.uid,
@@ -49,6 +43,8 @@ class AddClient extends React.Component {
             <FancyInput placeholder='Name' placeholderColor='#fff' onChange = {(name) => this.setState({name})} password={false}/>
 
             <FancyButton action={this.addNewClient} btnText='Add'/>
+
+            <Loading animating={this.state.indicator} />
         </FancyBackground>
     );
   }
