@@ -23,12 +23,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         alignSelf: 'stretch',
         justifyContent: 'center',
-        borderBottomWidth: 3,
-        borderColor: GLOBALS.COLOR.PRIMARY,
-        marginBottom: 30
     },
     headerText: {
-        color: 'white',
+        color: GLOBALS.COLOR.SECONDARY,
         fontSize: 30,
         padding: 10,
         fontWeight: 'bold',

@@ -1,8 +1,8 @@
 import React from 'react'
-import { ScrollView, Animated } from 'react-native'
+import { ScrollView, Animated , StyleSheet} from 'react-native'
 import firebase from 'react-native-firebase'
 
-import { InfoTab, FancyButton, FancyHeader, FancyBackground, HeaderButton, MenuSlide } from '../components'
+import { InfoTab, FancyHeader, FancyBackground, HeaderButton, MenuSlide, SearchButton } from '../components'
 
 
 export default class Client extends React.Component {
@@ -87,7 +87,7 @@ export default class Client extends React.Component {
                     <MenuSlide  onPressFirst={this.deleteClient} onPressSecond={this.toggleModal} icon='trash' text='Delete' />
                 </Animated.View>
 
-                <ScrollView style={{alignSelf: 'stretch', flex: 1}}>
+                <ScrollView style={styles.scrollView}>
                     <InfoTab toDisplay={data.lastApplication} tabName='Poprzednia stylizacja: '/>
                     <InfoTab toDisplay={data.nextApplication} tabName='Następna stylizacja: '/>
                     <InfoTab toDisplay={data.lashName} tabName='Nazwa rzęs: '/>
@@ -102,7 +102,9 @@ export default class Client extends React.Component {
 
                 <HeaderButton onPress={this.toggleModal} iconName='trash' iconColor='#a8555e'/>
 
-                <FancyButton action={() => this.props.navigation.push('EditClient', data)} btnText='Edit' />
+                <SearchButton onPress={() => this.props.navigation.push('EditClient', data)} iconName='edit' iconColor='#a8555e' />
+
+                {/* <FancyButton action={() => this.props.navigation.push('EditClient', data)} btnText='Edit' /> */}
 
             </FancyBackground>
         );
@@ -110,4 +112,13 @@ export default class Client extends React.Component {
 }
 
 
-
+const styles = StyleSheet.create({
+    scrollView: {
+        flex: 1,
+        alignSelf: 'stretch',
+        backgroundColor: 'rgba(255,255,255,.3)',
+        paddingHorizontal: 30,
+        paddingTop: 10,
+        borderRadius: 15
+    }
+});

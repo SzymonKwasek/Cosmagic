@@ -22,13 +22,18 @@ class Login extends React.Component {
             password: '',
             animation: {
                 emailPositionLeft: new Animated.Value(795),
-                passwordPositionLeft: new Animated.Value(905)
+                passwordPositionLeft: new Animated.Value(905),
+                passwordPosition: new Animated.Value(0)
             }
         }
     }
     
     componentDidMount() {
         this._loadInitialState().done();
+        this.loadAnimationHandler()
+    }
+
+    loadAnimationHandler() {
         const timing = Animated.timing
         Animated.parallel([
             timing(this.state.animation.emailPositionLeft, {
@@ -38,6 +43,32 @@ class Login extends React.Component {
             timing(this.state.animation.passwordPositionLeft, {
                 toValue: 0,
                 duration: 900
+            })
+        ]).start()
+    }
+
+    wrongInputHandler() {
+        const timing = Animated.timing
+        Animated.sequence([
+            timing(this.state.animation.passwordPosition, {
+                toValue: -10,
+                duration: 100
+            }),
+            timing(this.state.animation.passwordPosition, {
+                toValue: 10,
+                duration: 100
+            }),
+            timing(this.state.animation.passwordPosition, {
+                toValue: -6,
+                duration: 100
+            }),
+            timing(this.state.animation.passwordPosition, {
+                toValue: 14,
+                duration: 100
+            }),
+            timing(this.state.animation.passwordPosition, {
+                toValue: 0,
+                duration: 100
             })
         ]).start()
     }
@@ -82,7 +113,8 @@ class Login extends React.Component {
                 this.props.navigation.dispatch(this.resetAction('Menu', null));
             })
             .catch ( err => {
-                alert(err)
+                this.wrongInputHandler()
+                // alert(err)            
             })
         } 
         catch( err ) {
@@ -107,11 +139,15 @@ class Login extends React.Component {
                 </Animated.View>
 
                 <Animated.View style={{position: 'relative', left: this.state.animation.passwordPositionLeft, alignSelf: 'stretch'}}>
-                    <FancyInput 
-                        placeholder="Password"
-                        onChange={ (password) => this.setState({password}) }
-                        password= {true}
-                        placeholderColor='#a592b7'/>
+                     <Animated.View style={{position: 'relative', left: this.state.animation.passwordPosition, alignSelf: 'stretch'}}>
+                    
+                        <FancyInput 
+                            placeholder="Password"
+                            onChange={ (password) => this.setState({password}) }
+                            password= {true}
+                            placeholderColor='#a592b7'/>
+
+                    </Animated.View>
                 </Animated.View>
 
                 <FancyButton action={this.signIn} btnText='Login' />

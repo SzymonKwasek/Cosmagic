@@ -44,7 +44,7 @@ class ClientInfo extends React.Component {
                         </View>
                         
                         <TouchableOpacity onPress={this.calendarPress}>
-                            <Icon name='calendar' size={25} color={GLOBALS.COLOR.SECONDARY}></Icon>                    
+                            <Icon name='calendar' size={25} color='#f7b736' ></Icon>                    
                         </TouchableOpacity>
 
                     </TouchableOpacity>

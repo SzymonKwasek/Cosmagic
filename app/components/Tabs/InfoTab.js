@@ -17,7 +17,7 @@ export default class InfoTab extends React.Component {
                 <Text style={styles.infoName}>
                     {this.props.tabName}
                 </Text>
-                <FancyText text={this.props.toDisplay}/>
+                <FancyText style={styles.infoText} text={this.props.toDisplay}/>
             </View>
         );
     }
@@ -37,16 +37,19 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         justifyContent: 'space-around',
         marginTop: 10,
-        marginBottom: 20,
+        marginBottom: 10,
         height: 60,
-        borderColor: GLOBALS.COLOR.PRIMARY,
-        borderBottomWidth: 1.5,
     },
     infoName: {
         color: GLOBALS.COLOR.PRIMARY,
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 5
+    },
+    infoText: {
+        fontSize: 17,
+        paddingLeft: 5,
+
     }
 })
 
